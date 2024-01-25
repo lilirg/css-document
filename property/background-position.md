@@ -1,21 +1,18 @@
 # background-position
 
----
+## è¯­æ³•
 
-ÕâÀïÊÇ¹ØÓÚbackground-positionµÄÃèÊö»òÊ¾ÀýÄÚÈÝ¡£
+```css
+.el{
 
----
+}
+```
+|è¯­æ³•ç‰¹æ€§|è¯´æ˜Ž|
+| :--- | :--- |
+| é»˜è®¤å€¼||
+| é€‚ç”¨HTMLå…ƒç´  | |
+| åŠ¨ç”»| |
 
-## background-position µÄÓÃÍ¾ºÍÓÃ·¨
-
----
-
-## Ïà¹ØÊôÐÔºÍ¸ÅÄî
-
----
-
-## Ïà¹ØÁ´½ÓºÍ×ÊÔ´
-
----
-
-## ²Î¿¼×ÊÁÏ
+## å±žæ€§å€¼
+- 
+## ç¤ºä¾‹
