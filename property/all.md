@@ -1,6 +1,6 @@
 # all
 
-该属性是一个速记属性，可用于重置元素上的所有 CSS 属性，但 `direction` 和 `unicode-bidi` 除外。
+该属性可用于重置元素上的所有 CSS 属性，但 `direction` 和 `unicode-bidi` 除外。
 
 它可用于将属性重置为其初始值，或强制这些属性从级联继承其值。
 
