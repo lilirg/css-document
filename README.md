@@ -265,7 +265,3 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 - [ ] [`will-change`](property/will-change.md) - 即将变化
 - [ ] [`orphans`](property/orphans.md) - 孤行
 - [ ] [`widows`](property/widows.md) - 孤行（末页）
-
-##### 遮罩 Mask
-
-✅ 完成
