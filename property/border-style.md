@@ -1,6 +1,6 @@
 # border-style
 
-该属性设置元素的边框样式。
+该属性用于设置元素四个边框的样式，可以是一个、两个、三个或四个值。
 
 ## 语法
 
@@ -8,209 +8,153 @@
 border-style: <line-style>{1,4}
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `none`         |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 否             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `none` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
 
 ## 值
 
-### `<line-style>`
+### none
+无边框，不绘制边框。
 
-定义边框的样式。可选值包括：
+### hidden
+与 `none` 类似，但在表格单元格冲突解决中优先级更高。
 
-| 值 | 说明 |
-|------|------|
-| `none` | 无边框（不绘制边框） |
-| `hidden` | 隐藏边框（用于表格边框冲突解决） |
-| `dotted` | 点状边框 |
-| `dashed` | 虚线边框 |
-| `solid` | 实线边框 |
-| `double` | 双线边框 |
-| `groove` | 3D 凹槽边框 |
-| `ridge` | 3D 凸脊边框 |
-| `inset` | 3D 内嵌边框 |
-| `outset` | 3D 外凸边框 |
+### dotted
+点状边框，由点组成。
 
-### 多值语法
+### dashed
+虚线边框，由短线段组成。
 
-可以指定 1 到 4 个值，分别设置不同边的样式：
+### solid
+实线边框，单实线。
 
-```css
-border-style: solid;              /* 所有边 */
-border-style: solid dashed;       /* 上下，左右 */
-border-style: solid dashed dotted;  /* 上，左右，下 */
-border-style: solid dashed dotted groove;  /* 上，右，下，左 */
-```
+### double
+双线边框，两条实线加中间间隙。
+
+### groove
+凹槽边框，3D 凹陷效果。
+
+### ridge
+凸槽边框，3D 凸起效果。
+
+### inset
+内嵌边框，3D 内陷效果。
+
+### outset
+外凸边框，3D 外凸效果。
+
+### 值数量说明
+| 值数量 | 说明 |
+| :--- | :--- |
+| 1 个值 | 所有四个边框使用相同样式 |
+| 2 个值 | 上下边框使用第一个值，左右边框使用第二个值 |
+| 3 个值 | 上边框使用第一个值，左右边框使用第二个值，下边框使用第三个值 |
+| 4 个值 | 上、右、下、左边框分别使用对应值（顺时针） |
 
 ## 注意
-
-- 如果边框颜色未设置，边框颜色默认为元素的 `color` 值
-- `none` 和 `hidden` 的区别：`hidden` 在表格边框冲突时优先
-- 必须设置 `border-width` 才能显示边框（`none` 除外）
+- 边框宽度必须大于 0 才能显示（`border-width` 不能为 0 或 `medium` 以外的默认值）
+- `none` 和 `hidden` 的区别在于表格边框冲突解决时的优先级
+- 3D 效果（`groove`, `ridge`, `inset`, `outset`）的颜色由 `border-color` 决定
+- 可以使用 `border-top-style`, `border-right-style`, `border-bottom-style`, `border-left-style` 分别设置
 
 ## 示例
 
 ```css
-/* 无边框 */
-.el1 {
-  border-style: none;
-  border-width: 5px;
-  border-color: #333;
-}
-
-/* 点状边框 */
-.el2 {
-  border-style: dotted;
+/* 1 个值 - 所有边框相同样式 */
+.box {
   border-width: 2px;
-  border-color: #333;
-}
-
-/* 虚线边框 */
-.el3 {
-  border-style: dashed;
-  border-width: 2px;
-  border-color: #333;
-}
-
-/* 实线边框 */
-.el4 {
   border-style: solid;
+}
+
+/* 2 个值 - 上下 / 左右 */
+.box {
   border-width: 2px;
-  border-color: #333;
+  border-style: solid dashed;
 }
 
-/* 双线边框 */
-.el5 {
-  border-style: double;
-  border-width: 5px;
-  border-color: #333;
+/* 3 个值 - 上 / 左右 / 下 */
+.box {
+  border-width: 2px;
+  border-style: solid dashed dotted;
 }
 
-/* 3D 凹槽边框 */
-.el6 {
+/* 4 个值 - 上 / 右 / 下 / 左 */
+.box {
+  border-width: 2px;
+  border-style: solid dashed dotted double;
+}
+
+/* 3D 效果边框 */
+.groove {
+  border-width: 4px;
   border-style: groove;
-  border-width: 5px;
-  border-color: #333;
 }
 
-/* 3D 凸脊边框 */
-.el7 {
+.ridge {
+  border-width: 4px;
   border-style: ridge;
-  border-width: 5px;
-  border-color: #333;
 }
 
-/* 3D 内嵌边框 */
-.el8 {
+.inset {
+  border-width: 4px;
   border-style: inset;
-  border-width: 5px;
-  border-color: #333;
 }
 
-/* 3D 外凸边框 */
-.el9 {
+.outset {
+  border-width: 4px;
   border-style: outset;
-  border-width: 5px;
-  border-color: #333;
-}
-
-/* 多值设置 */
-.el10 {
-  border-style: solid dashed dotted groove;
-  border-width: 2px;
-  border-color: #333;
 }
 ```
 
 ```html
-<div class="el1">none</div>
-<div class="el2">dotted</div>
-<div class="el3">dashed</div>
-<div class="el4">solid</div>
-<div class="el5">double</div>
-<div class="el6">groove</div>
-<div class="el7">ridge</div>
-<div class="el8">inset</div>
-<div class="el9">outset</div>
-<div class="el10">多值设置</div>
+<!-- HTML 示例 -->
+<div class="solid">实线边框</div>
+<div class="dashed">虚线边框</div>
+<div class="dotted">点状边框</div>
+<div class="double">双线边框</div>
+<div class="groove">凹槽边框</div>
+<div class="ridge">凸槽边框</div>
+<div class="inset">内嵌边框</div>
+<div class="outset">外凸边框</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 点状边框 - 提示区域 */
-.hint-box {
-  border-style: dotted;
-  border-width: 1px;
-  border-color: #ffc107;
-  padding: 15px;
-  background-color: #fff3cd;
-}
-
-/* 虚线边框 - 可拖拽区域 */
-.draggable {
-  border-style: dashed;
-  border-width: 2px;
-  border-color: #007bff;
-  padding: 20px;
-  text-align: center;
-}
-
-/* 实线边框 - 卡片 */
+/* 1. 简单实线边框 */
 .card {
-  border-style: solid;
   border-width: 1px;
-  border-color: #dee2e6;
-  padding: 20px;
-  border-radius: 8px;
+  border-style: solid;
+  border-color: #ddd;
 }
 
-/* 双线边框 - 强调内容 */
-.emphasized {
+/* 2. 虚线边框（可点击区域提示） */
+.clickable {
+  border-width: 2px;
+  border-style: dashed;
+  border-color: #0066cc;
+}
+
+/* 3. 重点强调边框 */
+.important {
+  border-width: 3px;
+  border-style: solid;
+  border-color: #f57c00;
+}
+
+/* 4. 装饰性双线边框 */
+.decorative {
+  border-width: 4px;
   border-style: double;
-  border-width: 4px;
-  border-color: #28a745;
-  padding: 20px;
-}
-
-/* 凹槽边框 - 凹陷效果 */
-.inset-box {
-  border-style: groove;
-  border-width: 4px;
-  border-color: #6c757d;
-  padding: 20px;
-}
-
-/* 凸脊边框 - 凸起效果 */
-.outset-box {
-  border-style: ridge;
-  border-width: 4px;
-  border-color: #6c757d;
-  padding: 20px;
-}
-
-/* 内嵌边框 - 输入框效果 */
-.input-effect {
-  border-style: inset;
-  border-width: 2px;
-  border-color: #ced4da;
-  padding: 10px;
-}
-
-/* 外凸边框 - 按钮效果 */
-.button-effect {
-  border-style: outset;
-  border-width: 2px;
-  border-color: #007bff;
-  padding: 10px 20px;
-}
-
-/* 混合边框 - 特殊设计 */
-.mixed-border {
-  border-style: solid dashed solid dashed;
-  border-width: 2px;
   border-color: #333;
-  padding: 20px;
+}
+
+/* 5. 混合边框设计 */
+.mixed {
+  border-width: 2px;
+  border-style: solid dashed solid dashed;
+  border-color: #0066cc;
 }

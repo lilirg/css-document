@@ -1,53 +1,158 @@
 # all
 
-该属性可用于重置元素上的所有 CSS 属性，但 `direction` 和 `unicode-bidi` 除外。
-
-它可用于将属性重置为其初始值，或强制这些属性从级联继承其值。
+该属性用于重置元素的所有 CSS 属性（除了 `unicode-bidi`）为初始值、继承值或指定值。
 
 ## 语法
 
 ```css
-all: inherit | initial | unset
+all: initial | inherit | unset | revert | revert-layer
 ```
 
-| 语法特性     | 说明     |
-| :----------- | :------- |
-| 默认值       | -        |
-| 适用HTML元素 | 所有元素 |
-| 动画         | -        |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | 无 |
+| 适用 HTML 元素 | 所有元素（除 `::first-line` 和 `::first-letter`） |
+| 动画 | 否 |
 
 ## 值
 
-### inherit
-
-`direction` 和 `unicode-bidi` 之外属性均设置为默认值
-
 ### initial
+将所有属性重置为其初始值（默认值）：
+- 非继承属性使用初始值
+- 继承属性使用初始值（而不是父元素的值）
 
-`direction` 和 `unicode-bidi` 之外属性均设置为继承父级
+### inherit
+将所有属性继承自父元素：
+- 所有属性都继承父元素的计算值
 
 ### unset
+将所有属性重置为 `unset`：
+- 如果属性是继承的，则表现为 `inherit`
+- 如果属性不是继承的，则表现为 `initial`
 
-这个值实际上是对应了 `initial`，可以清除 `initial` 带来的继承
+### revert
+将属性重置为浏览器默认样式：
+- 如果属性是用户代理样式表定义的，则恢复为默认值
+- 否则表现为 `unset`
+
+### revert-layer
+将属性重置为当前层（`@layer`）的初始值：
+- 用于 CSS 层（Layers）中
+- 恢复为当前层中定义的初始值
+
+## 注意
+- `all` 属性不会影响 `unicode-bidi` 属性
+- `all` 属性不会影响 CSS 自定义属性（变量）
+- `all` 属性不会影响 `direction` 和 `unicode-bidi`
+- 使用 `all: initial` 可以完全清除元素的所有样式
+- 使用 `all: unset` 可以清除所有样式但保留继承属性
 
 ## 示例
 
-示例中，`.element` 的 `all` 属性设置为 `inherit`, 其余属性均被重置为默认值。
-
 ```css
-.element {
-  padding: 1em;
-  background-color: #222;
-  color: #fff;
+/* 重置为初始值 */
+.reset-initial {
+  all: initial;
+}
+
+/* 继承父元素样式 */
+.reset-inherit {
   all: inherit;
+}
+
+/* 重置为 unset */
+.reset-unset {
+  all: unset;
+}
+
+/* 重置为浏览器默认样式 */
+.reset-revert {
+  all: revert;
+}
+
+/* 清除按钮默认样式 */
+.btn-reset {
+  all: unset;
+  cursor: pointer;
+}
+
+/* 清除链接默认样式 */
+.link-reset {
+  all: unset;
+  color: blue;
+  text-decoration: underline;
 }
 ```
 
 ```html
-<div class="container">
-  <div class="element">
-    <p>This is the child container.</p>
-    <p>lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, quos, quas, repellat, quod, natus, debitis, expedita, obcaecati, dolorum, quaerat, quasi, repudiandae, sapiente.</p>
-  </div>
-</div>
+<!-- HTML 示例 -->
+<div class="reset-initial">初始值重置</div>
+<div class="reset-inherit">继承重置</div>
+<div class="reset-unset">unset 重置</div>
+<button class="btn-reset">重置按钮</button>
+<a href="#" class="link-reset">重置链接</a>
 ```
+
+## 使用场景
+
+```css
+/* 1. 清除按钮默认样式 */
+.btn {
+  all: unset;
+  cursor: pointer;
+  background: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* 2. 清除链接默认样式 */
+.link {
+  all: unset;
+  color: #0066cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* 3. 清除输入框默认样式 */
+.input-reset {
+  all: unset;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+/* 4. 清除列表默认样式 */
+.list-reset {
+  all: unset;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 5. 清除标题默认样式 */
+.heading-reset {
+  all: unset;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* 6. 清除卡片默认样式 */
+.card-reset {
+  all: unset;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* 7. 完全重置元素 */
+.full-reset {
+  all: initial;
+}
+
+/* 8. 重置为浏览器默认 */
+.browser-default {
+  all: revert;
+}

@@ -1,10 +1,6 @@
 # border
 
-该属性是用于设置 CSS 边框属性的速记属性。
-
-* [`border-width`](./border-width.md)
-* [`border-style`](./border-style.md)
-* [`border-color`](./border-color.md)
+该属性用于设置元素四个边框的所有属性（宽度、样式、颜色）的速记属性。
 
 ## 语法
 
@@ -12,162 +8,150 @@
 border: <border-width> || <border-style> || <border-color>
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | 见各独立属性   |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | 各属性初始值 |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 取决于各组成部分 |
 
-## 各属性说明
+## 值
 
-### `border-width`
+### border-width
+边框宽度：
+- `length` - 具体长度值（如 `1px`, `2pt`）
+- `thin` - 细边框
+- `medium` - 中等边框（默认）
+- `thick` - 粗边框
 
-定义边框的宽度。可选值：
-- `thin`、`medium`、`thick`
-- 长度值（如 `1px`、`2pt`）
+### border-style
+边框样式：
+- `none` - 无边框
+- `hidden` - 隐藏边框（用于表格）
+- `dotted` - 点状边框
+- `dashed` - 虚线边框
+- `solid` - 实线边框
+- `double` - 双线边框
+- `groove` - 凹槽边框
+- `ridge` - 凸槽边框
+- `inset` - 内嵌边框
+- `outset` - 外凸边框
 
-### `border-style`
-
-定义边框的样式。可选值：
-- `none`、`hidden`、`dotted`、`dashed`、`solid`、`double`、`groove`、`ridge`、`inset`、`outset`
-
-### `border-color`
-
-定义边框的颜色。可选值：
-- 颜色值（如 `red`、`#ff0000`、`rgb(255, 0, 0)`）
-- `transparent`
-
-## 默认值
-
-- `border-width: medium`
-- `border-style: none`
-- `border-color: currentColor`
+### border-color
+边框颜色：
+- 颜色值（如 `#ff0000`, `red`, `rgb(255,0,0)`, `rgba(255,0,0,0.5)`）
+- 透明色 `transparent`
 
 ## 注意
-
-- 如果只指定一个值，它应用于所有四条边
-- 如果 `border-style` 为 `none`，其他属性将被忽略
-- 可以分别设置四条边的样式
+- 必须指定 `style` 值，否则边框不会显示（默认 `none`）
+- 值的顺序可以互换，但通常按 `width style color` 书写
+- 未指定的属性将使用其初始值
+- 可以使用 `border-top`, `border-right`, `border-bottom`, `border-left` 分别设置单个边框
+- 可以使用 `border-width`, `border-style`, `border-color` 分别设置所有边框的对应属性
 
 ## 示例
 
 ```css
-/* 简单边框 */
-.el {
-  border: 1px solid #000;
+/* 基本用法 */
+.box {
+  border: 2px solid #333;
 }
 
-/* 不同宽度的边框 */
-.el2 {
-  border: 2px dashed #333;
+/* 只设置样式和颜色（宽度为默认 medium） */
+.box {
+  border: solid red;
 }
 
-/* 彩色边框 */
-.el3 {
-  border: 1px solid blue;
+/* 只设置样式（颜色和宽度为默认值） */
+.box {
+  border: dashed;
 }
 
-/* 圆角边框 */
-.el4 {
-  border: 2px solid #007bff;
-  border-radius: 8px;
+/* 使用关键字宽度 */
+.box {
+  border: thick double blue;
 }
 
-/* 虚线边框 */
-.el5 {
-  border: 2px dashed #ccc;
+/* 透明边框 */
+.box {
+  border: 4px solid transparent;
 }
 
-/* 点线边框 */
-.el6 {
-  border: 2px dotted #999;
+/* 单边设置 */
+.top {
+  border-top: 2px solid #333;
 }
 
-/* 双线边框 */
-.el7 {
-  border: 4px double #333;
+.right {
+  border-right: 2px solid #333;
 }
 
-/* 立体边框 */
-.el8 {
-  border: 4px groove #ccc;
+.bottom {
+  border-bottom: 2px solid #333;
 }
 
-/* 无边框 */
-.el9 {
-  border: none;
+.left {
+  border-left: 2px solid #333;
 }
 ```
 
 ```html
-<div class="el">1px solid</div>
-<div class="el2">2px dashed</div>
-<div class="el3">蓝色边框</div>
-<div class="el4">圆角边框</div>
-<div class="el5">虚线边框</div>
-<div class="el6">点线边框</div>
-<div class="el7">双线边框</div>
-<div class="el8">立体边框</div>
-<div class="el9">无边框</div>
+<!-- HTML 示例 -->
+<div class="box">基本边框</div>
+<div class="red">红色边框</div>
+<div class="dashed">虚线边框</div>
+<div class="thick">粗双线边框</div>
+<div class="transparent">透明边框</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 按钮边框 */
-.button {
-  border: 1px solid #007bff;
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
+/* 1. 卡片边框 */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
-.button:hover {
-  border-color: #0056b3;
-  background-color: #0056b3;
-}
-
-/* 输入框边框 */
+/* 2. 输入框边框 */
 .input {
   border: 1px solid #ccc;
   padding: 8px 12px;
   border-radius: 4px;
-  transition: border-color 0.3s ease;
 }
 
+/* 3. 输入框聚焦状态 */
 .input:focus {
-  border-color: #007bff;
+  border: 2px solid #0066cc;
   outline: none;
 }
 
-/* 卡片边框 */
-.card {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 虚线边框提示 */
-.dashed-hint {
-  border: 2px dashed #ccc;
-  padding: 20px;
-  text-align: center;
-  color: #999;
-}
-
-/* 立体效果边框 */
-.styled-box {
-  border: 4px groove #ddd;
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-/* 双线边框装饰 */
-.decorated {
-  border: 4px double #333;
+/* 4. 警告提示框 */
+.warning {
+  border: 2px solid #f57c00;
+  background-color: #fff3e0;
   padding: 15px;
-  margin: 20px 0;
+  border-radius: 4px;
+}
+
+/* 5. 成功提示框 */
+.success {
+  border: 2px solid #388e3c;
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+/* 6. 错误提示框 */
+.error {
+  border: 2px solid #e74c3c;
+  background-color: #fce4ec;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+/* 7. 虚线边框（拖放区域） */
+.drop-zone {
+  border: 2px dashed #0066cc;
+  padding: 40px;
+  text-align: center;
 }

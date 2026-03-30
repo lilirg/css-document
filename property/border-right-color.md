@@ -1,195 +1,130 @@
 # border-right-color
 
-该属性设置元素的右边框颜色。
+该属性用于设置元素右边框的颜色。
 
 ## 语法
 
 ```css
-border-right-color: <color>
+border-right-color: color
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | 取决于用户代理 |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | 元素的 `color` 值 |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（可动画） |
 
 ## 值
 
-### `<color>`
-
-定义右边框的颜色。可以使用任何有效的 CSS 颜色值：
-
-| 类型 | 示例 |
-|------|------|
-| 颜色关键字 | `red`、`blue`、`green`、`#333` |
-| 十六进制 | `#ff0000`、`#f00`、`#ff000080` |
-| RGB | `rgb(255, 0, 0)`、`rgb(100% 0% 0%)` |
-| RGBA | `rgba(255, 0, 0, 0.5)` |
-| HSL | `hsl(0, 100%, 50%)` |
-| HSLA | `hsla(0, 100%, 50%, 0.5)` |
-| 关键字 | `transparent`、`currentcolor` |
+### color
+颜色值：
+- 颜色关键字（如 `red`, `blue`, `transparent`）
+- 十六进制颜色（如 `#ff0000`, `#f00`）
+- RGB/RGBA（如 `rgb(255, 0, 0)`, `rgba(255, 0, 0, 0.5)`）
+- HSL/HSLA（如 `hsl(0, 100%, 50%)`, `hsla(0, 100%, 50%, 0.5)`）
+- `currentColor`（继承自元素的 `color` 属性）
+- `inherit`（从父元素继承）
 
 ## 注意
-
-- 如果边框样式为 `none` 或 `hidden`，边框颜色不会显示
-- 边框颜色默认继承元素的 `color` 属性值
-- 可以使用 `transparent` 创建透明边框
+- 如果 `border-right-style` 为 `none`，边框不会显示
+- 默认颜色是元素的文本颜色（`color` 属性值）
+- 可以使用 `border-color` 速记属性同时设置四个边框的颜色
+- 颜色值不区分大小写
 
 ## 示例
 
 ```css
-/* 颜色关键字 */
-.el1 {
+/* 基本用法 - 使用颜色关键字 */
+.box {
   border-right-color: red;
   border-right-style: solid;
   border-right-width: 2px;
 }
 
-.el2 {
-  border-right-color: blue;
+/* 使用十六进制颜色 */
+.hex {
+  border-right-color: #0066cc;
   border-right-style: solid;
   border-right-width: 2px;
 }
 
-.el3 {
-  border-right-color: green;
+/* 使用 RGB 颜色 */
+.rgb {
+  border-right-color: rgb(0, 128, 0);
   border-right-style: solid;
   border-right-width: 2px;
 }
 
-/* 十六进制颜色 */
-.el4 {
-  border-right-color: #ff0000;
-  border-right-style: solid;
-  border-right-width: 2px;
-}
-
-.el5 {
-  border-right-color: #00ff00;
-  border-right-style: solid;
-  border-right-width: 2px;
-}
-
-.el6 {
-  border-right-color: #0000ff;
-  border-right-style: solid;
-  border-right-width: 2px;
-}
-
-/* RGBA 颜色 */
-.el7 {
+/* 使用半透明颜色 */
+.transparent {
   border-right-color: rgba(255, 0, 0, 0.5);
   border-right-style: solid;
   border-right-width: 2px;
 }
 
-/* HSL 颜色 */
-.el8 {
-  border-right-color: hsl(120, 100%, 50%);
+/* 使用 currentColor */
+.current {
+  color: blue;
+  border-right-color: currentColor;
   border-right-style: solid;
   border-right-width: 2px;
-}
-
-/* 透明边框 */
-.el9 {
-  border-right-color: transparent;
-  border-right-style: solid;
-  border-right-width: 2px;
-}
-
-/* 当前颜色 */
-.el10 {
-  border-right-color: currentcolor;
-  border-right-style: solid;
-  border-right-width: 2px;
-  color: purple;
 }
 ```
 
 ```html
-<div class="el1">red</div>
-<div class="el2">blue</div>
-<div class="el3">green</div>
-<div class="el4">#ff0000</div>
-<div class="el5">#00ff00</div>
-<div class="el6">#0000ff</div>
-<div class="el7">rgba</div>
-<div class="el8">hsl</div>
-<div class="el9">transparent</div>
-<div class="el10">currentcolor</div>
+<!-- HTML 示例 -->
+<div class="box">红色右边框</div>
+<div class="hex">蓝色右边框</div>
+<div class="rgb">绿色右边框</div>
+<div class="transparent">半透明红色右边框</div>
+<div class="current">蓝色文字和边框</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 成功状态 */
-.success-right {
-  border-right-color: #28a745;
+/* 1. 时间轴右侧连接线 */
+.timeline-item {
+  border-right-color: #e0e0e0;
   border-right-style: solid;
   border-right-width: 2px;
-  padding-right: 15px;
+  padding-right: 20px;
+  position: relative;
 }
 
-/* 警告状态 */
-.warning-right {
-  border-right-color: #ffc107;
-  border-right-style: solid;
-  border-right-width: 2px;
-  padding-right: 15px;
-}
-
-/* 错误状态 */
-.error-right {
-  border-right-color: #dc3545;
-  border-right-style: solid;
-  border-right-width: 2px;
-  padding-right: 15px;
-}
-
-/* 信息状态 */
-.info-right {
-  border-right-color: #17a2b8;
-  border-right-style: solid;
-  border-right-width: 2px;
-  padding-right: 15px;
-}
-
-/* 焦点状态 */
-.focused-right {
-  border-right-color: #007bff;
-  border-right-style: solid;
-  border-right-width: 2px;
-  outline: none;
-}
-
-/* 禁用状态 */
-.disabled-right {
-  border-right-color: #6c757d;
-  border-right-style: solid;
-  border-right-width: 1px;
-  opacity: 0.6;
-}
-
-/* 渐变边框（配合 border-image） */
-.gradient-right {
-  border-right-color: transparent;
+/* 2. 代码块右侧装饰 */
+.code-block {
+  border-right-color: #0066cc;
   border-right-style: solid;
   border-right-width: 4px;
-  border-image: linear-gradient(180deg, #ff6b6b, #4ecdc4) 1;
   padding-right: 15px;
+  background: #f5f5f5;
 }
 
-/* 动态颜色（配合动画） */
-.animated-right {
-  border-right-color: #28a745;
+/* 3. 引用块右侧装饰 */
+.quote {
+  border-right-color: #999;
+  border-right-style: solid;
+  border-right-width: 3px;
+  padding-right: 15px;
+  font-style: italic;
+}
+
+/* 4. 活动状态指示器 */
+.nav-item {
+  border-right-color: transparent;
   border-right-style: solid;
   border-right-width: 2px;
-  padding-right: 15px;
-  animation: colorChange 2s infinite;
+  transition: border-right-color 0.2s ease;
+}
+.nav-item.active {
+  border-right-color: #0066cc;
 }
 
-@keyframes colorChange {
-  0%, 100% { border-right-color: #28a745; }
-  50% { border-right-color: #dc3545; }
+/* 5. 警告提示框 */
+.warning {
+  border-right-color: #f57c00;
+  border-right-style: solid;
+  border-right-width: 4px;
+  padding-right: 15px;
 }

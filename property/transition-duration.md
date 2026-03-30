@@ -5,105 +5,102 @@
 ## 语法
 
 ```css
-transition-duration: <time>#
+transition-duration: time
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `0s`           |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `0s` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
 
 ## 值
 
-### `<time>`
-
-定义过渡效果从开始到结束所需的时间长度。
-
-- 可以使用 `s`（秒）或 `ms`（毫秒）作为单位
-- 值不能为负数
-- 如果值为 `0`（默认值），则不会显示过渡效果
+### time
+过渡持续时间：
+- 时间值（如 `0s`, `200ms`, `1s`）
+- 必须为正值（0 表示无过渡）
+- 默认值为 `0s`
 
 ## 注意
-
-- 如果指定了多个过渡，每个过渡的持续时间用逗号分隔
-- 持续时间必须大于 0 才能看到过渡效果
-- 较短的持续时间会使过渡效果更快完成
-- 在 `transition` 速记属性中，第一个时间值是持续时间
+- 值为 `0s` 时，过渡效果不执行
+- 可以指定多个持续时间，用逗号分隔，对应多个过渡属性
+- 持续时间从过渡开始时计算
+- 较长的持续时间会使过渡更平滑但更慢
 
 ## 示例
 
 ```css
-/* 过渡持续 0.3 秒 */
-.el {
+/* 基本用法 - 持续 0.3 秒 */
+.box {
   transition-duration: 0.3s;
+  transition-property: background-color;
 }
 
-/* 过渡持续 500 毫秒 */
-.el2 {
-  transition-duration: 500ms;
+/* 多个持续时间 */
+.multi {
+  transition-duration: 0.2s, 0.4s, 0.3s;
+  transition-property: background-color, transform, opacity;
 }
 
-/* 过渡持续 1 秒 */
-.el3 {
-  transition-duration: 1s;
-}
-
-/* 多个过渡，不同的持续时间 */
-.el4 {
-  transition: background-color 0.3s, transform 0.5s;
-}
-
-/* 使用速记属性 */
-.el5 {
-  transition: background-color 0.3s ease;
-  /* 0.3s 是持续时间 */
+/* 使用毫秒 */
+.fast {
+  transition-duration: 150ms;
 }
 ```
 
 ```html
-<div class="el">0.3 秒过渡</div>
-<div class="el2">500 毫秒过渡</div>
-<div class="el3">1 秒过渡</div>
-<div class="el4">多个过渡</div>
-<div class="el5">速记属性</div>
+<!-- HTML 示例 -->
+<div class="box">悬停我</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 按钮悬停效果 */
-.button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  transition-duration: 0.3s;
-  transition-property: background-color, transform;
-  transition-timing-function: ease;
+/* 1. 快速按钮反馈 */
+.btn {
+  transition-duration: 0.1s;
+  transition-property: background-color;
+}
+.btn:hover {
+  background-color: #0066cc;
 }
 
-.button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-/* 卡片悬停效果 */
+/* 2. 平滑的卡片悬停效果 */
 .card {
-  transition-duration: 0.4s;
-  transition-property: box-shadow, transform;
+  transition-duration: 0.3s;
+  transition-property: transform, box-shadow;
 }
-
 .card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 不同的过渡时间 */
-.multi-transition {
-  transition: 
-    opacity 0.2s ease,
-    transform 0.4s ease,
-    background-color 0.6s ease;
+/* 3. 缓慢的淡入淡出 */
+.fade {
+  transition-duration: 0.5s;
+  transition-property: opacity;
+}
+.fade.hidden {
+  opacity: 0;
+}
+
+/* 4. 不同属性的不同持续时间 */
+.complex {
+  transition-duration: 0.2s, 0.4s;
+  transition-property: color, transform;
+}
+
+/* 5. 模态框动画 */
+.modal {
+  transition-duration: 0.3s;
+  transition-property: opacity, transform;
+}
+.modal.open {
+  opacity: 1;
+  transform: scale(1);
+}
+.modal.closed {
+  opacity: 0;
+  transform: scale(0.9);
 }

@@ -1,149 +1,128 @@
 # border-left-width
 
-该属性设置元素的左边框宽度。
+该属性用于设置元素左边框的宽度。
 
 ## 语法
 
 ```css
-border-left-width: <line-width>
+border-left-width: width
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `medium`       |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `medium` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（可动画） |
 
 ## 值
 
-### `<line-width>`
+### length
+具体的长度值：
+- 绝对单位（如 `1px`, `2pt`, `0.5in`）
+- 相对单位（如 `0.5em`, `2rem`, `10%`）
+- 必须为正值
 
-定义左边框的宽度。可选值包括：
+### thin
+细边框（约 1-2px，取决于浏览器）。
 
-| 值 | 说明 |
-|------|------|
-| `thin` | 细边框（约 1px） |
-| `medium` | 中等边框（约 3px，默认值） |
-| `thick` | 粗边框（约 5px） |
-| `<length>` | 具体长度值（如 `1px`、`2pt`、`0.5em`） |
+### medium
+中等边框（约 3-4px，取决于浏览器，默认值）。
+
+### thick
+粗边框（约 4-6px，取决于浏览器）。
 
 ## 注意
-
-- 值不能为负数
-- 必须与 `border-left-style` 配合使用才能显示边框
-- 可以使用不同的单位（px、em、rem、pt 等）
+- 如果 `border-left-style` 为 `none` 或 `hidden`，边框不会显示
+- `thin`, `medium`, `thick` 的具体像素值由浏览器决定
+- 可以使用 `border-width` 速记属性同时设置四个边框的宽度
+- 边框宽度不能为负值
 
 ## 示例
 
 ```css
+/* 基本用法 - 使用像素值 */
+.box {
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: #333;
+}
+
 /* 使用关键字 */
-.el1 {
+.thin {
   border-left-width: thin;
   border-left-style: solid;
 }
 
-.el2 {
+.medium {
   border-left-width: medium;
   border-left-style: solid;
 }
 
-.el3 {
+.thick {
   border-left-width: thick;
   border-left-style: solid;
 }
 
-/* 使用长度值 */
-.el4 {
-  border-left-width: 1px;
-  border-left-style: solid;
-}
-
-.el5 {
-  border-left-width: 5px;
-  border-left-style: solid;
-}
-
-.el6 {
-  border-left-width: 0.5em;
-  border-left-style: solid;
-}
-
-.el7 {
-  border-left-width: 2rem;
-  border-left-style: solid;
-}
-
-/* 零宽度 */
-.el8 {
-  border-left-width: 0;
+/* 使用相对单位 */
+.relative {
+  border-left-width: 0.25em;
   border-left-style: solid;
 }
 ```
 
 ```html
-<div class="el1">thin</div>
-<div class="el2">medium</div>
-<div class="el3">thick</div>
-<div class="el4">1px</div>
-<div class="el5">5px</div>
-<div class="el6">0.5em</div>
-<div class="el7">2rem</div>
-<div class="el8">0</div>
+<!-- HTML 示例 -->
+<div class="box">4px 左边框</div>
+<div class="thin">细左边框</div>
+<div class="medium">中等左边框</div>
+<div class="thick">粗左边框</div>
+<div class="relative">0.25em 左边框</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 细左侧线 */
-.fine-left {
-  border-left-width: 1px;
-  border-left-style: solid;
-  border-left-color: #ddd;
-  padding-left: 15px;
-}
-
-/* 粗左侧强调 */
-.thick-left {
+/* 1. 引用块左侧装饰线 */
+blockquote {
   border-left-width: 4px;
   border-left-style: solid;
-  border-left-color: #007bff;
-  padding-left: 15px;
+  border-left-color: #0066cc;
+  padding-left: 20px;
+  margin-left: 0;
 }
 
-/* 中等左侧线 */
-.medium-left {
-  border-left-width: medium;
-  border-left-style: solid;
-  border-left-color: #333;
-  padding-left: 15px;
-}
-
-/* 渐变左侧 */
-.gradient-left {
-  border-left-width: 4px;
-  border-left-style: solid;
-  border-left-color: transparent;
-  border-image: linear-gradient(0deg, #ff6b6b, #4ecdc4) 1;
-  padding-left: 15px;
-}
-
-/* 隐藏左侧边框 */
-.no-left {
+/* 2. 活动状态指示器 */
+.menu-item {
   border-left-width: 0;
   border-left-style: solid;
-  border-left-color: #333;
-}
-
-/* 动态宽度（配合动画） */
-.animated-left {
-  border-left-width: 2px;
-  border-left-style: solid;
-  border-left-color: #28a745;
+  border-left-color: #0066cc;
   padding-left: 15px;
-  animation: widthChange 2s infinite;
+  transition: border-left-width 0.2s ease;
+}
+.menu-item.active {
+  border-left-width: 4px;
 }
 
-@keyframes widthChange {
-  0%, 100% { border-left-width: 2px; }
-  50% { border-left-width: 6px; }
+/* 3. 警告提示框 */
+.warning {
+  border-left-width: 6px;
+  border-left-style: solid;
+  border-left-color: #f57c00;
+  padding-left: 15px;
+}
+
+/* 4. 成功提示框 */
+.success {
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: #388e3c;
+  padding-left: 15px;
+}
+
+/* 5. 错误提示框 */
+.error {
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: #d32f2f;
+  padding-left: 15px;
 }

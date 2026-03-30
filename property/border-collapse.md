@@ -1,6 +1,6 @@
 # border-collapse
 
-该属性设置表格边框的折叠方式。
+该属性用于设置表格单元格边框是否合并，控制表格边框的显示方式。
 
 ## 语法
 
@@ -8,239 +8,132 @@
 border-collapse: collapse | separate
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `separate`     |
-| 适用 HTML 元素 | `table` 元素   |
-| 动画         | 否             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `separate` |
+| 适用 HTML 元素 | `table` 元素 |
+| 动画 | 否 |
 
 ## 值
 
-### `collapse`
+### separate
+分离边框模型（默认值）：
+- 每个单元格有独立的边框
+- 可以使用 `border-spacing` 设置单元格间距
+- 边框不会重叠
 
-将表格边框折叠为单一边框。单元格之间的边框被合并，形成统一的表格边框。
-
-### `separate`
-
-将表格边框分离。每个单元格都有独立的边框，这是默认值。
+### collapse
+合并边框模型：
+- 相邻单元格的边框合并为一条
+- `border-spacing` 无效
+- 边框冲突解决规则决定最终边框样式
 
 ## 注意
-
-- 该属性仅适用于 `table` 和 `tbody`、`thead`、`tfoot`、`tr`、`td`、`th` 元素
-- 在 `separate` 模式下，可以使用 `border-spacing` 属性设置单元格间距
-- 在 `collapse` 模式下，`border-spacing` 和 `empty-cells` 属性被忽略
+- 仅适用于 `table` 和 `tbody`、`thead`、`tfoot`、`tr`、`td`、`th` 等表格元素
+- `collapse` 值在 Internet Explorer 9 及以下版本不支持
+- 使用 `collapse` 时，边框冲突解决规则：
+  1. `hidden` > `none`
+  2. 边框宽度：宽 > 窄
+  3. 边框样式：`double` > `solid` > `dashed` > `dotted` > `inset` > `outset` > `groove` > `ridge` > `dashed` > `dotted`
+  4. 边框颜色：相同样式下，颜色不同则取第一个
 
 ## 示例
 
 ```css
-/* 折叠边框 */
-table.collapse {
-  border-collapse: collapse;
-  border: 2px solid #333;
-}
-
-table.collapse th,
-table.collapse td {
-  border: 1px solid #333;
-  padding: 10px;
-}
-
-/* 分离边框 */
-table.separate {
+/* 分离边框（默认） */
+.separate-table {
   border-collapse: separate;
-  border-spacing: 5px;
-  border: 2px solid #333;
+  border-spacing: 4px;
 }
 
-table.separate th,
-table.separate td {
-  border: 1px solid #333;
-  padding: 10px;
+/* 合并边框 */
+.collapse-table {
+  border-collapse: collapse;
+}
+
+/* 配合单元格边框 */
+.collapse-table td,
+.collapse-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 ```
 
 ```html
-<!-- 折叠边框表格 -->
-<table class="collapse">
-  <thead>
-    <tr>
-      <th>姓名</th>
-      <th>年龄</th>
-      <th>城市</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>张三</td>
-      <td>25</td>
-      <td>北京</td>
-    </tr>
-    <tr>
-      <td>李四</td>
-      <td>30</td>
-      <td>上海</td>
-    </tr>
-  </tbody>
+<!-- HTML 示例 - 分离边框 -->
+<table class="separate-table">
+  <tr>
+    <td>单元格 1</td>
+    <td>单元格 2</td>
+  </tr>
 </table>
 
-<!-- 分离边框表格 -->
-<table class="separate">
-  <thead>
-    <tr>
-      <th>姓名</th>
-      <th>年龄</th>
-      <th>城市</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>张三</td>
-      <td>25</td>
-      <td>北京</td>
-    </tr>
-    <tr>
-      <td>李四</td>
-      <td>30</td>
-      <td>上海</td>
-    </tr>
-  </tbody>
+<!-- HTML 示例 - 合并边框 -->
+<table class="collapse-table">
+  <tr>
+    <td>单元格 1</td>
+    <td>单元格 2</td>
+  </tr>
 </table>
 ```
 
 ## 使用场景
 
 ```css
-/* 简洁表格 - 折叠边框 */
-.simple-table {
+/* 1. 标准合并边框表格 */
+.standard-table {
   border-collapse: collapse;
   width: 100%;
-  border: 1px solid #dee2e6;
 }
-
-.simple-table th,
-.simple-table td {
-  border: 1px solid #dee2e6;
+.standard-table td,
+.standard-table th {
+  border: 1px solid #ddd;
   padding: 12px;
-  text-align: left;
 }
 
-.simple-table th {
-  background-color: #f8f9fa;
-  font-weight: bold;
-}
-
-/* 现代表格 - 分离边框 */
-.modern-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.modern-table th,
-.modern-table td {
-  border-bottom: 1px solid #dee2e6;
-  padding: 12px;
-  text-align: left;
-}
-
-.modern-table th {
-  background-color: #f8f9fa;
-  font-weight: bold;
-}
-
-.modern-table tr:last-child td {
-  border-bottom: none;
-}
-
-/* 带间距的表格 */
+/* 2. 分离边框表格（带间距） */
 .spaced-table {
   border-collapse: separate;
   border-spacing: 8px;
 }
-
-.spaced-table th,
-.spaced-table td {
-  border: 1px solid #dee2e6;
-  padding: 10px;
-  background-color: white;
-}
-
-/* 斑马纹表格 */
-.stripe-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.stripe-table th,
-.stripe-table td {
-  border: 1px solid #dee2e6;
+.spaced-table td,
+.spaced-table th {
+  background-color: #fff;
+  border: 1px solid #ddd;
   padding: 12px;
 }
 
-.stripe-table tr:nth-child(even) {
-  background-color: #f8f9fa;
-}
-
-/* 悬停效果表格 */
-.hover-table {
+/* 3. 简洁表格（无外边框） */
+.simple-table {
   border-collapse: collapse;
-  width: 100%;
 }
-
-.hover-table th,
-.hover-table td {
-  border: 1px solid #dee2e6;
-  padding: 12px;
-  transition: background-color 0.3s;
-}
-
-.hover-table tr:hover {
-  background-color: #e9ecef;
-}
-
-/* 响应式表格 */
-.responsive-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.responsive-table th,
-.responsive-table td {
-  border: 1px solid #dee2e6;
+.simple-table td,
+.simple-table th {
+  border: none;
+  border-bottom: 1px solid #ddd;
   padding: 12px;
 }
 
-@media (max-width: 768px) {
-  .responsive-table {
-    border-collapse: separate;
-    border-spacing: 4px;
-    display: block;
-  }
-  
-  .responsive-table thead {
-    display: none;
-  }
-  
-  .responsive-table tr {
-    display: block;
-    margin-bottom: 16px;
-  }
-  
-  .responsive-table td {
-    display: block;
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
-  }
-  
-  .responsive-table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
-    text-align: left;
-  }
+/* 4. 网格表格 */
+.grid-table {
+  border-collapse: collapse;
+}
+.grid-table td,
+.grid-table th {
+  border: 1px solid #eee;
+  padding: 12px;
+}
+
+/* 5. 带表头样式的表格 */
+.styled-table {
+  border-collapse: collapse;
+}
+.styled-table thead th {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+.styled-table tbody td {
+  border: 1px solid #ddd;
+  padding: 12px;
 }

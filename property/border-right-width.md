@@ -1,149 +1,127 @@
 # border-right-width
 
-该属性设置元素的右边框宽度。
+该属性用于设置元素右边框的宽度。
 
 ## 语法
 
 ```css
-border-right-width: <line-width>
+border-right-width: width
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `medium`       |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `medium` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（可动画） |
 
 ## 值
 
-### `<line-width>`
+### length
+具体的长度值：
+- 绝对单位（如 `1px`, `2pt`, `0.5in`）
+- 相对单位（如 `0.5em`, `2rem`, `10%`）
+- 必须为正值
 
-定义右边框的宽度。可选值包括：
+### thin
+细边框（约 1-2px，取决于浏览器）。
 
-| 值 | 说明 |
-|------|------|
-| `thin` | 细边框（约 1px） |
-| `medium` | 中等边框（约 3px，默认值） |
-| `thick` | 粗边框（约 5px） |
-| `<length>` | 具体长度值（如 `1px`、`2pt`、`0.5em`） |
+### medium
+中等边框（约 3-4px，取决于浏览器，默认值）。
+
+### thick
+粗边框（约 4-6px，取决于浏览器）。
 
 ## 注意
-
-- 值不能为负数
-- 必须与 `border-right-style` 配合使用才能显示边框
-- 可以使用不同的单位（px、em、rem、pt 等）
+- 如果 `border-right-style` 为 `none` 或 `hidden`，边框不会显示
+- `thin`, `medium`, `thick` 的具体像素值由浏览器决定
+- 可以使用 `border-width` 速记属性同时设置四个边框的宽度
+- 边框宽度不能为负值
 
 ## 示例
 
 ```css
+/* 基本用法 - 使用像素值 */
+.box {
+  border-right-width: 4px;
+  border-right-style: solid;
+  border-right-color: #333;
+}
+
 /* 使用关键字 */
-.el1 {
+.thin {
   border-right-width: thin;
   border-right-style: solid;
 }
 
-.el2 {
+.medium {
   border-right-width: medium;
   border-right-style: solid;
 }
 
-.el3 {
+.thick {
   border-right-width: thick;
   border-right-style: solid;
 }
 
-/* 使用长度值 */
-.el4 {
-  border-right-width: 1px;
-  border-right-style: solid;
-}
-
-.el5 {
-  border-right-width: 5px;
-  border-right-style: solid;
-}
-
-.el6 {
-  border-right-width: 0.5em;
-  border-right-style: solid;
-}
-
-.el7 {
-  border-right-width: 2rem;
-  border-right-style: solid;
-}
-
-/* 零宽度 */
-.el8 {
-  border-right-width: 0;
+/* 使用相对单位 */
+.relative {
+  border-right-width: 0.25em;
   border-right-style: solid;
 }
 ```
 
 ```html
-<div class="el1">thin</div>
-<div class="el2">medium</div>
-<div class="el3">thick</div>
-<div class="el4">1px</div>
-<div class="el5">5px</div>
-<div class="el6">0.5em</div>
-<div class="el7">2rem</div>
-<div class="el8">0</div>
+<!-- HTML 示例 -->
+<div class="box">4px 右边框</div>
+<div class="thin">细右边框</div>
+<div class="medium">中等右边框</div>
+<div class="thick">粗右边框</div>
+<div class="relative">0.25em 右边框</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 细右侧线 */
-.fine-right {
-  border-right-width: 1px;
-  border-right-style: solid;
-  border-right-color: #ddd;
-  padding-right: 15px;
-}
-
-/* 粗右侧强调 */
-.thick-right {
+/* 1. 侧边栏右侧装饰线 */
+.sidebar {
   border-right-width: 4px;
   border-right-style: solid;
-  border-right-color: #007bff;
-  padding-right: 15px;
+  border-right-color: #0066cc;
+  padding-right: 20px;
 }
 
-/* 中等右侧线 */
-.medium-right {
-  border-right-width: medium;
-  border-right-style: solid;
-  border-right-color: #333;
-  padding-right: 15px;
-}
-
-/* 渐变右侧 */
-.gradient-right {
-  border-right-width: 4px;
-  border-right-style: solid;
-  border-right-color: transparent;
-  border-image: linear-gradient(180deg, #ff6b6b, #4ecdc4) 1;
-  padding-right: 15px;
-}
-
-/* 隐藏右侧边框 */
-.no-right {
+/* 2. 活动状态指示器 */
+.menu-item {
   border-right-width: 0;
   border-right-style: solid;
-  border-right-color: #333;
-}
-
-/* 动态宽度（配合动画） */
-.animated-right {
-  border-right-width: 2px;
-  border-right-style: solid;
-  border-right-color: #28a745;
+  border-right-color: #0066cc;
   padding-right: 15px;
-  animation: widthChange 2s infinite;
+  transition: border-right-width 0.2s ease;
+}
+.menu-item.active {
+  border-right-width: 4px;
 }
 
-@keyframes widthChange {
-  0%, 100% { border-right-width: 2px; }
-  50% { border-right-width: 6px; }
+/* 3. 警告提示框 */
+.warning {
+  border-right-width: 6px;
+  border-right-style: solid;
+  border-right-color: #f57c00;
+  padding-right: 15px;
+}
+
+/* 4. 成功提示框 */
+.success {
+  border-right-width: 4px;
+  border-right-style: solid;
+  border-right-color: #388e3c;
+  padding-right: 15px;
+}
+
+/* 5. 错误提示框 */
+.error {
+  border-right-width: 4px;
+  border-right-style: solid;
+  border-right-color: #d32f2f;
+  padding-right: 15px;
 }

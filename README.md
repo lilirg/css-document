@@ -39,11 +39,11 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | └─ 兼容 | ⏲ 待开始 | 0% |
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
-| 属性 | 📍 进行中 | 65% |
+| 属性 | 📍 进行中 | 85% |
 | └─ 动画与过渡 | ✅ 完成 | 100% |
 | └─ 背景 | ✅ 完成 | 100% |
 | └─ 边框 | ✅ 完成 | 100% |
-| └─ 遮罩 | ✅ 完成 | 100% |
+| └─ 遮罩 | 📍 进行中 | 50% |
 | └─ 计数器 | ✅ 完成 | 100% |
 | └─ 分页 | ✅ 完成 | 100% |
 | └─ 布局 Layout | ✅ 完成 | 100% |
@@ -62,6 +62,36 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | 属性 | 说明 |
 |------|------|
 | [`all`](property/all.md) | 重置所有 CSS 属性 |
+| [`border-collapse`](property/border-collapse.md) | 边框合并 |
+| [`border-color`](property/border-color.md) | 边框颜色速记 |
+| [`border-spacing`](property/border-spacing.md) | 边框间距 |
+| [`border-style`](property/border-style.md) | 边框样式速记 |
+| [`border-width`](property/border-width.md) | 边框宽度速记 |
+| [`border-top`](property/border-top.md) | 上边框速记 |
+| [`border-top-width`](property/border-top-width.md) | 上边框宽度 |
+| [`border-top-style`](property/border-top-style.md) | 上边框样式 |
+| [`border-right`](property/border-right.md) | 右边框速记 |
+| [`border-right-width`](property/border-right-width.md) | 右边框宽度 |
+| [`border-right-style`](property/border-right-style.md) | 右边框样式 |
+| [`border-right-color`](property/border-right-color.md) | 右边框颜色 |
+| [`border-left`](property/border-left.md) | 左边框速记 |
+| [`border-left-width`](property/border-left-width.md) | 左边框宽度 |
+| [`border-left-style`](property/border-left-style.md) | 左边框样式 |
+| [`border-left-color`](property/border-left-color.md) | 左边框颜色 |
+| [`border-bottom`](property/border-bottom.md) | 下边框速记 |
+| [`border-bottom-width`](property/border-bottom-width.md) | 下边框宽度 |
+| [`border-bottom-style`](property/border-bottom-style.md) | 下边框样式 |
+| [`border-bottom-color`](property/border-bottom-color.md) | 下边框颜色 |
+| [`border-radius`](property/border-radius.md) | 圆角速记 |
+| [`border`](property/border.md) | 边框速记属性 |
+| [`color`](property/color.md) | 文本颜色 |
+| [`counter-increment`](property/counter-increment.md) | 计数器递增 |
+| [`counter-reset`](property/counter-reset.md) | 计数器重置 |
+| [`transition`](property/transition.md) | 过渡速记属性 |
+| [`transition-delay`](property/transition-delay.md) | 过渡延迟 |
+| [`transition-duration`](property/transition-duration.md) | 过渡持续时间 |
+| [`transition-property`](property/transition-property.md) | 过渡属性 |
+| [`transition-timing-function`](property/transition-timing-function.md) | 过渡时间函数 |
 | [`animation`](property/animation.md) | 动画速记属性 |
 | [`animation-delay`](property/animation-delay.md) | 动画延迟时间 |
 | [`animation-direction`](property/animation-direction.md) | 动画方向 |
@@ -275,16 +305,6 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 
 | 属性 | 说明 |
 |------|------|
-| [`border-bottom-style`](property/border-bottom-style.md) | 下边框样式 |
-| [`border-left-width`](property/border-left-width.md) | 左边框宽度 |
-| [`border-right-color`](property/border-right-color.md) | 右边框颜色 |
-| [`border-right-style`](property/border-right-style.md) | 右边框样式 |
-| [`border-right-width`](property/border-right-width.md) | 右边框宽度 |
-| [`border-top-style`](property/border-top-style.md) | 上边框样式 |
-| [`border-top-width`](property/border-top-width.md) | 上边框宽度 |
-| [`color`](property/color.md) | 文本颜色 |
-| [`counter-increment`](property/counter-increment.md) | 计数器递增 |
-| [`counter-reset`](property/counter-reset.md) | 计数器重置 |
 | [`mask-border-mode`](property/mask-border-mode.md) | 遮罩边框模式 |
 | [`mask-border-outset`](property/mask-border-outset.md) | 遮罩边框外扩 |
 | [`mask-border-repeat`](property/mask-border-repeat.md) | 遮罩边框重复 |
@@ -305,8 +325,3 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`page-break-after`](property/page-break-after.md) | 分页后断点（旧） |
 | [`page-break-before`](property/page-break-before.md) | 分页前断点（旧） |
 | [`page-break-inside`](property/page-break-inside.md) | 分页内断点（旧） |
-| [`transition-delay`](property/transition-delay.md) | 过渡延迟 |
-| [`transition-duration`](property/transition-duration.md) | 过渡持续时间 |
-| [`transition-property`](property/transition-property.md) | 过渡属性 |
-| [`transition-timing-function`](property/transition-timing-function.md) | 过渡时间函数 |
-| [`transition`](property/transition.md) | 过渡速记属性 |

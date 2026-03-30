@@ -1,153 +1,121 @@
 # transition-timing-function
 
-该属性指定过渡效果的速度曲线（缓动函数）。
+该属性指定过渡效果的速度曲线。
 
 ## 语法
 
 ```css
-transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>) | steps(<number>[, <step-position>])
+transition-timing-function: function
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `ease`         |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `ease` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
 
 ## 值
 
-### 预定义缓动函数
+### linear
+线性速度，过渡以恒定速度进行。
 
-| 值 | 说明 |
-|------|------|
-| `ease` | 默认值。慢 - 快 - 慢（`cubic-bezier(0.25, 0.1, 0.25, 1.0)`） |
-| `linear` | 匀速（`cubic-bezier(0.0, 0.0, 1.0, 1.0)`） |
-| `ease-in` | 慢 - 快（`cubic-bezier(0.42, 0.0, 1.0, 1.0)`） |
-| `ease-out` | 快 - 慢（`cubic-bezier(0.0, 0.0, 0.58, 1.0)`） |
-| `ease-in-out` | 慢 - 快 - 慢（`cubic-bezier(0.42, 0.0, 0.58, 1.0)`） |
+### ease
+缓动效果（默认值），开始慢，中间快，结束慢。
 
-### `cubic-bezier()`
+### ease-in
+渐入效果，开始慢，然后加速。
 
-自定义贝塞尔曲线。
+### ease-out
+渐出效果，开始快，然后减速。
 
-- 需要四个参数，都是 0 到 1 之间的值
-- 前两个参数定义控制点 P1，后两个参数定义控制点 P2
-- 例如：`cubic-bezier(0.68, -0.55, 0.265, 1.55)` 可以创建弹跳效果
+### ease-in-out
+渐入渐出效果，开始慢，中间快，结束慢。
 
-### `steps()`
+### cubic-bezier(x1, y1, x2, y2)
+自定义贝塞尔曲线：
+- x1, x2 必须在 0 到 1 之间
+- y1, y2 可以是任何值
 
+### steps(number, direction)
 阶梯函数，将过渡分成若干步。
 
-- 第一个参数：步数（正整数）
-- 第二个参数（可选）：步进方向
-  - `start`：在每步开始时应用值
-  - `end`：在每步结束时应用值（默认）
-  - `jump-start`：在第一步开始时立即应用
-  - `jump-end`：在最后一步结束时立即应用
-  - `jump-none`：不在任何步跳跃（默认）
-  - `jump-both`：在第一步和最后一步都跳跃
-
 ## 注意
-
-- 如果指定了多个过渡，每个过渡的缓动函数用逗号分隔
-- 缓动函数影响过渡的速度，但不影响总时长
+- 贝塞尔曲线的 x 值必须在 0 到 1 之间
+- 可以使用在线工具生成自定义贝塞尔曲线
+- `steps()` 函数的第二个参数可以是 `start` 或 `end`
+- 可以指定多个时间函数，用逗号分隔
 
 ## 示例
 
 ```css
-/* 预定义缓动函数 */
-.el {
+/* 基本用法 */
+.box {
   transition-timing-function: ease;
+  transition-duration: 0.3s;
 }
 
-.el2 {
+/* 线性过渡 */
+.linear {
   transition-timing-function: linear;
 }
 
-.el3 {
-  transition-timing-function: ease-in;
-}
-
-.el4 {
-  transition-timing-function: ease-out;
-}
-
-.el5 {
-  transition-timing-function: ease-in-out;
-}
-
 /* 自定义贝塞尔曲线 */
-.el6 {
+.custom {
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* 阶梯函数 */
-.el7 {
-  transition-timing-function: steps(5);
-}
-
-.el8 {
-  transition-timing-function: steps(5, start);
-}
-
-/* 多个过渡，不同的缓动函数 */
-.el9 {
-  transition: 
-    background-color 0.3s ease,
-    transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+/* 阶梯效果 */
+.stepped {
+  transition-timing-function: steps(5, end);
 }
 ```
 
 ```html
-<div class="el">ease</div>
-<div class="el2">linear</div>
-<div class="el3">ease-in</div>
-<div class="el4">ease-out</div>
-<div class="el5">ease-in-out</div>
-<div class="el6">cubic-bezier</div>
-<div class="el7">steps(5)</div>
-<div class="el8">steps(5, start)</div>
-<div class="el9">多个过渡</div>
+<!-- HTML 示例 -->
+<div class="box">悬停我</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 按钮悬停 - 使用 ease-out 让结束更平滑 */
-.button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease-out, transform 0.2s ease-out;
+/* 1. 按钮点击效果 - 使用 ease-out */
+.btn {
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+}
+.btn:active {
+  transform: scale(0.95);
 }
 
-.button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-/* 卡片悬停 - 使用 ease-in-out 让开始和结束都平滑 */
+/* 2. 卡片悬停 - 使用 ease-in-out */
 .card {
-  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
 }
-
 .card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 
-/* 弹跳效果 - 使用自定义贝塞尔曲线 */
+/* 3. 弹跳效果 - 使用自定义贝塞尔曲线 */
 .bounce {
-  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition-duration: 0.5s;
 }
 
-.bounce:hover {
-  transform: translateY(-10px);
+/* 4. 加载动画 - 使用线性 */
+.spinner {
+  transition-timing-function: linear;
+  animation: rotate 1s infinite;
 }
 
-/* 阶梯效果 - 用于数字计数等 */
-.counter {
-  transition: font-size 1s steps(10);
+/* 5. 阶梯式进度 */
+.progress {
+  transition-timing-function: steps(10, end);
+  transition-duration: 1s;
+}
+
+/* 6. 缓入效果 - 用于淡入 */
+.fade-in {
+  transition-timing-function: ease-in;
+  transition-duration: 0.4s;
 }

@@ -1,115 +1,126 @@
 # transition
 
-该属性是用于设置 CSS 过渡属性的速记属性。
-
-* [`transition-property`](./transition-property.md)
-* [`transition-duration`](./transition-duration.md)
-* [`transition-timing-function`](./transition-timing-function.md)
-* [`transition-delay`](./transition-delay.md)
+该属性是过渡的速记属性，用于设置四个过渡子属性。
 
 ## 语法
 
 ```css
-transition: <transition>#
+transition: property duration timing-function delay
 ```
 
-其中 `<transition>` 定义为：
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | 见各子属性 |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
 
-```css
-<transition> = <transition-property> || <transition-duration> || <transition-timing-function> || <transition-delay>
-```
+## 值
 
-可以指定多个过渡，用逗号分隔：
+### transition-property
+指定应用过渡的 CSS 属性名称：
+- 属性名称（如 `color`, `transform`）
+- `all`（所有可过渡的属性，默认值）
+- `none`（不应用过渡）
 
-```css
-transition: <transition>, <transition>, ...
-```
+### transition-duration
+指定过渡效果持续的时间：
+- 时间值（如 `1s`, `500ms`）
+- 必须为正值
 
-## 各属性说明
+### transition-timing-function
+指定过渡的速度曲线：
+- `linear`（线性）
+- `ease`（缓动，默认值）
+- `ease-in`（渐入）
+- `ease-out`（渐出）
+- `ease-in-out`（渐入渐出）
+- `cubic-bezier()`（自定义贝塞尔曲线）
 
-- `transition-property`：指定应用过渡的 CSS 属性名称
-- `transition-duration`：指定过渡效果完成所需的时间
-- `transition-timing-function`：指定过渡的速度曲线
-- `transition-delay`：指定过渡开始前的延迟时间
-
-## 默认值
-
-- `transition-property: all`
-- `transition-duration: 0s`
-- `transition-timing-function: ease`
-- `transition-delay: 0s`
+### transition-delay
+指定过渡效果开始前的延迟时间：
+- 时间值（如 `0s`, `200ms`）
+- 可以为负值
 
 ## 注意
-
-- 如果指定了多个过渡，每个过渡的属性用逗号分隔
-- 如果 `transition-duration` 和 `transition-delay` 都是时间值，第一个值被视为持续时间，第二个值被视为延迟
-- 如果 `transition-property` 为 `none`，其他属性将被忽略
+- 可以指定多个过渡，用逗号分隔
+- 每个过渡可以有不同的属性、时长、时间函数和延迟
+- 如果时长为 0 或延迟为负，过渡立即执行
+- 只有可动画的 CSS 属性才能应用过渡
 
 ## 示例
 
 ```css
-/* 简单的过渡效果 */
-.el {
-  transition: all 0.3s ease;
+/* 基本用法 */
+.box {
+  transition: background-color 0.3s ease;
 }
 
-/* 指定特定属性的过渡 */
-.el2 {
-  transition: background-color 0.5s, transform 0.3s;
-}
-
-/* 带延迟的过渡 */
-.el3 {
-  transition: opacity 0.5s ease 0.2s;
-}
-
-/* 多个过渡效果 */
-.el4 {
+/* 多个过渡 */
+.multi {
   transition: 
     background-color 0.3s ease,
-    transform 0.5s ease-in-out,
-    opacity 0.2s linear 0.1s;
+    transform 0.5s ease-out,
+    opacity 0.2s linear;
 }
 
-/* 无过渡 */
-.el5 {
-  transition: none;
+/* 使用 all 过渡所有属性 */
+.all {
+  transition: all 0.5s ease;
 }
 ```
 
 ```html
-<div class="el">所有属性过渡</div>
-<div class="el2">特定属性过渡</div>
-<div class="el3">带延迟过渡</div>
-<div class="el4">多个过渡</div>
-<div class="el5">无过渡</div>
+<!-- HTML 示例 -->
+<div class="box">悬停我</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 鼠标悬停效果 */
-.button {
-  background-color: #007bff;
+/* 1. 按钮悬停效果 */
+.btn {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn:hover {
+  background-color: #0066cc;
   color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+/* 2. 卡片悬停放大效果 */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 焦点状态过渡 */
+/* 3. 菜单展开/收起效果 */
+.menu {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease;
+}
+.menu.open {
+  max-height: 500px;
+  opacity: 1;
+}
+.menu.closed {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* 4. 输入框聚焦效果 */
 .input {
-  border: 1px solid #ccc;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
 }
 
-.input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+/* 5. 淡入淡出效果 */
+.fade {
+  transition: opacity 0.3s ease;
+}
+.fade.hidden {
+  opacity: 0;
 }

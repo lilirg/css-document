@@ -5,90 +5,97 @@
 ## 语法
 
 ```css
-transition-delay: <time>#
+transition-delay: time
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `0s`           |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `0s` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
 
 ## 值
 
-### `<time>`
-
-定义过渡效果开始前的延迟时间。
-
-- 可以使用 `s`（秒）或 `ms`（毫秒）作为单位
-- 正值：延迟指定时间后开始过渡
-- 负值：过渡立即开始，但会从时间轴的指定位置开始（部分效果可能跳过）
+### time
+延迟时间：
+- 时间值（如 `0s`, `200ms`, `1s`）
+- 可以为负值（过渡立即开始，但已经进行了一部分）
+- 默认值为 `0s`
 
 ## 注意
-
-- 如果指定了多个过渡，每个过渡的延迟时间用逗号分隔
-- 负延迟值会导致过渡立即开始，并从计算出的时间点开始播放
-- 在 `transition` 速记属性中，如果同时指定了两个时间值，第一个是持续时间，第二个是延迟
+- 负延迟值会使过渡立即开始，但已经进行了一部分
+- 可以指定多个延迟值，用逗号分隔，对应多个过渡属性
+- 延迟值从元素属性变化时开始计算
+- 如果元素在延迟期间属性再次变化，延迟会重新开始
 
 ## 示例
 
 ```css
-/* 延迟 0.5 秒后开始过渡 */
-.el {
+/* 基本用法 - 延迟 0.5 秒 */
+.box {
   transition-delay: 0.5s;
+  transition-property: background-color;
+  transition-duration: 0.3s;
 }
 
-/* 延迟 500 毫秒后开始过渡 */
-.el2 {
-  transition-delay: 500ms;
+/* 多个延迟值 */
+.multi {
+  transition-delay: 0.1s, 0.2s, 0.3s;
+  transition-property: background-color, transform, opacity;
+  transition-duration: 0.3s;
 }
 
-/* 负延迟：过渡立即开始，从 0.3 秒处开始 */
-.el3 {
-  transition-delay: -0.3s;
-}
-
-/* 多个过渡，不同的延迟时间 */
-.el4 {
-  transition: background-color 0.3s, transform 0.5s;
-  transition-delay: 0.2s, 0.4s;
-}
-
-/* 使用速记属性 */
-.el5 {
-  transition: background-color 0.3s ease 0.5s;
-  /* 0.3s 是持续时间，0.5s 是延迟 */
+/* 负延迟 - 立即开始但已进行一部分 */
+.negative {
+  transition-delay: -0.2s;
 }
 ```
 
 ```html
-<div class="el">延迟 0.5 秒</div>
-<div class="el2">延迟 500 毫秒</div>
-<div class="el3">负延迟 -0.3 秒</div>
-<div class="el4">多个过渡</div>
-<div class="el5">速记属性</div>
+<!-- HTML 示例 -->
+<div class="box">悬停我</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 悬停延迟效果 */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transition-delay: 0.1s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* 离开时快速，进入时延迟 */
+/* 1. 延迟显示的提示框 */
 .tooltip {
-  transition: opacity 0.2s ease;
   transition-delay: 0.3s;
+  transition: opacity 0.2s ease;
 }
-
-.tooltip:hover {
+.tooltip.show {
   opacity: 1;
 }
+
+/* 2. 级联动画效果 */
+.item:nth-child(1) { transition-delay: 0s; }
+.item:nth-child(2) { transition-delay: 0.1s; }
+.item:nth-child(3) { transition-delay: 0.2s; }
+.item:nth-child(4) { transition-delay: 0.3s; }
+
+/* 3. 避免误触的按钮效果 */
+.btn {
+  transition-delay: 0.1s;
+  transition: transform 0.1s ease;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* 4. 菜单项依次展开 */
+.menu-item {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.menu-item:nth-child(1) { transition-delay: 0s; }
+.menu-item:nth-child(2) { transition-delay: 0.05s; }
+.menu-item:nth-child(3) { transition-delay: 0.1s; }
+.menu-item:nth-child(4) { transition-delay: 0.15s; }
+
+/* 5. 加载动画的延迟 */
+.loader-dot {
+  animation: bounce 0.6s infinite;
+}
+.loader-dot:nth-child(1) { animation-delay: 0s; }
+.loader-dot:nth-child(2) { animation-delay: 0.15s; }
+.loader-dot:nth-child(3) { animation-delay: 0.3s; }
