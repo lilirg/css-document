@@ -39,7 +39,7 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | └─ 兼容 | ⏲ 待开始 | 0% |
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
-| 属性 | 📍 进行中 | 35% |
+| 属性 | 📍 进行中 | 40% |
 | └─ 动画与过渡 | ✅ 完成 | 100% |
 | └─ 背景 | ✅ 完成 | 100% |
 | 规则 | ⏲ 待开始 | 0% |
@@ -116,6 +116,20 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`transition-duration`](property/transition-duration.md) | 过渡持续时间 |
 | [`transition-property`](property/transition-property.md) | 过渡属性 |
 | [`transition-timing-function`](property/transition-timing-function.md) | 过渡时间函数 |
+| [`counter-increment`](property/counter-increment.md) | 计数器递增 |
+| [`counter-reset`](property/counter-reset.md) | 计数器重置 |
+| [`mask`](property/mask.md) | 遮罩速记属性 |
+| [`mask-clip`](property/mask-clip.md) | 遮罩裁剪 |
+| [`mask-image`](property/mask-image.md) | 遮罩图像 |
+| [`mask-mode`](property/mask-mode.md) | 遮罩模式 |
+| [`mask-origin`](property/mask-origin.md) | 遮罩原点 |
+| [`mask-position`](property/mask-position.md) | 遮罩位置 |
+| [`mask-repeat`](property/mask-repeat.md) | 遮罩重复 |
+| [`mask-size`](property/mask-size.md) | 遮罩尺寸 |
+| [`mask-type`](property/mask-type.md) | 遮罩类型 |
+| [`page-break-after`](property/page-break-after.md) | 分页后断点（旧） |
+| [`page-break-before`](property/page-break-before.md) | 分页前断点（旧） |
+| [`page-break-inside`](property/page-break-inside.md) | 分页内断点（旧） |
 
 #### 待完善的属性
 
@@ -246,7 +260,6 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 
 ##### 遮罩 Mask
 
-- [ ] [`mask`](property/mask.md) - 遮罩速记
 - [ ] [`mask-border`](property/mask-border.md) - 遮罩边框速记
 - [ ] [`mask-border-mode`](property/mask-border-mode.md) - 遮罩边框模式
 - [ ] [`mask-border-outset`](property/mask-border-outset.md) - 遮罩边框外扩
@@ -254,23 +267,4 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 - [ ] [`mask-border-slice`](property/mask-border-slice.md) - 遮罩边框切片
 - [ ] [`mask-border-source`](property/mask-border-source.md) - 遮罩边框源
 - [ ] [`mask-border-width`](property/mask-border-width.md) - 遮罩边框宽度
-- [ ] [`mask-clip`](property/mask-clip.md) - 遮罩裁剪
 - [ ] [`mask-composite`](property/mask-composite.md) - 遮罩合成
-- [ ] [`mask-image`](property/mask-image.md) - 遮罩图像
-- [ ] [`mask-mode`](property/mask-mode.md) - 遮罩模式
-- [ ] [`mask-origin`](property/mask-origin.md) - 遮罩原点
-- [ ] [`mask-position`](property/mask-position.md) - 遮罩位置
-- [ ] [`mask-repeat`](property/mask-repeat.md) - 遮罩重复
-- [ ] [`mask-size`](property/mask-size.md) - 遮罩尺寸
-- [ ] [`mask-type`](property/mask-type.md) - 遮罩类型
-
-##### 计数器 Counter
-
-- [ ] [`counter-increment`](property/counter-increment.md) - 计数器递增
-- [ ] [`counter-reset`](property/counter-reset.md) - 计数器重置
-
-##### 分页 Page
-
-- [ ] [`page-break-after`](property/page-break-after.md) - 分页后断点（旧）
-- [ ] [`page-break-before`](property/page-break-before.md) - 分页前断点（旧）
-- [ ] [`page-break-inside`](property/page-break-inside.md) - 分页内断点（旧）
