@@ -1,172 +1,166 @@
 # mask-composite
 
-该属性设置多个遮罩图像的复合方式。
+该属性用于设置多个遮罩图像的复合（混合）方式。
 
 ## 语法
 
 ```css
-mask-composite: add | subtract | intersect | exclude
+mask-composite: <composite-mode>#
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `add`          |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 否             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `add` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
 
 ## 值
 
-### `add`
+### add
+添加模式（默认值）：
+- 将遮罩图像叠加在一起
+- 遮罩值相加
+- 结果更不透明
 
-添加模式。将新遮罩添加到现有遮罩。这是默认值。
+### subtract
+减去模式：
+- 从当前遮罩中减去新遮罩
+- 新遮罩区域被隐藏
+- 用于创建镂空效果
 
-### `subtract`
+### intersect
+交集模式：
+- 只显示遮罩重叠的区域
+- 非重叠区域被隐藏
+- 用于精确遮罩控制
 
-减去模式。从现有遮罩中减去新遮罩。
-
-### `intersect`
-
-交集模式。仅保留两个遮罩的交集部分。
-
-### `exclude`
-
-排除模式。保留两个遮罩的非重叠部分。
+### exclude
+排除模式：
+- 显示非重叠区域
+- 重叠区域被隐藏
+- 用于创建异或效果
 
 ## 注意
-
-- 该属性用于组合多个遮罩图像
-- 类似于 `composition` 操作
+- 该属性仅在设置多个遮罩图像时生效
+- 复合方式按顺序应用于遮罩层
 - 与 `mask-image` 配合使用
+- 可以设置多个值对应多个遮罩图像
 
 ## 示例
 
 ```css
-/* 添加模式 */
-.el1 {
-  mask-image: url("mask1.png"), url("mask2.png");
+/* 添加模式（默认） */
+.box {
+  mask-image: 
+    url('mask1.png'),
+    url('mask2.png');
   mask-composite: add;
 }
 
 /* 减去模式 */
-.el2 {
-  mask-image: url("mask1.png"), url("mask2.png");
+.box {
+  mask-image: 
+    url('mask1.png'),
+    url('mask2.png');
   mask-composite: subtract;
 }
 
 /* 交集模式 */
-.el3 {
-  mask-image: url("mask1.png"), url("mask2.png");
+.box {
+  mask-image: 
+    url('mask1.png'),
+    url('mask2.png');
   mask-composite: intersect;
 }
 
 /* 排除模式 */
-.el4 {
-  mask-image: url("mask1.png"), url("mask2.png");
+.box {
+  mask-image: 
+    url('mask1.png'),
+    url('mask2.png');
   mask-composite: exclude;
+}
+
+/* 多个复合方式 */
+.box {
+  mask-image: 
+    url('mask1.png'),
+    url('mask2.png'),
+    url('mask3.png');
+  mask-composite: add, subtract;
 }
 ```
 
 ```html
-<!-- 遮罩复合示例 -->
-<div class="add-composite">
-  <p>添加复合</p>
-</div>
-
-<div class="subtract-composite">
-  <p>减去复合</p>
-</div>
-
-<div class="intersect-composite">
-  <p>交集复合</p>
-</div>
-
-<div class="exclude-composite">
-  <p>排除复合</p>
-</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 添加复合 */
-.add-composite {
-  mask-image: url("mask1.png"), url("mask2.png");
+/* 1. 叠加遮罩效果 */
+.add-mask {
+  mask-image: 
+    url('pattern.png'),
+    url('gradient.png');
   mask-composite: add;
 }
 
-/* 减去复合 */
-.subtract-composite {
-  mask-image: url("mask1.png"), url("mask2.png");
+/* 2. 镂空效果 */
+.subtract-mask {
+  mask-image: 
+    url('base.png'),
+    url('hole.png');
   mask-composite: subtract;
 }
 
-/* 交集复合 */
-.intersect-composite {
-  mask-image: url("mask1.png"), url("mask2.png");
+/* 3. 交集遮罩 */
+.intersect-mask {
+  mask-image: 
+    url('shape1.png'),
+    url('shape2.png');
   mask-composite: intersect;
 }
 
-/* 排除复合 */
-.exclude-composite {
-  mask-image: url("mask1.png"), url("mask2.png");
+/* 4. 异或遮罩 */
+.exclude-mask {
+  mask-image: 
+    url('shape1.png'),
+    url('shape2.png');
   mask-composite: exclude;
 }
 
-/* 多个遮罩复合 */
+/* 5. 多图层复合 */
 .multi-composite {
   mask-image: 
-    url("mask1.png"),
-    url("mask2.png"),
-    url("mask3.png");
-  mask-composite: add;
+    url('layer1.png'),
+    url('layer2.png'),
+    url('layer3.png');
+  mask-composite: add, subtract;
 }
 
-/* 渐变复合 */
-.gradient-composite {
+/* 6. 圆形镂空 */
+.circle-hole {
   mask-image: 
-    linear-gradient(to right, transparent, black),
-    radial-gradient(circle, transparent, black);
+    url('rectangle.png'),
+    url('circle.png');
+  mask-composite: subtract;
+}
+
+/* 7. 星形遮罩 */
+.star-mask {
+  mask-image: 
+    url('circle.png'),
+    url('star.png');
   mask-composite: intersect;
 }
 
-/* 形状复合 */
-.shape-composite {
+/* 8. 复杂复合 */
+.complex-composite {
   mask-image: 
-    url("circle.png"),
-    url("square.png");
-  mask-composite: exclude;
-}
-
-/* 文字遮罩复合 */
-.text-composite {
-  mask-image: 
-    url("text-mask.png"),
-    url("pattern.png");
-  mask-composite: intersect;
-}
-
-/* 响应式复合 */
-.responsive-composite {
-  mask-image: url("mask1.png"), url("mask2.png");
-  mask-composite: add;
-}
-
-@media (min-width: 768px) {
-  .responsive-composite {
-    mask-composite: intersect;
-  }
-}
-
-/* 动画复合 */
-.animated-composite {
-  mask-image: url("mask1.png"), url("mask2.png");
-  mask-composite: add;
-  animation: compositeChange 3s infinite;
-}
-
-@keyframes compositeChange {
-  0%, 100% { mask-composite: add; }
-  25% { mask-composite: subtract; }
-  50% { mask-composite: intersect; }
-  75% { mask-composite: exclude; }
+    url('base.png'),
+    url('pattern.png'),
+    url('gradient.png');
+  mask-composite: add, intersect;
 }

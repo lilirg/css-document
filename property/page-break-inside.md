@@ -1,139 +1,116 @@
 # page-break-inside
 
-该属性设置元素内部是否允许分页（用于打印）。
+该属性用于设置元素内部是否允许插入分页符（用于打印时的分页控制）。
 
 ## 语法
 
 ```css
-page-break-inside: auto | avoid
+page-break-inside: auto | avoid | page | column | avoid-page | avoid-column
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `auto`         |
-| 适用 HTML 元素 | 块级元素     |
-| 动画         | 否             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `auto` |
+| 适用 HTML 元素 | 块级元素 |
+| 动画 | 否 |
 
 ## 值
 
-### `auto`
+### auto
+自动分页（默认值）：
+- 由浏览器决定是否在元素内部分页
 
-默认值。允许在元素内部分页。
+### avoid
+避免分页：
+- 尽量避免在元素内部分页
+- 如果可能，将整个元素保持在同一页面
 
-### `avoid`
+### page
+在元素内部允许分页
 
-避免在元素内部分页。
+### column
+在元素内部允许列分
+
+### avoid-page
+避免页面内分页（与 `avoid` 相同）
+
+### avoid-column
+避免列内分页
 
 ## 注意
-
-- 该属性主要用于打印样式
-- 现代浏览器推荐使用 `break-inside` 属性
-- 常用于避免段落、列表项在中间分页
-- 与 `page-break-before` 和 `page-break-after` 配合使用
+- 该属性主要用于打印样式（`@media print`）
+- 在现代 CSS 中，推荐使用 `break-inside` 属性
+- 该属性是旧版规范，但仍被广泛支持
+- 常用于防止卡片、段落等元素被分页切断
+- 不能应用于空元素或 `display: none` 的元素
 
 ## 示例
 
 ```css
+/* 自动分页（默认） */
+.box {
+  page-break-inside: auto;
+}
+
 /* 避免内部分页 */
-.paragraph {
+.no-break-inside {
   page-break-inside: avoid;
 }
 
 /* 允许内部分页 */
-.content {
-  page-break-inside: auto;
+.allow-break {
+  page-break-inside: page;
 }
 ```
 
 ```html
-<!-- 避免分页的段落 -->
-<article>
-  <div class="paragraph">
-    <h2>标题</h2>
-    <p>这是一个完整的段落，不会在中间分页。</p>
-  </div>
-  <div class="paragraph">
-    <h2>另一个标题</h2>
-    <p>这是另一个完整的段落。</p>
-  </div>
-</article>
+<!-- HTML 示例 -->
+<div class="box">内容 1</div>
+<div class="no-break-inside">完整内容（不会被分页切断）</div>
+<div class="box">内容 2</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 避免段落分页 */
-.paragraph {
-  page-break-inside: avoid;
-}
-
-/* 避免列表项分页 */
-li {
-  page-break-inside: avoid;
-}
-
-/* 避免卡片分页 */
+/* 1. 卡片避免分页 */
 .card {
   page-break-inside: avoid;
 }
 
-/* 避免图片分页 */
-figure {
+/* 2. 段落避免分页 */
+.paragraph {
   page-break-inside: avoid;
 }
 
-/* 现代替代方案 */
-.modern-break {
-  break-inside: avoid;
+/* 3. 列表项避免分页 */
+.list-item {
+  page-break-inside: avoid;
 }
 
-/* 打印样式 */
+/* 4. 表格避免分页 */
+.table {
+  page-break-inside: avoid;
+}
+
+/* 5. 图片容器避免分页 */
+.image-container {
+  page-break-inside: avoid;
+}
+
+/* 6. 代码块避免分页 */
+.code-block {
+  page-break-inside: avoid;
+}
+
+/* 7. 引用块避免分页 */
+.blockquote {
+  page-break-inside: avoid;
+}
+
+/* 8. 打印样式 */
 @media print {
-  .print-avoid {
+  .keep-together {
     page-break-inside: avoid;
   }
-  
-  .print-allow {
-    page-break-inside: auto;
-  }
-}
-
-/* 报告章节 */
-.report-section {
-  page-break-inside: avoid;
-}
-
-/* 简历项目 */
-.resume-item {
-  page-break-inside: avoid;
-}
-
-/* 表格行 */
-tr {
-  page-break-inside: avoid;
-}
-
-/* 代码块 */
-pre {
-  page-break-inside: avoid;
-}
-
-/* 引用块 */
-blockquote {
-  page-break-inside: avoid;
-}
-
-/* 避免表格分页 */
-table {
-  page-break-inside: avoid;
-}
-
-/* 避免摘要分页 */
-.summary {
-  page-break-inside: avoid;
-}
-
-/* 避免脚注分页 */
-.footnote {
-  page-break-inside: avoid;
 }

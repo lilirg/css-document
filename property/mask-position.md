@@ -1,205 +1,157 @@
 # mask-position
 
-该属性设置遮罩图像的初始位置。
+该属性用于设置遮罩图像的起始位置。
 
 ## 语法
 
 ```css
-mask-position: <position>
+mask-position: <position>#
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `center`       |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `0% 0%` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（可动画） |
 
 ## 值
 
 ### 关键字位置
-
-| 值 | 说明 |
-|------|------|
-| `top` | 顶部 |
-| `bottom` | 底部 |
-| `left` | 左侧 |
-| `right` | 右侧 |
-| `center` | 中心（默认） |
+- `center` - 中心（等同于 `50% 50%`）
+- `top` - 顶部（等同于 `50% 0%`）
+- `bottom` - 底部（等同于 `50% 100%`）
+- `left` - 左侧（等同于 `0% 50%`）
+- `right` - 右侧（等同于 `100% 50%`）
 
 ### 长度值
+- `<length>` - 具体长度值（如 `10px`, `2em`）
+- `<percentage>` - 百分比值（如 `25%`, `50%`）
 
-| 值 | 说明 |
-|------|------|
-| `<length>` | 具体长度值（如 `10px`、`2em`） |
-| `<percentage>` | 相对于元素和图像的百分比 |
+### 值数量说明
+| 值数量 | 说明 |
+| :--- | :--- |
+| 1 个值 | 第一个值为水平位置，垂直位置为 `50%` |
+| 2 个值 | 第一个值为水平位置，第二个值为垂直位置 |
 
-### 组合语法
-
-```css
-mask-position: center;              /* 单个值 - 水平和垂直都是中心 */
-mask-position: left top;            /* 两个值 - 水平 垂直 */
-mask-position: 10px 20px;           /* 两个长度值 */
-mask-position: 50% 50%;             /* 两个百分比值 */
-mask-position: left 10px;           /* 关键字 + 长度 */
-```
+### 位置计算
+- 第一个值：水平位置（0% = 左，50% = 中，100% = 右）
+- 第二个值：垂直位置（0% = 上，50% = 中，100% = 下）
 
 ## 注意
-
-- 第一个值表示水平位置
-- 第二个值表示垂直位置
-- 如果只指定一个值，垂直位置默认为 `center`
+- 该属性通常与 `mask-image` 配合使用
+- 可以设置多个值对应多个遮罩图像
+- 位置是相对于元素内容区域计算的
+- 可以使用负值将图像移出可见区域
 
 ## 示例
 
 ```css
 /* 中心位置 */
-.el1 {
+.box {
   mask-image: url('mask.png');
   mask-position: center;
-  padding: 20px;
 }
 
 /* 左上角 */
-.el2 {
+.box {
   mask-image: url('mask.png');
-  mask-position: left top;
-  padding: 20px;
+  mask-position: 0% 0%;
 }
 
 /* 右下角 */
-.el3 {
+.box {
   mask-image: url('mask.png');
-  mask-position: right bottom;
-  padding: 20px;
+  mask-position: 100% 100%;
 }
 
-/* 使用长度值 */
-.el4 {
+/* 具体位置 */
+.box {
   mask-image: url('mask.png');
-  mask-position: 10px 20px;
-  padding: 20px;
+  mask-position: 50px 100px;
 }
 
-/* 使用百分比 */
-.el5 {
+/* 百分比位置 */
+.box {
   mask-image: url('mask.png');
-  mask-position: 50% 50%;
-  padding: 20px;
+  mask-position: 25% 75%;
 }
 
-/* 左侧居中 */
-.el6 {
+/* 混合关键字和百分比 */
+.box {
   mask-image: url('mask.png');
   mask-position: left center;
-  padding: 20px;
 }
 
-/* 顶部居中 */
-.el7 {
+/* 负值位置 */
+.box {
   mask-image: url('mask.png');
-  mask-position: center top;
-  padding: 20px;
-}
-
-/* 单个值 */
-.el8 {
-  mask-image: url('mask.png');
-  mask-position: 25%;
-  padding: 20px;
+  mask-position: -50px -50px;
 }
 ```
 
 ```html
-<div class="el1">center</div>
-<div class="el2">left top</div>
-<div class="el3">right bottom</div>
-<div class="el4">10px 20px</div>
-<div class="el5">50% 50%</div>
-<div class="el6">left center</div>
-<div class="el7">center top</div>
-<div class="el8">25%</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 居中对齐遮罩 */
+/* 1. 中心对齐遮罩 */
 .center-mask {
-  mask-image: url('images/mask.png');
+  mask-image: url('mask.png');
   mask-position: center;
-  mask-size: cover;
-  padding: 20px;
+  mask-repeat: no-repeat;
 }
 
-/* 左上角对齐 */
+/* 2. 左上角遮罩 */
 .top-left-mask {
-  mask-image: url('images/mask.png');
-  mask-position: left top;
-  mask-size: contain;
-  padding: 20px;
+  mask-image: url('mask.png');
+  mask-position: top left;
 }
 
-/* 右下角对齐 */
+/* 3. 右下角遮罩 */
 .bottom-right-mask {
-  mask-image: url('images/mask.png');
-  mask-position: right bottom;
-  mask-size: contain;
-  padding: 20px;
+  mask-image: url('mask.png');
+  mask-position: bottom right;
 }
 
-/* 偏移遮罩 */
+/* 4. 水平居中遮罩 */
+.horizontal-center {
+  mask-image: url('mask.png');
+  mask-position: center top;
+}
+
+/* 5. 垂直居中遮罩 */
+.vertical-center {
+  mask-image: url('mask.png');
+  mask-position: left center;
+}
+
+/* 6. 偏移遮罩 */
 .offset-mask {
-  mask-image: url('images/mask.png');
-  mask-position: 10px 10px;
-  padding: 20px;
+  mask-image: url('mask.png');
+  mask-position: 20px 40px;
 }
 
-/* 百分比定位 */
-.percentage-mask {
-  mask-image: url('images/mask.png');
-  mask-position: 25% 75%;
-  padding: 20px;
+/* 7. 多图像不同位置 */
+.multi-mask {
+  mask-image: 
+    url('mask1.png'),
+    url('mask2.png');
+  mask-position: 
+    top left,
+    bottom right;
 }
 
-/* 左侧对齐 */
-.left-mask {
-  mask-image: url('images/mask.png');
-  mask-position: left;
-  padding: 20px;
+/* 8. 动画遮罩位置 */
+.animated-mask {
+  mask-image: url('mask.png');
+  mask-position: 0% 0%;
+  animation: moveMask 3s infinite;
 }
 
-/* 顶部对齐 */
-.top-mask {
-  mask-image: url('images/mask.png');
-  mask-position: top;
-  padding: 20px;
-}
-
-/* 动态位置（配合动画） */
-.animated-position {
-  mask-image: url('images/mask.png');
-  mask-position: left;
-  padding: 20px;
-  animation: positionMove 3s infinite;
-}
-
-@keyframes positionMove {
-  0%, 100% { mask-position: left; }
-  50% { mask-position: right; }
-}
-
-/* 卡片遮罩 */
-.card-mask {
-  mask-image: url('images/card-mask.png');
-  mask-position: center;
-  mask-size: cover;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-/* 渐变遮罩位置 */
-.gradient-position {
-  mask-image: linear-gradient(to right, black 50%, transparent 100%);
-  mask-position: left;
-  padding: 20px;
+@keyframes moveMask {
+  0% { mask-position: 0% 0%; }
+  100% { mask-position: 100% 100%; }
 }

@@ -1,149 +1,141 @@
 # page-break-after
 
-该属性设置元素后是否开始新页面（用于打印）。
+该属性用于设置元素后是否插入分页符（用于打印时的分页控制）。
 
 ## 语法
 
 ```css
-page-break-after: auto | always | avoid | left | right | recto | verso
+page-break-after: auto | always | avoid | left | right | page | column | avoid-page | avoid-column
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `auto`         |
-| 适用 HTML 元素 | 块级元素     |
-| 动画         | 否             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `auto` |
+| 适用 HTML 元素 | 块级元素 |
+| 动画 | 否 |
 
 ## 值
 
-### `auto`
+### auto
+自动分页（默认值）：
+- 由浏览器决定是否在元素后分页
 
-默认值。由浏览器自动决定。
+### always
+强制分页：
+- 在元素后始终插入分页符
+- 元素总是从新页面开始
 
-### `always`
+### avoid
+避免分页：
+- 尽量避免在元素后分页
+- 如果可能，将元素保持在同一页面
 
-强制在元素后开始新页面。
+### left
+在元素后插入分页符，直到下一个左页：
+- 用于双面打印
+- 可能插入两个分页符
 
-### `avoid`
+### right
+在元素后插入分页符，直到下一个右页：
+- 用于双面打印
+- 可能插入两个分页符
 
-避免在元素后分页。
+### page
+强制分页（与 `always` 相同）
 
-### `left`
+### column
+在元素后插入列分符
 
-在元素后开始新页面，并强制空白页（左页）。
+### avoid-page
+避免分页（与 `avoid` 相同）
 
-### `right`
-
-在元素后开始新页面，并强制空白页（右页）。
-
-### `recto`
-
-在元素后开始新页面，并强制空白页（右页/正面）。
-
-### `verso`
-
-在元素后开始新页面，并强制空白页（左页/背面）。
+### avoid-column
+避免列分
 
 ## 注意
-
-- 该属性主要用于打印样式
-- 现代浏览器推荐使用 `break-after` 属性
+- 该属性主要用于打印样式（`@media print`）
+- 在现代 CSS 中，推荐使用 `break-after` 属性
+- 该属性是旧版规范，但仍被广泛支持
 - 不能应用于空元素或 `display: none` 的元素
-- 不能应用于 `table`、`tr`、`td` 等表格元素
+- 不能应用于 `display: table-row`, `table-row-group`, `table-header-group`, `table-footer-group`, `table-column`, `table-column-group`
 
 ## 示例
 
 ```css
+/* 自动分页（默认） */
+.box {
+  page-break-after: auto;
+}
+
 /* 强制分页 */
-.chapter {
+.page-break {
   page-break-after: always;
 }
 
 /* 避免分页 */
-.content {
+.no-break {
   page-break-after: avoid;
 }
 
-/* 右页开始 */
-.section {
+/* 左页 */
+.left-page {
+  page-break-after: left;
+}
+
+/* 右页 */
+.right-page {
   page-break-after: right;
 }
 ```
 
 ```html
-<!-- 章节分页 -->
-<article>
-  <div class="chapter">
-    <h1>第一章</h1>
-    <p>内容...</p>
-  </div>
-  <div class="chapter">
-    <h1>第二章</h1>
-    <p>内容...</p>
-  </div>
-</article>
+<!-- HTML 示例 -->
+<div class="box">内容 1</div>
+<div class="page-break">内容 2（新页面）</div>
+<div class="box">内容 3</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 每章新页面 */
+/* 1. 章节分页 */
 .chapter {
   page-break-after: always;
 }
 
-/* 避免段落分页 */
+/* 2. 避免段落分页 */
 .paragraph {
   page-break-after: avoid;
 }
 
-/* 右页开始（书籍） */
-.book-section {
-  page-break-after: right;
-}
-
-/* 左页开始 */
-.left-page {
+/* 3. 双面打印 - 左页 */
+.left-side {
   page-break-after: left;
 }
 
-/* 现代替代方案 */
-.modern-break {
-  break-after: page;
+/* 4. 双面打印 - 右页 */
+.right-side {
+  page-break-after: right;
 }
 
-/* 避免分页 */
-.no-break {
-  break-after: avoid;
-}
-
-/* 打印样式 */
-@media print {
-  .print-break {
-    page-break-after: always;
-  }
-  
-  .print-avoid {
-    page-break-after: avoid;
-  }
-}
-
-/* 报告分页 */
+/* 5. 报告分页 */
 .report-section {
   page-break-after: always;
 }
 
-/* 图表分页 */
-.figure {
+/* 6. 表格避免分页 */
+.table-container {
   page-break-after: avoid;
 }
 
-/* 表格分页 */
-.table-container {
-  page-break-after: always;
+/* 7. 图片避免分页 */
+.image-container {
+  page-break-after: avoid;
 }
 
-/* 简历分页 */
-.resume-section {
-  page-break-after: always;
+/* 8. 打印样式 */
+@media print {
+  .no-print {
+    page-break-after: always;
+  }
 }

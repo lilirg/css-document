@@ -1,201 +1,145 @@
 # mask
 
-该属性设置元素的遮罩，是遮罩相关属性的速记属性。
+该属性用于设置元素遮罩的所有属性（图像、位置、尺寸、重复等）的速记属性。
 
 ## 语法
 
 ```css
-mask: <mask-layer>
+mask: [ <mask-reference> || <position> [ / <bg-size> ]? || <repeat-style> || <box> || <composite-mode> ]#
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | 见各个独立属性 |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | 各属性初始值 |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 取决于各组成部分 |
 
 ## 值
 
-### 组合值
+### mask-reference
+遮罩源：
+- `none` - 无遮罩
+- `<image>` - 遮罩图像（URL 或渐变）
 
-`mask` 可以设置以下属性的组合：
+### position
+遮罩位置：
+- `center`, `top`, `bottom`, `left`, `right`
+- `<length>`, `<percentage>`
 
-| 属性 | 说明 |
-|------|------|
-| `mask-image` | 遮罩图像 |
-| `mask-mode` | 遮罩模式 |
-| `mask-position` | 遮罩位置 |
-| `mask-size` | 遮罩尺寸 |
-| `mask-repeat` | 遮罩重复方式 |
-| `mask-origin` | 遮罩原点 |
-| `mask-clip` | 遮罩裁剪区域 |
+### bg-size
+遮罩尺寸：
+- `auto`, `cover`, `contain`
+- `<length>`, `<percentage>`
 
-### 基本语法
+### repeat-style
+重复方式：
+- `repeat`, `repeat-x`, `repeat-y`, `no-repeat`, `space`, `round`
 
-```css
-mask: <图像> <模式> / <尺寸> <位置> <原点> <裁剪> <重复>
-```
+### box
+定位框：
+- `border-box`, `padding-box`, `content-box`
+
+### composite-mode
+混合模式：
+- `add`, `subtract`, `intersect`, `exclude`
 
 ## 注意
-
-- 遮罩会隐藏元素的部分内容，而不是显示内容
-- 使用 `mask-image` 设置遮罩图像
-- 使用 `mask-mode` 设置遮罩模式（alpha、luminance、auto）
+- 速记属性会重置所有未指定的遮罩属性为其初始值
+- 可以使用 `mask-image`, `mask-mode`, `mask-repeat`, `mask-position`, `mask-clip`, `mask-origin`, `mask-size` 分别设置
+- 遮罩图像可以是 SVG、PNG 或 CSS 渐变
+- 遮罩支持 alpha 通道和亮度值
 
 ## 示例
 
 ```css
 /* 基本用法 - 使用图像遮罩 */
-.el1 {
-  mask-image: url('mask.png');
-  mask-size: cover;
-  padding: 20px;
+.box {
+  mask: url('mask.png') no-repeat center / cover;
 }
 
 /* 使用渐变遮罩 */
-.el2 {
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  padding: 20px;
+.box {
+  mask: linear-gradient(to bottom, black, transparent);
 }
 
-/* 使用径向渐变 */
-.el3 {
-  mask-image: radial-gradient(circle, black 50%, transparent 100%);
-  padding: 20px;
+/* 多个遮罩 */
+.box {
+  mask: 
+    url('mask1.png') no-repeat left / 50%,
+    url('mask2.png') no-repeat right / 50%;
 }
 
-/* 设置遮罩位置 */
-.el4 {
-  mask-image: url('mask.png');
-  mask-position: center;
-  mask-size: cover;
-  padding: 20px;
-}
-
-/* 设置遮罩重复 */
-.el5 {
-  mask-image: url('mask.png');
-  mask-repeat: repeat;
-  padding: 20px;
-}
-
-/* 使用 alpha 模式 */
-.el6 {
-  mask-image: url('mask.png');
+/* 使用 RGBA 图像 */
+.box {
+  mask: url('mask.png');
   mask-mode: alpha;
-  padding: 20px;
 }
 
-/* 使用 luminance 模式 */
-.el7 {
-  mask-image: url('mask.png');
+/* 使用亮度遮罩 */
+.box {
+  mask: url('mask.png');
   mask-mode: luminance;
-  padding: 20px;
-}
-
-/* 无遮罩 */
-.el8 {
-  mask-image: none;
-  padding: 20px;
 }
 ```
 
 ```html
-<div class="el1">图像遮罩</div>
-<div class="el2">渐变遮罩</div>
-<div class="el3">径向渐变</div>
-<div class="el4">位置</div>
-<div class="el5">重复</div>
-<div class="el6">alpha 模式</div>
-<div class="el7">luminance 模式</div>
-<div class="el8">无遮罩</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 渐隐效果 */
-.fade-mask {
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  padding: 20px;
-}
-
-/* 圆形遮罩 */
+/* 1. 圆形遮罩（圆形图片） */
 .circle-mask {
-  width: 200px;
-  height: 200px;
-  mask-image: radial-gradient(circle, black 70%, transparent 100%);
-  mask-size: cover;
+  mask: url('circle-mask.png') no-repeat center / contain;
 }
 
-/* 图片渐隐 */
-.image-fade {
-  mask-image: linear-gradient(to right, black 80%, transparent 100%);
-  padding: 20px;
+/* 2. 渐隐效果 */
+.fade-mask {
+  mask: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
-/* 边框渐隐 */
-.border-fade {
-  mask-image: linear-gradient(black, black),
-              radial-gradient(ellipse at top, transparent, black),
-              radial-gradient(ellipse at bottom, transparent, black),
-              radial-gradient(ellipse at left, transparent, black),
-              radial-gradient(ellipse at right, transparent, black);
-  mask-mode: alpha;
-  mask-composite: intersect;
-  padding: 20px;
-}
-
-/* 文字遮罩 */
+/* 3. 文字遮罩效果 */
 .text-mask {
-  font-size: 48px;
-  font-weight: bold;
-  mask-image: linear-gradient(90deg, black 0%, transparent 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  mask: url('text-mask.svg') no-repeat center / contain;
 }
 
-/* 卡片遮罩 */
-.card-mask {
-  mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
-  padding: 20px;
-  border-radius: 12px;
+/* 4. 边缘渐隐 */
+.edge-fade {
+  mask: radial-gradient(
+    circle at center,
+    black 0%,
+    black 70%,
+    transparent 100%
+  );
 }
 
-/* 重复图案遮罩 */
-.pattern-mask {
-  mask-image: url('pattern.png');
-  mask-repeat: repeat;
-  mask-size: 50px 50px;
-  padding: 20px;
+/* 5. 水平渐隐 */
+.horizontal-fade {
+  mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
 }
 
-/* 动态遮罩（配合动画） */
-.animated-mask {
-  mask-image: linear-gradient(to right, black 0%, transparent 100%);
-  padding: 20px;
-  animation: maskMove 3s infinite;
+/* 6. 多图像遮罩 */
+.multi-mask {
+  mask: 
+    url('mask1.png') no-repeat left top / 50%,
+    url('mask2.png') no-repeat right bottom / 50%;
 }
 
-@keyframes maskMove {
-  0%, 100% { mask-position: 0%; }
-  50% { mask-position: 100%; }
-}
-
-/* 多图层遮罩 */
-.multi-layer-mask {
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%),
-              radial-gradient(circle, transparent 30%, black 70%);
-  mask-mode: alpha, alpha;
-  mask-composite: add;
-  padding: 20px;
-}
-
-/* 形状遮罩 */
+/* 7. 形状遮罩 */
 .shape-mask {
-  mask-image: url('shape.svg');
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  padding: 20px;
+  mask: url('star-mask.svg') no-repeat center / contain;
+}
+
+/* 8. 视频遮罩（动态内容） */
+.video-mask {
+  mask: url('video-mask.png');
+  mask-mode: alpha;
 }

@@ -1,208 +1,151 @@
 # mask-size
 
-该属性设置遮罩图像的尺寸。
+该属性用于设置遮罩图像的尺寸。
 
 ## 语法
 
 ```css
-mask-size: <mask-size> | <length> | <percentage>
+mask-size: <mask-size>#
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `auto`         |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `auto` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（可动画） |
 
 ## 值
 
-### 关键字尺寸
+### auto
+保持图像原始尺寸（默认值）。
 
-| 值 | 说明 |
-|------|------|
-| `auto` | 保持图像原始尺寸（默认） |
-| `cover` | 缩放图像以完全覆盖元素 |
-| `contain` | 缩放图像以完整显示在元素内 |
+### cover
+缩放图像以覆盖整个区域：
+- 保持图像宽高比
+- 图像完全覆盖元素
+- 可能裁剪部分图像
 
-### 长度值
+### contain
+缩放图像以适应整个区域：
+- 保持图像宽高比
+- 图像完整显示
+- 可能有空白区域
 
-| 值 | 说明 |
-|------|------|
-| `<length>` | 具体长度值（如 `100px`、`2em`） |
-| `<percentage>` | 相对于元素尺寸的百分比 |
+### length
+具体长度值：
+- `<length>` - 绝对长度（如 `100px`, `2em`）
+- `<percentage>` - 相对于元素尺寸的百分比
 
-### 组合语法
-
-```css
-mask-size: auto;              /* 单个值 - 保持原始尺寸 */
-mask-size: cover;             /* 覆盖整个元素 */
-mask-size: contain;           /* 完整显示在元素内 */
-mask-size: 100px;             /* 宽度 100px，高度自动 */
-mask-size: 100px 50px;        /* 宽度 100px，高度 50px */
-mask-size: 50% 50%;           /* 宽度和高度都是元素的 50% */
-```
+### 值数量说明
+| 值数量 | 说明 |
+| :--- | :--- |
+| 1 个值 | 宽度和高度相同，或只设置宽度（高度为 auto） |
+| 2 个值 | 第一个值为宽度，第二个值为高度 |
 
 ## 注意
-
-- 第一个值表示宽度
-- 第二个值表示高度
-- 如果只指定一个值，第二个值默认为 `auto`
-- `cover` 和 `contain` 会保持图像的宽高比
+- 该属性通常与 `mask-image` 配合使用
+- 可以设置多个值对应多个遮罩图像
+- 使用百分比时，相对于元素尺寸计算
+- `cover` 和 `contain` 保持图像宽高比
 
 ## 示例
 
 ```css
-/* 自动尺寸 */
-.el1 {
+/* 原始尺寸 */
+.box {
   mask-image: url('mask.png');
   mask-size: auto;
-  padding: 20px;
 }
 
-/* 覆盖整个元素 */
-.el2 {
+/* 覆盖整个区域 */
+.box {
   mask-image: url('mask.png');
   mask-size: cover;
-  padding: 20px;
 }
 
-/* 完整显示在元素内 */
-.el3 {
+/* 适应整个区域 */
+.box {
   mask-image: url('mask.png');
   mask-size: contain;
-  padding: 20px;
 }
 
-/* 固定宽度 */
-.el4 {
-  mask-image: url('mask.png');
-  mask-size: 100px;
-  padding: 20px;
-}
-
-/* 固定宽高 */
-.el5 {
+/* 具体尺寸 */
+.box {
   mask-image: url('mask.png');
   mask-size: 100px 50px;
-  padding: 20px;
 }
 
 /* 百分比尺寸 */
-.el6 {
+.box {
   mask-image: url('mask.png');
-  mask-size: 50% 50%;
-  padding: 20px;
+  mask-size: 50% 100%;
 }
 
-/* 宽度百分比，高度自动 */
-.el7 {
+/* 单值（宽度，高度为 auto） */
+.box {
   mask-image: url('mask.png');
-  mask-size: 100% auto;
-  padding: 20px;
-}
-
-/* 使用 em 单位 */
-.el8 {
-  mask-image: url('mask.png');
-  mask-size: 10em 5em;
-  padding: 20px;
+  mask-size: 50%;
 }
 ```
 
 ```html
-<div class="el1">auto</div>
-<div class="el2">cover</div>
-<div class="el3">contain</div>
-<div class="el4">100px</div>
-<div class="el5">100px 50px</div>
-<div class="el6">50% 50%</div>
-<div class="el7">100% auto</div>
-<div class="el8">10em 5em</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 覆盖整个元素 */
-.cover-mask {
-  mask-image: url('images/mask.png');
+/* 1. 全尺寸遮罩 */
+.full-mask {
+  mask-image: url('mask.png');
   mask-size: cover;
-  padding: 20px;
 }
 
-/* 完整显示在元素内 */
-.contain-mask {
-  mask-image: url('images/mask.png');
+/* 2. 完整显示遮罩 */
+.complete-mask {
+  mask-image: url('mask.png');
   mask-size: contain;
-  padding: 20px;
 }
 
-/* 固定尺寸遮罩 */
+/* 3. 固定尺寸遮罩 */
 .fixed-mask {
-  mask-image: url('images/mask.png');
+  mask-image: url('mask.png');
   mask-size: 200px 100px;
-  padding: 20px;
 }
 
-/* 宽度自适应 */
-.width-mask {
-  mask-image: url('images/mask.png');
-  mask-size: 100% auto;
-  padding: 20px;
-}
-
-/* 高度自适应 */
-.height-mask {
-  mask-image: url('images/mask.png');
-  mask-size: auto 100%;
-  padding: 20px;
-}
-
-/* 百分比遮罩 */
-.percentage-mask {
-  mask-image: url('images/mask.png');
+/* 4. 相对尺寸遮罩 */
+.relative-mask {
+  mask-image: url('mask.png');
   mask-size: 50% 50%;
-  padding: 20px;
 }
 
-/* 卡片遮罩 */
-.card-mask {
-  mask-image: url('images/card-mask.png');
-  mask-size: cover;
-  padding: 20px;
-  border-radius: 12px;
+/* 5. 宽度固定，高度自适应 */
+.width-fixed {
+  mask-image: url('mask.png');
+  mask-size: 100px auto;
 }
 
-/* 重复图案遮罩 */
-.pattern-mask {
-  mask-image: url('images/pattern.png');
-  mask-size: 50px 50px;
+/* 6. 高度固定，宽度自适应 */
+.height-fixed {
+  mask-image: url('mask.png');
+  mask-size: auto 50px;
+}
+
+/* 7. 平铺小图案 */
+.tile-pattern {
+  mask-image: url('pattern.png');
+  mask-size: 20px 20px;
   mask-repeat: repeat;
-  padding: 20px;
 }
 
-/* 动态尺寸（配合动画） */
-.animated-size {
-  mask-image: url('images/mask.png');
-  mask-size: contain;
-  padding: 20px;
-  animation: sizeChange 3s infinite;
-}
-
-@keyframes sizeChange {
-  0%, 100% { mask-size: contain; }
-  50% { mask-size: cover; }
-}
-
-/* 响应式遮罩 */
+/* 8. 响应式遮罩 */
 .responsive-mask {
-  mask-image: url('images/mask.png');
-  mask-size: contain;
-  padding: 20px;
+  mask-image: url('mask.png');
+  mask-size: cover;
 }
-
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .responsive-mask {
-    mask-size: cover;
+    mask-size: contain;
   }
 }

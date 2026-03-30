@@ -1,175 +1,161 @@
 # mask-origin
 
-该属性设置遮罩图像的定位区域。
+该属性用于设置遮罩图像的定位原点，即遮罩位置相对于哪个区域计算。
 
 ## 语法
 
 ```css
-mask-origin: <box>
+mask-origin: <box>#
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `border-box`   |
-| 适用 HTML 元素 | 所有元素       |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `border-box` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
 
 ## 值
 
-### 定位区域
+### border-box
+相对于边框盒定位（默认值）：
+- 遮罩位置从边框外边缘开始计算
+- 包括边框区域
 
-| 值 | 说明 |
-|------|------|
-| `border-box` | 从边框区域开始定位（默认） |
-| `padding-box` | 从内边距区域开始定位 |
-| `content-box` | 从内容区域开始定位 |
-| `fill-box` | 相对于 SVG 填充边界框 |
-| `stroke-box` | 相对于 SVG 描边边界框 |
-| `view-box` | 相对于 SVG 视口 |
+### padding-box
+相对于内边距盒定位：
+- 遮罩位置从内边距外边缘开始计算
+- 不包括边框
+
+### content-box
+相对于内容盒定位：
+- 遮罩位置从内容区域开始计算
+- 不包括内边距和边框
+
+### fill-box
+相对于 SVG 填充边界框定位：
+- 仅适用于 SVG 元素
+- 使用填充边界框
+
+### stroke-box
+相对于 SVG 描边边界框定位：
+- 仅适用于 SVG 元素
+- 使用描边边界框
+
+### view-box
+相对于 SVG 视口定位：
+- 仅适用于 SVG 元素
+- 使用最近的视口
 
 ## 注意
-
-- 该属性与 `mask-position` 配合使用
-- 对于非 SVG 元素，通常使用 `border-box`、`padding-box`、`content-box`
-- 对于 SVG 元素，可以使用 `fill-box`、`stroke-box`、`view-box`
+- 该属性通常与 `mask-image` 和 `mask-position` 配合使用
+- 可以设置多个值对应多个遮罩图像
+- 与 `mask-clip` 配合使用可以精确控制遮罩效果
+- SVG 相关的值仅适用于 SVG 元素
 
 ## 示例
 
 ```css
-/* 从边框区域开始 */
-.el1 {
+/* 相对于边框盒定位（默认） */
+.box {
   mask-image: url('mask.png');
   mask-origin: border-box;
-  padding: 20px;
-  border: 10px solid #333;
 }
 
-/* 从内边距区域开始 */
-.el2 {
+/* 相对于内边距盒定位 */
+.box {
   mask-image: url('mask.png');
   mask-origin: padding-box;
-  padding: 20px;
-  border: 10px solid #333;
 }
 
-/* 从内容区域开始 */
-.el3 {
+/* 相对于内容盒定位 */
+.box {
   mask-image: url('mask.png');
   mask-origin: content-box;
-  padding: 20px;
-  border: 10px solid #333;
 }
 
-/* 使用 position 配合 */
-.el4 {
+/* 配合位置使用 */
+.box {
   mask-image: url('mask.png');
   mask-origin: padding-box;
-  mask-position: 0 0;
-  padding: 20px;
-}
-
-/* 居中定位 */
-.el5 {
-  mask-image: url('mask.png');
-  mask-origin: content-box;
   mask-position: center;
-  padding: 20px;
+}
+
+/* 多个遮罩不同原点 */
+.box {
+  mask-image: 
+    url('mask1.png'),
+    url('mask2.png');
+  mask-origin: border-box, padding-box;
 }
 ```
 
 ```html
-<div class="el1">border-box</div>
-<div class="el2">padding-box</div>
-<div class="el3">content-box</div>
-<div class="el4">padding-box + position</div>
-<div class="el5">content-box + center</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 边框内遮罩 */
-.border-mask {
-  mask-image: url('images/mask.png');
+/* 1. 边框内遮罩 */
+.border-origin {
+  mask-image: url('mask.png');
   mask-origin: border-box;
-  mask-size: cover;
-  padding: 20px;
   border: 10px solid #333;
 }
 
-/* 内边距内遮罩 */
-.padding-mask {
-  mask-image: url('images/mask.png');
+/* 2. 内边距内遮罩 */
+.padding-origin {
+  mask-image: url('mask.png');
   mask-origin: padding-box;
-  mask-size: cover;
   padding: 20px;
   border: 10px solid #333;
 }
 
-/* 内容区遮罩 */
-.content-mask {
-  mask-image: url('images/mask.png');
-  mask-origin: content-box;
-  mask-size: cover;
-  padding: 20px;
-  border: 10px solid #333;
-}
-
-/* 卡片遮罩 */
-.card-mask {
-  mask-image: url('images/card-mask.png');
-  mask-origin: padding-box;
-  mask-size: cover;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-/* 渐变遮罩 */
-.gradient-mask {
-  mask-image: linear-gradient(to right, black 50%, transparent 100%);
+/* 3. 内容区遮罩 */
+.content-origin {
+  mask-image: url('mask.png');
   mask-origin: content-box;
   padding: 20px;
+  border: 10px solid #333;
 }
 
-/* 图片渐隐 */
-.image-fade {
-  mask-image: url('images/fade.png');
+/* 4. 中心对齐遮罩 */
+.center-origin {
+  mask-image: url('mask.png');
   mask-origin: padding-box;
-  mask-size: 100% 100%;
-  padding: 20px;
+  mask-position: center;
+  mask-size: cover;
 }
 
-/* 边框渐隐 */
-.border-fade {
-  mask-image: linear-gradient(black, black),
-              radial-gradient(ellipse at top, transparent, black);
+/* 5. 多图层不同原点 */
+.multi-origin {
+  mask-image: 
+    url('pattern.png'),
+    url('gradient.png');
+  mask-origin: content-box, padding-box;
+}
+
+/* 6. 带圆角遮罩 */
+.rounded-origin {
+  mask-image: url('mask.png');
   mask-origin: border-box;
-  padding: 20px;
+  border-radius: 10px;
 }
 
-/* 响应式遮罩 */
-.responsive-mask {
-  mask-image: url('images/mask.png');
+/* 7. SVG 元素遮罩 */
+.svg-origin {
+  mask-image: url('mask.svg');
+  mask-origin: fill-box;
+}
+
+/* 8. 响应式遮罩原点 */
+.responsive-origin {
+  mask-image: url('mask.png');
   mask-origin: content-box;
-  mask-size: cover;
-  padding: 20px;
 }
-
 @media (min-width: 768px) {
-  .responsive-mask {
+  .responsive-origin {
     mask-origin: padding-box;
   }
-}
-
-/* 动态原点（配合动画） */
-.animated-origin {
-  mask-image: url('images/mask.png');
-  mask-origin: border-box;
-  padding: 20px;
-  animation: originChange 3s infinite;
-}
-
-@keyframes originChange {
-  0%, 100% { mask-origin: border-box; }
-  50% { mask-origin: content-box; }
 }

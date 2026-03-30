@@ -1,151 +1,162 @@
 # mask-border-repeat
 
-该属性设置遮罩边框图像的重复方式。
+该属性用于设置遮罩边框图像的重复方式。
 
 ## 语法
 
 ```css
-mask-border-repeat: stretch | repeat | round | space
+mask-border-repeat: stretch | repeat | round | space {1,2}
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `stretch`      |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 否             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `stretch` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
 
 ## 值
 
-### `stretch`
+### stretch
+拉伸（默认值）：
+- 将边区域拉伸以适应边框宽度
+- 可能改变图像比例
 
-拉伸图像以填充边框区域。这是默认值。
+### repeat
+重复：
+- 重复显示图像
+- 可能裁剪部分图像
 
-### `repeat`
+### round
+圆整：
+- 重复显示图像
+- 调整图像大小以适应空间
+- 保持图像完整显示
 
-重复图像，裁剪超出部分。
+### space
+间距：
+- 重复显示图像
+- 在图像之间均匀分布空白
+- 保持图像完整显示
 
-### `round`
-
-重复图像，调整大小以适应边框。
-
-### `space`
-
-重复图像，均匀分布空白。
+### 值数量说明
+| 值数量 | 说明 |
+| :--- | :--- |
+| 1 个值 | 所有四个边使用相同重复方式 |
+| 2 个值 | 第一个值为水平方向，第二个值为垂直方向 |
 
 ## 注意
-
-- 该属性是 `mask-border` 速记属性的一部分
-- 可以指定 1-2 个值（水平和垂直方向）
-- 类似于 `border-image-repeat`
+- 该属性通常与 `mask-border-image-source` 配合使用
+- 只影响边区域，不影响角区域
+- `stretch` 是默认值，最简单但可能失真
+- `round` 和 `space` 保持图像完整但可能改变间距
 
 ## 示例
 
 ```css
-/* 拉伸 */
-.el1 {
-  mask-border: url("border.png") 30 / 10px / 0 stretch;
+/* 拉伸（默认） */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: stretch;
 }
 
 /* 重复 */
-.el2 {
-  mask-border: url("border.png") 30 / 10px / 0 repeat;
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: repeat;
 }
 
 /* 圆整 */
-.el3 {
-  mask-border: url("border.png") 30 / 10px / 0 round;
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: round;
 }
 
-/* 空间 */
-.el4 {
-  mask-border: url("border.png") 30 / 10px / 0 space;
+/* 间距 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: space;
 }
 
-/* 不同方向 */
-.el5 {
-  mask-border: url("border.png") 30 / 10px / 0 round stretch;
+/* 两个方向不同 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: repeat stretch;
 }
 ```
 
 ```html
-<!-- 遮罩边框重复示例 -->
-<div class="stretch-border">
-  <p>拉伸边框</p>
-</div>
-
-<div class="repeat-border">
-  <p>重复边框</p>
-</div>
-
-<div class="round-border">
-  <p>圆整边框</p>
-</div>
-
-<div class="space-border">
-  <p>空间边框</p>
-</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩边框内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 拉伸边框 */
+/* 1. 拉伸边框 */
 .stretch-border {
-  mask-border: url("border.png") 30 / 10px / 0 stretch;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: stretch;
+  mask-border-width: 10px;
 }
 
-/* 重复边框 */
+/* 2. 重复边框 */
 .repeat-border {
-  mask-border: url("border.png") 30 / 10px / 0 repeat;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: repeat;
+  mask-border-width: 10px;
 }
 
-/* 圆整边框 */
+/* 3. 圆整边框 */
 .round-border {
-  mask-border: url("border.png") 30 / 10px / 0 round;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: round;
+  mask-border-width: 10px;
 }
 
-/* 空间边框 */
+/* 4. 间距边框 */
 .space-border {
-  mask-border: url("border.png") 30 / 10px / 0 space;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: space;
+  mask-border-width: 10px;
 }
 
-/* 水平重复，垂直拉伸 */
+/* 5. 水平重复垂直拉伸 */
 .horizontal-repeat {
-  mask-border: url("border.png") 30 / 10px / 0 repeat stretch;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: repeat stretch;
+  mask-border-width: 10px;
 }
 
-/* 水平拉伸，垂直重复 */
+/* 6. 水平拉伸垂直重复 */
 .vertical-repeat {
-  mask-border: url("border.png") 30 / 10px / 0 stretch repeat;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-repeat: stretch repeat;
+  mask-border-width: 10px;
 }
 
-/* 双向圆整 */
-.double-round {
-  mask-border: url("border.png") 30 / 10px / 0 round round;
-}
-
-/* 双向空间 */
-.double-space {
-  mask-border: url("border.png") 30 / 10px / 0 space space;
-}
-
-/* 图案边框 */
+/* 7. 图案边框 */
 .pattern-border {
-  mask-border: url("pattern.png") 30 / 10px / 0 round;
+  mask-border-image-source: url('pattern.png');
+  mask-border-slice: 20;
+  mask-border-repeat: round;
+  mask-border-width: 10px;
 }
 
-/* 渐变边框 */
-.gradient-border {
-  mask-border: linear-gradient(to right, transparent, black) 30 / 10px / 0 stretch;
-}
-
-/* 响应式重复 */
-.responsive-repeat {
-  mask-border: url("border.png") 30 / 10px / 0 stretch;
-}
-
-@media (min-width: 768px) {
-  .responsive-repeat {
-    mask-border: url("border.png") 30 / 15px / 0 round;
-  }
+/* 8. 图标边框 */
+.icon-border {
+  mask-border-image-source: url('icons.png');
+  mask-border-slice: 30;
+  mask-border-repeat: space;
+  mask-border-width: 10px;
 }

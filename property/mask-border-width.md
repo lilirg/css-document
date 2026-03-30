@@ -1,140 +1,165 @@
 # mask-border-width
 
-该属性设置遮罩边框图像的宽度。
+该属性用于设置遮罩边框的宽度。
 
 ## 语法
 
 ```css
-mask-border-width: auto | <length> | <percentage> | <number>
+mask-border-width: <number> | <length> | auto {1,4}
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `auto`         |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `auto` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（可动画） |
 
 ## 值
 
-### `auto`
+### number
+数字值（无单位）：
+- 相对于 `mask-border-slice` 定义的区域的倍数
+- 例如：`2` 表示切片区域的两倍
 
-使用 `mask-border-slice` 的值作为宽度。
+### length
+长度值：
+- 绝对单位（如 `10px`, `2em`）
+- 相对单位（如 `1rem`, `50%`）
 
-### `<length>`
+### auto
+自动宽度（默认值）：
+- 使用 `mask-border-slice` 定义的区域尺寸
+- 自动计算边框宽度
 
-使用长度值指定宽度。可以是 `px`、`em`、`rem` 等单位。
-
-### `<percentage>`
-
-使用百分比值，相对于元素尺寸。
-
-### `<number>`
-
-无单位数字，相对于 `mask-border-slice` 的倍数。
+### 值数量说明
+| 值数量 | 说明 |
+| :--- | :--- |
+| 1 个值 | 所有四个边使用相同宽度 |
+| 2 个值 | 上下使用第一个值，左右使用第二个值 |
+| 3 个值 | 上、左右、下分别使用对应值 |
+| 4 个值 | 上、右、下、左分别使用对应值（顺时针） |
 
 ## 注意
-
-- 该属性是 `mask-border` 速记属性的一部分
-- 可以指定 1-4 个值（上、右、下、左）
-- 类似于 `border-image-width`
+- 该属性通常与 `mask-border-image-source` 配合使用
+- 数字值相对于切片区域计算
+- 长度值为绝对宽度
+- `auto` 值使用切片区域的尺寸
+- 可以设置多个值对应不同边框
 
 ## 示例
 
 ```css
-/* 自动宽度 */
-.el1 {
-  mask-border: url("border.png") 30 auto;
+/* 自动宽度（默认） */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: auto;
 }
 
-/* 固定宽度 */
-.el2 {
-  mask-border: url("border.png") 30 / 10px;
+/* 数字值 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 2;
 }
 
-/* 百分比宽度 */
-.el3 {
-  mask-border: url("border.png") 30 / 20%;
+/* 长度值 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
 }
 
-/* 四边不同宽度 */
-.el4 {
-  mask-border: url("border.png") 30 / 10px 20px 10px 20px;
+/* 1 个值 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-width: 10px;
+}
+
+/* 2 个值 - 上下 / 左右 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-width: 10px 20px;
+}
+
+/* 3 个值 - 上 / 左右 / 下 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-width: 10px 20px 15px;
+}
+
+/* 4 个值 - 上 / 右 / 下 / 左 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-width: 10px 20px 15px 25px;
 }
 ```
 
 ```html
-<!-- 遮罩边框宽度示例 -->
-<div class="width-border">
-  <p>带有宽度的遮罩边框</p>
-</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩边框内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 自动宽度 */
+/* 1. 等宽边框 */
+.equal-width {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+}
+
+/* 2. 水平边框更宽 */
+.horizontal-width {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px 30px;
+}
+
+/* 3. 垂直边框更宽 */
+.vertical-width {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 30px 10px;
+}
+
+/* 4. 不对称边框 */
+.asymmetric-width {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 20px 10px 15px 25px;
+}
+
+/* 5. 自动宽度 */
 .auto-width {
-  mask-border: url("border.png") 30 auto;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: auto;
 }
 
-/* 固定宽度 */
-.fixed-width {
-  mask-border: url("border.png") 30 / 10px;
-}
-
-/* 粗宽度 */
-.thick-width {
-  mask-border: url("border.png") 30 / 30px;
-}
-
-/* 细宽度 */
-.thin-width {
-  mask-border: url("border.png") 30 / 5px;
-}
-
-/* 百分比宽度 */
-.percentage-width {
-  mask-border: url("border.png") 30 / 15%;
-}
-
-/* 四边不同宽度 */
-.custom-width {
-  mask-border: url("border.png") 30 / 10px 20px 10px 20px;
-}
-
-/* 上宽度 */
-.top-width {
-  mask-border: url("border.png") 30 / 20px 0 0 0;
-}
-
-/* 左右宽度 */
-.side-width {
-  mask-border: url("border.png") 30 / 0 15px 0 15px;
-}
-
-/* 数字倍数 */
+/* 6. 数字倍数 */
 .multiplier-width {
-  mask-border: url("border.png") 30 / 1.5;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 2;
 }
 
-/* 响应式宽度 */
+/* 7. 相对单位 */
+.relative-width {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 2em;
+}
+
+/* 8. 响应式边框宽度 */
 .responsive-width {
-  mask-border: url("border.png") 30 / 10px;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
 }
-
 @media (min-width: 768px) {
   .responsive-width {
-    mask-border: url("border.png") 30 / 20px;
+    mask-border-width: 20px;
   }
-}
-
-/* 动画宽度 */
-.animated-width {
-  mask-border: url("border.png") 30 / 10px;
-  animation: widthChange 3s infinite;
-}
-
-@keyframes widthChange {
-  0%, 100% { mask-border-width: 10px; }
-  50% { mask-border-width: 30px; }
 }

@@ -1,131 +1,153 @@
 # mask-border-slice
 
-该属性定义如何切割遮罩边框图像。
+该属性用于定义遮罩边框图像的切片区域，将图像分割为九个区域。
 
 ## 语法
 
 ```css
-mask-border-slice: <number> | <percentage> | fill
+mask-border-slice: <number> | <percentage>{1,4} | fill
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `0`            |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `0` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（可动画） |
 
 ## 值
 
-### `<number>`
+### number
+数字值（无单位）：
+- 表示图像尺寸的百分比
+- 范围：0 到 100
+- 例如：`30` 表示 30%
 
-无单位数字，表示图像尺寸的百分比。
+### percentage
+百分比值：
+- 表示图像尺寸的百分比
+- 范围：0% 到 100%
+- 例如：`30%`
 
-### `<percentage>`
+### fill
+填充模式：
+- 中心区域作为填充
+- 默认情况下中心区域被丢弃
 
-百分比值，指定切割区域的大小。
-
-### `fill`
-
-保留图像中心部分作为填充。
+### 值数量说明
+| 值数量 | 说明 |
+| :--- | :--- |
+| 1 个值 | 所有四个边使用相同切片值 |
+| 2 个值 | 上下使用第一个值，左右使用第二个值 |
+| 3 个值 | 上、左右、下分别使用对应值 |
+| 4 个值 | 上、右、下、左分别使用对应值（顺时针） |
 
 ## 注意
-
-- 该属性是 `mask-border` 速记属性的一部分
-- 可以指定 1-4 个值（上、右、下、左）
-- 类似于 `border-image-slice`
+- 切片值定义图像的边界区域
+- 四个角区域不会被拉伸
+- 边区域会根据 `mask-border-repeat` 设置进行拉伸或重复
+- 中心区域默认被丢弃，除非使用 `fill`
+- 切片值过大可能导致区域重叠
 
 ## 示例
 
 ```css
-/* 基本切割 */
-.el1 {
-  mask-border: url("border.png") 30;
+/* 1 个值 - 所有边相同 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
 }
 
-/* 百分比切割 */
-.el2 {
-  mask-border: url("border.png") 30%;
+/* 2 个值 - 上下 / 左右 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30 20;
 }
 
-/* 四边不同切割 */
-.el3 {
-  mask-border: url("border.png") 10 20 10 20;
+/* 3 个值 - 上 / 左右 / 下 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30 20 10;
 }
 
-/* 保留中心 */
-.el4 {
-  mask-border: url("border.png") 30 fill;
+/* 4 个值 - 上 / 右 / 下 / 左 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30 20 10 15;
+}
+
+/* 使用百分比 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 25%;
+}
+
+/* 使用 fill */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30 fill;
 }
 ```
 
 ```html
-<!-- 遮罩边框切割示例 -->
-<div class="slice-border">
-  <p>带有切割的遮罩边框</p>
-</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩边框内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 基本切割 */
-.basic-slice {
-  mask-border: url("border.png") 30;
+/* 1. 对称切片 */
+.symmetric-slice {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
 }
 
-/* 百分比切割 */
+/* 2. 不对称切片 */
+.asymmetric-slice {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 40 20 30 25;
+  mask-border-width: 10px;
+}
+
+/* 3. 百分比切片 */
 .percentage-slice {
-  mask-border: url("border.png") 25%;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 25%;
+  mask-border-width: 10px;
 }
 
-/* 四边相同切割 */
-.uniform-slice {
-  mask-border: url("border.png") 20;
-}
-
-/* 四边不同切割 */
-.custom-slice {
-  mask-border: url("border.png") 10 20 10 20;
-}
-
-/* 上切割 */
-.top-slice {
-  mask-border: url("border.png") 30 0 0 0;
-}
-
-/* 左右切割 */
-.side-slice {
-  mask-border: url("border.png") 0 20 0 20;
-}
-
-/* 保留中心填充 */
+/* 4. 带填充的切片 */
 .fill-slice {
-  mask-border: url("border.png") 30 fill;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30 fill;
+  mask-border-width: 10px;
 }
 
-/* 不填充中心 */
-.no-fill-slice {
-  mask-border: url("border.png") 30;
+/* 5. 小切片值 */
+.small-slice {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 10;
+  mask-border-width: 5px;
 }
 
-/* 响应式切割 */
-.responsive-slice {
-  mask-border: url("border.png") 20;
+/* 6. 大切片值 */
+.large-slice {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 50;
+  mask-border-width: 20px;
 }
 
-@media (min-width: 768px) {
-  .responsive-slice {
-    mask-border: url("border.png") 30;
-  }
+/* 7. 水平切片大于垂直 */
+.horizontal-slice {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 20 40;
+  mask-border-width: 10px;
 }
 
-/* 动画切割 */
-.animated-slice {
-  mask-border: url("border.png") 20;
-  animation: sliceChange 3s infinite;
-}
-
-@keyframes sliceChange {
-  0%, 100% { mask-border-slice: 20; }
-  50% { mask-border-slice: 40; }
+/* 8. 垂直切片大于水平 */
+.vertical-slice {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 40 20;
+  mask-border-width: 10px;
 }

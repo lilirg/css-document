@@ -1,136 +1,132 @@
 # mask-border
 
-该属性是遮罩边框的速记属性，用于设置元素边缘的遮罩效果。
+该属性用于设置元素遮罩边框的所有属性（图像、切片、宽度、外扩、重复）的速记属性。
 
 ## 语法
 
 ```css
-mask-border: <mask-border-source> || <mask-border-slice> || <mask-border-width> || <mask-border-outset> || <mask-border-repeat> || <mask-border-mode>
+mask-border: <mask-border-source> || <mask-border-slice> [ / <mask-border-width> ]? || <mask-border-outset> || <mask-border-repeat> || <mask-border-mode>
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | 各属性的初始值 |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 否             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | 各属性初始值 |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 取决于各组成部分 |
 
 ## 值
 
-### 组成部分
+### mask-border-source
+遮罩边框图像：
+- `none` - 无图像
+- `<image>` - 图像 URL
 
-| 属性 | 说明 |
-| :--- | :--- |
-| `mask-border-source` | 遮罩边框图像源 |
-| `mask-border-slice` | 遮罩边框图像切片 |
-| `mask-border-width` | 遮罩边框宽度 |
-| `mask-border-outset` | 遮罩边框外扩 |
-| `mask-border-repeat` | 遮罩边框重复方式 |
-| `mask-border-mode` | 遮罩边框模式 |
+### mask-border-slice
+图像切片：
+- `<number>` - 像素值
+- `<percentage>` - 百分比值
+
+### mask-border-width
+边框宽度：
+- `<number>` - 倍数
+- `<length>` - 具体长度
+- `auto` - 自动
+
+### mask-border-outset
+边框外扩：
+- `<length>` - 外扩距离
+
+### mask-border-repeat
+重复方式：
+- `stretch` - 拉伸
+- `repeat` - 重复
+- `round` - 圆整
+- `space` - 间距
+
+### mask-border-mode
+遮罩模式：
+- `alpha` - Alpha 通道
+- `luminance` - 亮度值
 
 ## 注意
-
-- 该属性是 `mask-border-*` 系列属性的速记
-- 类似于 `border-image` 属性
-- 主要用于 SVG 遮罩边框效果
-- 浏览器支持有限
+- 速记属性会重置所有未指定的遮罩边框属性为其初始值
+- 可以使用 `mask-border-image-source`, `mask-border-slice`, `mask-border-width`, `mask-border-outset`, `mask-border-repeat`, `mask-border-mode` 分别设置
+- 遮罩边框图像通常是一个九宫格图像
+- 切片值定义图像的边界
 
 ## 示例
 
 ```css
-/* 基本遮罩边框 */
-.el {
-  mask-border: url("mask.svg") 30;
+/* 基本用法 */
+.box {
+  mask-border: url('mask-border.png') 30;
 }
 
-/* 完整语法 */
-.el {
-  mask-border: url("mask.svg") 30 30 30 30 / 10px 10px 10px 10px / 0 0 stretch stretch alpha;
+/* 指定切片和宽度 */
+.box {
+  mask-border: url('mask-border.png') 30 / 10px;
 }
 
-/* 使用渐变 */
-.el {
-  mask-border: linear-gradient(to right, transparent, black) 30;
+/* 指定重复方式 */
+.box {
+  mask-border: url('mask-border.png') 30 / 10px / 2 stretch;
+}
+
+/* 使用 Alpha 模式 */
+.box {
+  mask-border: url('mask-border.png') 30 / 10px / 2 stretch alpha;
+}
+
+/* 无图像 */
+.box {
+  mask-border: none;
 }
 ```
 
 ```html
-<!-- 遮罩边框示例 -->
-<div class="masked-border">
-  <p>带有遮罩边框的内容</p>
-</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩边框内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 图像遮罩边框 */
-.image-mask-border {
-  mask-border: url("border-mask.png") 30;
+/* 1. 简单遮罩边框 */
+.simple-border {
+  mask-border: url('border.png') 30;
 }
 
-/* 渐变遮罩边框 */
-.gradient-mask-border {
-  mask-border: linear-gradient(to right, transparent, black, transparent) 30;
+/* 2. 带宽度的遮罩边框 */
+.width-border {
+  mask-border: url('border.png') 30 / 10px;
 }
 
-/* 径向渐变 */
-.radial-mask-border {
-  mask-border: radial-gradient(circle, transparent 20%, black 80%) 30;
+/* 3. 拉伸模式 */
+.stretch-border {
+  mask-border: url('border.png') 30 / 10px / 2 stretch;
 }
 
-/* 四边不同切片 */
-.custom-slice {
-  mask-border: url("mask.svg") 20 30 20 30;
+/* 4. 重复模式 */
+.repeat-border {
+  mask-border: url('border.png') 30 / 10px / 2 repeat;
 }
 
-/* 自定义宽度 */
-.custom-width {
-  mask-border: url("mask.svg") 30 / 20px;
+/* 5. 圆整模式 */
+.round-border {
+  mask-border: url('border.png') 30 / 10px / 2 round;
 }
 
-/* 外扩效果 */
-.outset-effect {
-  mask-border: url("mask.svg") 30 / 20px / 5px;
+/* 6. 间距模式 */
+.space-border {
+  mask-border: url('border.png') 30 / 10px / 2 space;
 }
 
-/* 重复方式 */
-.repeat-mask {
-  mask-border: url("mask.svg") 30 / 20px / 0 stretch;
+/* 7. Alpha 模式 */
+.alpha-border {
+  mask-border: url('border.png') 30 / 10px / 2 stretch alpha;
 }
 
-/* Alpha 模式 */
-.alpha-mode {
-  mask-border: url("mask.svg") 30 alpha;
-}
-
-/* Luminance 模式 */
-.luminance-mode {
-  mask-border: url("mask.svg") 30 luminance;
-}
-
-/* 完整配置 */
-.full-config {
-  mask-border: url("mask.svg") 30 30 30 30 / 15px 15px 15px 15px / 0 0 round round alpha;
-}
-
-/* 响应式遮罩边框 */
-.responsive-mask {
-  mask-border: url("mask-mobile.svg") 30;
-}
-
-@media (min-width: 768px) {
-  .responsive-mask {
-    mask-border: url("mask-desktop.svg") 40;
-  }
-}
-
-/* 动画遮罩边框 */
-.animated-mask {
-  mask-border: url("mask.svg") 30;
-  animation: maskChange 3s infinite;
-}
-
-@keyframes maskChange {
-  0%, 100% { mask-border: url("mask.svg") 30; }
-  50% { mask-border: url("mask-alt.svg") 40; }
+/* 8. 亮度模式 */
+.luminance-border {
+  mask-border: url('border.png') 30 / 10px / 2 stretch luminance;
 }

@@ -1,117 +1,178 @@
 # mask-border-outset
 
-该属性设置遮罩边框图像向外扩展的距离。
+该属性用于设置遮罩边框的外扩距离，即边框向外延伸的距离。
 
 ## 语法
 
 ```css
-mask-border-outset: <length> | <number>
+mask-border-outset: <length> | <number> {1,4}
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `0`            |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 是             |
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `0` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（可动画） |
 
 ## 值
 
-### `<length>`
+### length
+长度值：
+- 绝对单位（如 `10px`, `2em`）
+- 相对单位（如 `1rem`, `50%`）
+- 正值向外延伸，负值向内收缩
 
-使用长度值指定外扩距离。可以是 `px`、`em`、`rem` 等单位。
+### number
+数字值（无单位）：
+- 相对于 `mask-border-width` 的倍数
+- 例如：`2` 表示边框宽度的两倍
 
-### `<number>`
-
-使用无单位数字，相对于 `mask-border-width` 的倍数。
+### 值数量说明
+| 值数量 | 说明 |
+| :--- | :--- |
+| 1 个值 | 所有四个边使用相同外扩 |
+| 2 个值 | 上下使用第一个值，左右使用第二个值 |
+| 3 个值 | 上、左右、下分别使用对应值 |
+| 4 个值 | 上、右、下、左分别使用对应值（顺时针） |
 
 ## 注意
-
-- 该属性是 `mask-border` 速记属性的一部分
-- 正值向外扩展，负值向内收缩
-- 可以指定 1-4 个值（类似 `border-outset`）
+- 该属性通常与 `mask-border-width` 配合使用
+- 正值使边框向外延伸，负值使边框向内收缩
+- 数字值相对于边框宽度计算
+- 外扩不会影响元素的布局尺寸
+- 可以设置多个值对应不同边框
 
 ## 示例
 
 ```css
-/* 基本外扩 */
-.el1 {
-  mask-border: url("border.png") 30 / 10px / 5px;
+/* 无外扩（默认） */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 0;
 }
 
-/* 使用数字 */
-.el2 {
-  mask-border: url("border.png") 30 / 10px / 0.5;
+/* 长度值外扩 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 5px;
 }
 
-/* 四边不同外扩 */
-.el3 {
-  mask-border: url("border.png") 30 / 10px / 5px 10px 5px 10px;
+/* 数字值外扩 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 0.5;
+}
+
+/* 1 个值 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-outset: 5px;
+}
+
+/* 2 个值 - 上下 / 左右 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-outset: 5px 10px;
+}
+
+/* 3 个值 - 上 / 左右 / 下 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-outset: 5px 10px 15px;
+}
+
+/* 4 个值 - 上 / 右 / 下 / 左 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-outset: 5px 10px 15px 20px;
+}
+
+/* 负值内缩 */
+.box {
+  mask-border-image-source: url('border.png');
+  mask-border-outset: -5px;
 }
 ```
 
 ```html
-<!-- 遮罩边框外扩示例 -->
-<div class="outset-border">
-  <p>带有外扩的遮罩边框</p>
-</div>
+<!-- HTML 示例 -->
+<div class="box">遮罩边框内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 基本外扩 */
-.basic-outset {
-  mask-border: url("border.png") 30 / 10px / 5px;
+/* 1. 外扩边框 */
+.outset-border {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 5px;
 }
 
-/* 无外扩 */
-.no-outset {
-  mask-border: url("border.png") 30 / 10px / 0;
+/* 2. 内缩边框 */
+.inset-border {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: -5px;
 }
 
-/* 大外扩 */
-.large-outset {
-  mask-border: url("border.png") 30 / 10px / 20px;
+/* 3. 不对称外扩 */
+.asymmetric-outset {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 5px 10px 15px 20px;
 }
 
-/* 四边不同外扩 */
-.custom-outset {
-  mask-border: url("border.png") 30 / 10px / 5px 10px 5px 10px;
-}
-
-/* 上外扩 */
-.top-outset {
-  mask-border: url("border.png") 30 / 10px / 10px 0 0 0;
-}
-
-/* 左右外扩 */
-.side-outset {
-  mask-border: url("border.png") 30 / 10px / 0 15px 0 15px;
-}
-
-/* 数字倍数 */
+/* 4. 数字倍数外扩 */
 .multiplier-outset {
-  mask-border: url("border.png") 30 / 10px / 1;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 0.5;
 }
 
-/* 响应式外扩 */
+/* 5. 水平外扩 */
+.horizontal-outset {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 0 10px;
+}
+
+/* 6. 垂直外扩 */
+.vertical-outset {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 10px 0;
+}
+
+/* 7. 相对单位外扩 */
+.relative-outset {
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 0.5em;
+}
+
+/* 8. 响应式外扩 */
 .responsive-outset {
-  mask-border: url("border.png") 30 / 10px / 5px;
+  mask-border-image-source: url('border.png');
+  mask-border-slice: 30;
+  mask-border-width: 10px;
+  mask-border-outset: 5px;
 }
-
 @media (min-width: 768px) {
   .responsive-outset {
-    mask-border: url("border.png") 30 / 15px / 10px;
+    mask-border-outset: 10px;
   }
-}
-
-/* 动画外扩 */
-.animated-outset {
-  mask-border: url("border.png") 30 / 10px / 5px;
-  animation: outsetChange 3s infinite;
-}
-
-@keyframes outsetChange {
-  0%, 100% { mask-border-outset: 5px; }
-  50% { mask-border-outset: 15px; }
 }
