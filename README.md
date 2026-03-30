@@ -22,6 +22,12 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 
 ---
 
+## 参考网站：
+
+- [https://drafts.csswg.org/css-2024/](https://drafts.csswg.org/css-2024/)
+- [https://drafts.csswg.org/css-syntax/](https://drafts.csswg.org/css-syntax/)
+- [https://drafts.csswg.org/css-cascade-6/](https://drafts.csswg.org/css-cascade-6/)
+
 ## 完成进度
 
 | 模块 | 状态 | 进度 |
@@ -40,14 +46,6 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
 | 属性 | 📍 进行中 | 85% |
-| └─ 动画与过渡 | ✅ 完成 | 100% |
-| └─ 背景 | ✅ 完成 | 100% |
-| └─ 边框 | ✅ 完成 | 100% |
-| └─ 遮罩 | ✅ 完成 | 100% |
-| └─ 计数器 | ✅ 完成 | 100% |
-| └─ 分页 | ✅ 完成 | 100% |
-| └─ 布局 Layout | ✅ 完成 | 100% |
-| └─ 字体与文本 Font & Text | ✅ 完成 | 100% |
 | 规则 | ⏲ 待开始 | 0% |
 | 伪类 | ⏲ 待开始 | 0% |
 | 函数 | ⏲ 待开始 | 0% |
@@ -503,8 +501,6 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`width`](property/width.md) | 宽度 |
 
 ## 待完成的属性（根据 W3C CSS 规范）
-
-以下属性根据 W3C CSS 规范（https://drafts.csswg.org/css-2024/ 和 https://drafts.csswg.org/css-cascade-6/）尚未完成，建议优先完成核心属性。
 
 ### 核心属性（高优先级）
 
