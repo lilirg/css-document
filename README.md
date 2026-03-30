@@ -501,3 +501,118 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`table-layout`](property/table-layout.md) | 表格布局 |
 | [`vertical-align`](property/vertical-align.md) | 垂直对齐 |
 | [`width`](property/width.md) | 宽度 |
+
+## 待完成的属性（根据 W3C CSS 规范）
+
+以下属性根据 W3C CSS 规范（https://drafts.csswg.org/css-2024/ 和 https://drafts.csswg.org/css-cascade-6/）尚未完成，建议优先完成核心属性。
+
+### 核心属性（高优先级）
+
+| 属性 | 说明 | 状态 |
+| --- | --- | --- |
+| [`contain`](property/contain.md) | 包含 | ⏲ 待开始 |
+| [`content-visibility`](property/content-visibility.md) | 内容可见性 | ⏲ 待开始 |
+| [`inset`](property/inset.md) | 定位速记 | ⏲ 待开始 |
+| [`gap`](property/gap.md) | 间距速记 | ⏲ 待开始 |
+| [`scroll-behavior`](property/scroll-behavior.md) | 滚动行为 | ⏲ 待开始 |
+| [`scroll-snap-type`](property/scroll-snap-type.md) | 滚动捕捉类型 | ⏲ 待开始 |
+| [`scroll-snap-align`](property/scroll-snap-align.md) | 滚动捕捉对齐 | ⏲ 待开始 |
+| [`scroll-margin`](property/scroll-margin.md) | 滚动外边距速记 | ⏲ 待开始 |
+| [`scroll-padding`](property/scroll-padding.md) | 滚动内边距速记 | ⏲ 待开始 |
+| [`text-overflow`](property/text-overflow.md) | 文本溢出 | ⏲ 待开始 |
+| [`text-shadow`](property/text-shadow.md) | 文本阴影 | ⏲ 待开始 |
+| [`text-underline-offset`](property/text-underline-offset.md) | 下划线偏移 | ⏲ 待开始 |
+| [`accent-color`](property/accent-color.md) | 强调色 | ⏲ 待开始 |
+| [`color-scheme`](property/color-scheme.md) | 颜色方案 | ⏲ 待开始 |
+| [`scrollbar-gutter`](property/scrollbar-gutter.md) | 滚动条间距 | ⏲ 待开始 |
+| [`aspect-ratio`](property/aspect-ratio.md) | 宽高比 | ⏲ 待开始 |
+| [`content`](property/content.md) | 内容 | ⏲ 待开始 |
+| [`line-clamp`](property/line-clamp.md) | 行裁剪 | ⏲ 待开始 |
+
+### 字体相关属性
+
+| 属性 | 说明 | 状态 |
+| --- | --- | --- |
+| [`font-feature-settings`](property/font-feature-settings.md) | 字体特性设置 | ⏲ 待开始 |
+| [`font-kerning`](property/font-kerning.md) | 字体 Kerning | ⏲ 待开始 |
+| [`font-optical-sizing`](property/font-optical-sizing.md) | 字体光学缩放 | ⏲ 待开始 |
+| [`font-palette`](property/font-palette.md) | 字体调色板 | ⏲ 待开始 |
+| [`font-variation-settings`](property/font-variation-settings.md) | 字体变体设置 | ⏲ 待开始 |
+| [`font-variant-caps`](property/font-variant-caps.md) | 字体变体大写字母 | ⏲ 待开始 |
+| [`font-variant-numeric`](property/font-variant-numeric.md) | 字体变体数字 | ⏲ 待开始 |
+| [`font-variant-east-asian`](property/font-variant-east-asian.md) | 字体变体东亚 | ⏲ 待开始 |
+| [`font-variant-ligatures`](property/font-variant-ligatures.md) | 字体变体连字 | ⏲ 待开始 |
+
+### 文本相关属性
+
+| 属性 | 说明 | 状态 |
+| --- | --- | --- |
+| [`text-emphasis`](property/text-emphasis.md) | 文本强调速记 | ⏲ 待开始 |
+| [`text-emphasis-color`](property/text-emphasis-color.md) | 文本强调颜色 | ⏲ 待开始 |
+| [`text-emphasis-style`](property/text-emphasis-style.md) | 文本强调样式 | ⏲ 待开始 |
+| [`text-emphasis-position`](property/text-emphasis-position.md) | 文本强调位置 | ⏲ 待开始 |
+| [`text-size-adjust`](property/text-size-adjust.md) | 文本大小调整 | ⏲ 待开始 |
+| [`text-combine-upright`](property/text-combine-upright.md) | 文本组合直立 | ⏲ 待开始 |
+| [`line-break`](property/line-break.md) | 换行 | ⏲ 待开始 |
+
+### 逻辑属性补充
+
+| 属性 | 说明 | 状态 |
+| --- | --- | --- |
+| [`border-block-color`](property/border-block-color.md) | 块边框颜色 | ⏲ 待开始 |
+| [`border-block-style`](property/border-block-style.md) | 块边框样式 | ⏲ 待开始 |
+| [`border-block-width`](property/border-block-width.md) | 块边框宽度 | ⏲ 待开始 |
+| [`border-inline-color`](property/border-inline-color.md) | 行内边框颜色 | ⏲ 待开始 |
+| [`border-inline-style`](property/border-inline-style.md) | 行内边框样式 | ⏲ 待开始 |
+| [`border-inline-width`](property/border-inline-width.md) | 行内边框宽度 | ⏲ 待开始 |
+| [`border-start-start-radius`](property/border-start-start-radius.md) | 开始开始圆角 | ⏲ 待开始 |
+| [`border-start-end-radius`](property/border-start-end-radius.md) | 开始结束圆角 | ⏲ 待开始 |
+| [`border-end-start-radius`](property/border-end-start-radius.md) | 结束开始圆角 | ⏲ 待开始 |
+| [`border-end-end-radius`](property/border-end-end-radius.md) | 结束结束圆角 | ⏲ 待开始 |
+| [`inset-block`](property/inset-block.md) | 块定位速记 | ⏲ 待开始 |
+| [`inset-block-start`](property/inset-block-start.md) | 块开始定位 | ⏲ 待开始 |
+| [`inset-block-end`](property/inset-block-end.md) | 块结束定位 | ⏲ 待开始 |
+| [`inset-inline`](property/inset-inline.md) | 行内定位速记 | ⏲ 待开始 |
+| [`inset-inline-start`](property/inset-inline-start.md) | 行内开始定位 | ⏲ 待开始 |
+| [`inset-inline-end`](property/inset-inline-end.md) | 行内结束定位 | ⏲ 待开始 |
+
+### 动画与过渡新属性
+
+| 属性 | 说明 | 状态 |
+| --- | --- | --- |
+| [`animation-timeline`](property/animation-timeline.md) | 动画时间线 | ⏲ 待开始 |
+| [`animation-range`](property/animation-range.md) | 动画范围 | ⏲ 待开始 |
+| [`animation-range-start`](property/animation-range-start.md) | 动画范围开始 | ⏲ 待开始 |
+| [`animation-range-end`](property/animation-range-end.md) | 动画范围结束 | ⏲ 待开始 |
+| [`scroll-timeline`](property/scroll-timeline.md) | 滚动时间线 | ⏲ 待开始 |
+| [`view-timeline`](property/view-timeline.md) | 视图时间线 | ⏲ 待开始 |
+
+### 分页媒体补充
+
+| 属性 | 说明 | 状态 |
+| --- | --- | --- |
+| [`bleed`](property/bleed.md) | 出血 | ⏲ 待开始 |
+| [`marks`](property/marks.md) | 标记 | ⏲ 待开始 |
+| [`size`](property/size.md) | 页面尺寸 | ⏲ 待开始 |
+
+### 其他补充
+
+| 属性 | 说明 | 状态 |
+| --- | --- | --- |
+| [`box-decoration-break`](property/box-decoration-break.md) | 盒子装饰片段 | ⏲ 待开始 |
+| [`forced-color-adjust`](property/forced-color-adjust.md) | 强制颜色调整 | ⏲ 待开始 |
+| [`transform-box`](property/transform-box.md) | 变换盒子 | ⏲ 待开始 |
+| [`overflow-anchor`](property/overflow-anchor.md) | 溢出锚点 | ⏲ 待开始 |
+| [`overflow-block`](property/overflow-block.md) | 块溢出 | ⏲ 待开始 |
+| [`overflow-inline`](property/overflow-inline.md) | 行内溢出 | ⏲ 待开始 |
+| [`overflow-clip-margin`](property/overflow-clip-margin.md) | 溢出裁剪边距 | ⏲ 待开始 |
+| [`max-lines`](property/max-lines.md) | 最大行数 | ⏲ 待开始 |
+| [`speak`](property/speak.md) | 语音 | ⏲ 待开始 |
+| [`speak-as`](property/speak-as.md) | 语音方式 | ⏲ 待开始 |
+| [`caret`](property/caret.md) | 光标速记 | ⏲ 待开始 |
+| [`caret-shape`](property/caret-shape.md) | 光标形状 | ⏲ 待开始 |
+| [`outline`](property/outline.md) | 轮廓速记 | ⏲ 待开始 |
+| [`outline-color`](property/outline-color.md) | 轮廓颜色 | ⏲ 待开始 |
+| [`outline-style`](property/outline-style.md) | 轮廓样式 | ⏲ 待开始 |
+| [`outline-width`](property/outline-width.md) | 轮廓宽度 | ⏲ 待开始 |
+| [`outline-offset`](property/outline-offset.md) | 轮廓偏移 | ⏲ 待开始 |
