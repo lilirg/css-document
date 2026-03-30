@@ -28,6 +28,6 @@ HTML 元素的名称位于规则集开始。它选择了一个或多个需要添
 p {
   color:red;
   width:500px;
-  border:1pxsolidblack;
+  border:1px solid black;
 }
 ```
