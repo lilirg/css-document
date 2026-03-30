@@ -39,7 +39,7 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | └─ 兼容 | ⏲ 待开始 | 0% |
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
-| 属性 | 📍 进行中 | 40% |
+| 属性 | 📍 进行中 | 45% |
 | └─ 动画与过渡 | ✅ 完成 | 100% |
 | └─ 背景 | ✅ 完成 | 100% |
 | 规则 | ⏲ 待开始 | 0% |
@@ -127,6 +127,14 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`mask-repeat`](property/mask-repeat.md) | 遮罩重复 |
 | [`mask-size`](property/mask-size.md) | 遮罩尺寸 |
 | [`mask-type`](property/mask-type.md) | 遮罩类型 |
+| [`mask-border`](property/mask-border.md) | 遮罩边框速记 |
+| [`mask-border-mode`](property/mask-border-mode.md) | 遮罩边框模式 |
+| [`mask-border-outset`](property/mask-border-outset.md) | 遮罩边框外扩 |
+| [`mask-border-repeat`](property/mask-border-repeat.md) | 遮罩边框重复 |
+| [`mask-border-slice`](property/mask-border-slice.md) | 遮罩边框切片 |
+| [`mask-border-source`](property/mask-border-source.md) | 遮罩边框源 |
+| [`mask-border-width`](property/mask-border-width.md) | 遮罩边框宽度 |
+| [`mask-composite`](property/mask-composite.md) | 遮罩合成 |
 | [`page-break-after`](property/page-break-after.md) | 分页后断点（旧） |
 | [`page-break-before`](property/page-break-before.md) | 分页前断点（旧） |
 | [`page-break-inside`](property/page-break-inside.md) | 分页内断点（旧） |
@@ -260,11 +268,4 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 
 ##### 遮罩 Mask
 
-- [ ] [`mask-border`](property/mask-border.md) - 遮罩边框速记
-- [ ] [`mask-border-mode`](property/mask-border-mode.md) - 遮罩边框模式
-- [ ] [`mask-border-outset`](property/mask-border-outset.md) - 遮罩边框外扩
-- [ ] [`mask-border-repeat`](property/mask-border-repeat.md) - 遮罩边框重复
-- [ ] [`mask-border-slice`](property/mask-border-slice.md) - 遮罩边框切片
-- [ ] [`mask-border-source`](property/mask-border-source.md) - 遮罩边框源
-- [ ] [`mask-border-width`](property/mask-border-width.md) - 遮罩边框宽度
-- [ ] [`mask-composite`](property/mask-composite.md) - 遮罩合成
+✅ 完成
