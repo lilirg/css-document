@@ -39,7 +39,8 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | └─ 兼容 | ⏲ 待开始 | 0% |
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
-| 属性 | 📍 进行中 | 8% |
+| 属性 | 📍 进行中 | 15% |
+| └─ 动画与过渡 | ✅ 完成 | 100% |
 | 规则 | ⏲ 待开始 | 0% |
 | 伪类 | ⏲ 待开始 | 0% |
 | 函数 | ⏲ 待开始 | 0% |
@@ -61,23 +62,34 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`border`](property/border.md) | 边框速记属性 |
 | [`color`](property/color.md) | 文本颜色 |
 
+#### 已完成的属性 ✅
+
+| 属性 | 说明 |
+|------|------|
+| [`all`](property/all.md) | 重置所有 CSS 属性 |
+| [`animation`](property/animation.md) | 动画速记属性 |
+| [`animation-delay`](property/animation-delay.md) | 动画延迟时间 |
+| [`animation-direction`](property/animation-direction.md) | 动画方向 |
+| [`animation-duration`](property/animation-duration.md) | 动画持续时间 |
+| [`animation-fill-mode`](property/animation-fill-mode.md) | 动画填充模式 |
+| [`animation-iteration-count`](property/animation-iteration-count.md) | 动画迭代次数 |
+| [`animation-name`](property/animation-name.md) | 动画名称 |
+| [`animation-play-state`](property/animation-play-state.md) | 动画播放状态 |
+| [`animation-timing-function`](property/animation-timing-function.md) | 动画时间函数 |
+| [`appearance`](property/appearance.md) | 元素的原生 UI 外观 |
+| [`backdrop-filter`](property/backdrop-filter.md) | 背景模糊效果 |
+| [`background`](property/background.md) | 背景速记属性 |
+| [`border`](property/border.md) | 边框速记属性 |
+| [`color`](property/color.md) | 文本颜色 |
+| [`transition`](property/transition.md) | 过渡速记属性 |
+| [`transition-delay`](property/transition-delay.md) | 过渡延迟 |
+| [`transition-duration`](property/transition-duration.md) | 过渡持续时间 |
+| [`transition-property`](property/transition-property.md) | 过渡属性 |
+| [`transition-timing-function`](property/transition-timing-function.md) | 过渡时间函数 |
+
 #### 待完善的属性
 
-##### 动画与过渡 Animation & Transition
-
-- [ ] [`animation-delay`](property/animation-delay.md) - 动画延迟时间
-- [ ] [`animation-direction`](property/animation-direction.md) - 动画方向
-- [ ] [`animation-duration`](property/animation-duration.md) - 动画持续时间
-- [ ] [`animation-fill-mode`](property/animation-fill-mode.md) - 动画填充模式
-- [ ] [`animation-iteration-count`](property/animation-iteration-count.md) - 动画迭代次数
-- [ ] [`animation-name`](property/animation-name.md) - 动画名称
-- [ ] [`animation-play-state`](property/animation-play-state.md) - 动画播放状态
-- [ ] [`animation-timing-function`](property/animation-timing-function.md) - 动画时间函数
-- [ ] [`transition`](property/transition.md) - 过渡速记属性
-- [ ] [`transition-delay`](property/transition-delay.md) - 过渡延迟
-- [ ] [`transition-duration`](property/transition-duration.md) - 过渡持续时间
-- [ ] [`transition-property`](property/transition-property.md) - 过渡属性
-- [ ] [`transition-timing-function`](property/transition-timing-function.md) - 过渡时间函数
+##### 背景 Background
 
 ##### 背景 Background
 
