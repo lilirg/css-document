@@ -39,8 +39,9 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | └─ 兼容 | ⏲ 待开始 | 0% |
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
-| 属性 | 📍 进行中 | 15% |
+| 属性 | 📍 进行中 | 20% |
 | └─ 动画与过渡 | ✅ 完成 | 100% |
+| └─ 背景 | ✅ 完成 | 100% |
 | 规则 | ⏲ 待开始 | 0% |
 | 伪类 | ⏲ 待开始 | 0% |
 | 函数 | ⏲ 待开始 | 0% |
@@ -49,18 +50,6 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 ### 属性
 
 参考 [MDN CSS 属性参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
-
-#### 已完成的属性 ✅
-
-| 属性 | 说明 |
-|------|------|
-| [`all`](property/all.md) | 重置所有 CSS 属性 |
-| [`animation`](property/animation.md) | 动画速记属性 |
-| [`appearance`](property/appearance.md) | 元素的原生 UI 外观 |
-| [`backdrop-filter`](property/backdrop-filter.md) | 背景模糊效果 |
-| [`background`](property/background.md) | 背景速记属性 |
-| [`border`](property/border.md) | 边框速记属性 |
-| [`color`](property/color.md) | 文本颜色 |
 
 #### 已完成的属性 ✅
 
@@ -79,6 +68,15 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`appearance`](property/appearance.md) | 元素的原生 UI 外观 |
 | [`backdrop-filter`](property/backdrop-filter.md) | 背景模糊效果 |
 | [`background`](property/background.md) | 背景速记属性 |
+| [`background-attachment`](property/background-attachment.md) | 背景附着方式 |
+| [`background-blend-mode`](property/background-blend-mode.md) | 背景混合模式 |
+| [`background-clip`](property/background-clip.md) | 背景裁剪区域 |
+| [`background-color`](property/background-color.md) | 背景颜色 |
+| [`background-image`](property/background-image.md) | 背景图像 |
+| [`background-origin`](property/background-origin.md) | 背景定位原点 |
+| [`background-position`](property/background-position.md) | 背景位置 |
+| [`background-repeat`](property/background-repeat.md) | 背景重复方式 |
+| [`background-size`](property/background-size.md) | 背景尺寸 |
 | [`border`](property/border.md) | 边框速记属性 |
 | [`color`](property/color.md) | 文本颜色 |
 | [`transition`](property/transition.md) | 过渡速记属性 |
@@ -88,20 +86,6 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`transition-timing-function`](property/transition-timing-function.md) | 过渡时间函数 |
 
 #### 待完善的属性
-
-##### 背景 Background
-
-##### 背景 Background
-
-- [ ] [`background-attachment`](property/background-attachment.md) - 背景附着方式
-- [ ] [`background-blend-mode`](property/background-blend-mode.md) - 背景混合模式
-- [ ] [`background-clip`](property/background-clip.md) - 背景裁剪区域
-- [ ] [`background-color`](property/background-color.md) - 背景颜色
-- [ ] [`background-image`](property/background-image.md) - 背景图像
-- [ ] [`background-origin`](property/background-origin.md) - 背景定位原点
-- [ ] [`background-position`](property/background-position.md) - 背景位置
-- [ ] [`background-repeat`](property/background-repeat.md) - 背景重复方式
-- [ ] [`background-size`](property/background-size.md) - 背景尺寸
 
 ##### 边框 Border
 
