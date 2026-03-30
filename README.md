@@ -39,13 +39,15 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | └─ 兼容 | ⏲ 待开始 | 0% |
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
-| 属性 | 📍 进行中 | 55% |
+| 属性 | 📍 进行中 | 65% |
 | └─ 动画与过渡 | ✅ 完成 | 100% |
 | └─ 背景 | ✅ 完成 | 100% |
 | └─ 边框 | ✅ 完成 | 100% |
 | └─ 遮罩 | ✅ 完成 | 100% |
 | └─ 计数器 | ✅ 完成 | 100% |
 | └─ 分页 | ✅ 完成 | 100% |
+| └─ 布局 Layout | ✅ 完成 | 100% |
+| └─ 字体与文本 Font & Text | ✅ 完成 | 100% |
 | 规则 | ⏲ 待开始 | 0% |
 | 伪类 | ⏲ 待开始 | 0% |
 | 函数 | ⏲ 待开始 | 0% |
@@ -226,45 +228,85 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`width`](property/width.md) | 宽度 |
 | [`z-index`](property/z-index.md) | 堆叠顺序 |
 
-#### 待完善的属性
+#### 已完成的属性 ✅（续 2）
 
-##### 字体与文本 Font & Text
+| 属性 | 说明 |
+|------|------|
+| [`direction`](property/direction.md) | 文本方向 |
+| [`empty-cells`](property/empty-cells.md) | 空单元格 |
+| [`filter`](property/filter.md) | 滤镜效果 |
+| [`font`](property/font.md) | 字体速记 |
+| [`font-family`](property/font-family.md) | 字体系列 |
+| [`font-size`](property/font-size.md) | 字体大小 |
+| [`font-size-adjust`](property/font-size-adjust.md) | 字体大小调整 |
+| [`font-stretch`](property/font-stretch.md) | 字体宽度 |
+| [`font-style`](property/font-style.md) | 字体样式 |
+| [`font-synthesis`](property/font-synthesis.md) | 字体合成 |
+| [`font-variant`](property/font-variant.md) | 字体变体 |
+| [`font-weight`](property/font-weight.md) | 字体粗细 |
+| [`hanging-punctuation`](property/hanging-punctuation.md) | 悬挂标点 |
+| [`hyphens`](property/hyphens.md) | 连字符 |
+| [`letter-spacing`](property/letter-spacing.md) | 字母间距 |
+| [`line-height`](property/line-height.md) | 行高 |
+| [`list-style`](property/list-style.md) | 列表样式速记 |
+| [`list-style-image`](property/list-style-image.md) | 列表图像 |
+| [`list-style-position`](property/list-style-position.md) | 列表位置 |
+| [`list-style-type`](property/list-style-type.md) | 列表类型 |
+| [`text-align`](property/text-align.md) | 文本对齐 |
+| [`text-align-last`](property/text-align-last.md) | 最后一行对齐 |
+| [`text-decoration`](property/text-decoration.md) | 文本装饰速记 |
+| [`text-decoration-color`](property/text-decoration-color.md) | 装饰颜色 |
+| [`text-decoration-line`](property/text-decoration-line.md) | 装饰线类型 |
+| [`text-decoration-style`](property/text-decoration-style.md) | 装饰线样式 |
+| [`text-indent`](property/text-indent.md) | 文本缩进 |
+| [`text-justify`](property/text-justify.md) | 文本两端对齐 |
+| [`text-orientation`](property/text-orientation.md) | 文本方向 |
+| [`text-overflow`](property/text-overflow.md) | 文本溢出 |
+| [`text-rendering`](property/text-rendering.md) | 文本渲染 |
+| [`text-shadow`](property/text-shadow.md) | 文本阴影 |
+| [`text-transform`](property/text-transform.md) | 文本转换 |
+| [`white-space`](property/white-space.md) | 空白处理 |
+| [`word-break`](property/word-break.md) | 单词换行 |
+| [`word-spacing`](property/word-spacing.md) | 单词间距 |
+| [`word-wrap`](property/word-wrap.md) | 单词换行（旧） |
+| [`writing-mode`](property/writing-mode.md) | 书写模式 |
 
-- [ ] [`direction`](property/direction.md) - 文本方向
-- [ ] [`empty-cells`](property/empty-cells.md) - 空单元格
-- [ ] [`filter`](property/filter.md) - 滤镜效果
-- [ ] [`font`](property/font.md) - 字体速记
-- [ ] [`font-family`](property/font-family.md) - 字体系列
-- [ ] [`font-size`](property/font-size.md) - 字体大小
-- [ ] [`font-size-adjust`](property/font-size-adjust.md) - 字体大小调整
-- [ ] [`font-stretch`](property/font-stretch.md) - 字体宽度
-- [ ] [`font-style`](property/font-style.md) - 字体样式
-- [ ] [`font-synthesis`](property/font-synthesis.md) - 字体合成
-- [ ] [`font-variant`](property/font-variant.md) - 字体变体
-- [ ] [`font-weight`](property/font-weight.md) - 字体粗细
-- [ ] [`hanging-punctuation`](property/hanging-punctuation.md) - 悬挂标点
-- [ ] [`hyphens`](property/hyphens.md) - 连字符
-- [ ] [`letter-spacing`](property/letter-spacing.md) - 字母间距
-- [ ] [`line-height`](property/line-height.md) - 行高
-- [ ] [`list-style`](property/list-style.md) - 列表样式速记
-- [ ] [`list-style-image`](property/list-style-image.md) - 列表图像
-- [ ] [`list-style-position`](property/list-style-position.md) - 列表位置
-- [ ] [`list-style-type`](property/list-style-type.md) - 列表类型
-- [ ] [`text-align`](property/text-align.md) - 文本对齐
-- [ ] [`text-align-last`](property/text-align-last.md) - 最后一行对齐
-- [ ] [`text-decoration`](property/text-decoration.md) - 文本装饰速记
-- [ ] [`text-decoration-color`](property/text-decoration-color.md) - 装饰颜色
-- [ ] [`text-decoration-line`](property/text-decoration-line.md) - 装饰线类型
-- [ ] [`text-decoration-style`](property/text-decoration-style.md) - 装饰线样式
-- [ ] [`text-indent`](property/text-indent.md) - 文本缩进
-- [ ] [`text-justify`](property/text-justify.md) - 文本两端对齐
-- [ ] [`text-orientation`](property/text-orientation.md) - 文本方向
-- [ ] [`text-overflow`](property/text-overflow.md) - 文本溢出
-- [ ] [`text-rendering`](property/text-rendering.md) - 文本渲染
-- [ ] [`text-shadow`](property/text-shadow.md) - 文本阴影
-- [ ] [`text-transform`](property/text-transform.md) - 文本转换
-- [ ] [`white-space`](property/white-space.md) - 空白处理
-- [ ] [`word-break`](property/word-break.md) - 单词换行
-- [ ] [`word-spacing`](property/word-spacing.md) - 单词间距
-- [ ] [`word-wrap`](property/word-wrap.md) - 单词换行（旧）
-- [ ] [`writing-mode`](property/writing-mode.md) - 书写模式
+#### 待完成的属性 ⏳
+
+| 属性 | 说明 |
+|------|------|
+| [`border-bottom-style`](property/border-bottom-style.md) | 下边框样式 |
+| [`border-left-width`](property/border-left-width.md) | 左边框宽度 |
+| [`border-right-color`](property/border-right-color.md) | 右边框颜色 |
+| [`border-right-style`](property/border-right-style.md) | 右边框样式 |
+| [`border-right-width`](property/border-right-width.md) | 右边框宽度 |
+| [`border-top-style`](property/border-top-style.md) | 上边框样式 |
+| [`border-top-width`](property/border-top-width.md) | 上边框宽度 |
+| [`color`](property/color.md) | 文本颜色 |
+| [`counter-increment`](property/counter-increment.md) | 计数器递增 |
+| [`counter-reset`](property/counter-reset.md) | 计数器重置 |
+| [`mask-border-mode`](property/mask-border-mode.md) | 遮罩边框模式 |
+| [`mask-border-outset`](property/mask-border-outset.md) | 遮罩边框外扩 |
+| [`mask-border-repeat`](property/mask-border-repeat.md) | 遮罩边框重复 |
+| [`mask-border-slice`](property/mask-border-slice.md) | 遮罩边框切片 |
+| [`mask-border-source`](property/mask-border-source.md) | 遮罩边框源 |
+| [`mask-border-width`](property/mask-border-width.md) | 遮罩边框宽度 |
+| [`mask-border`](property/mask-border.md) | 遮罩边框速记 |
+| [`mask-clip`](property/mask-clip.md) | 遮罩裁剪 |
+| [`mask-composite`](property/mask-composite.md) | 遮罩合成 |
+| [`mask-image`](property/mask-image.md) | 遮罩图像 |
+| [`mask-mode`](property/mask-mode.md) | 遮罩模式 |
+| [`mask-origin`](property/mask-origin.md) | 遮罩原点 |
+| [`mask-position`](property/mask-position.md) | 遮罩位置 |
+| [`mask-repeat`](property/mask-repeat.md) | 遮罩重复 |
+| [`mask-size`](property/mask-size.md) | 遮罩尺寸 |
+| [`mask-type`](property/mask-type.md) | 遮罩类型 |
+| [`mask`](property/mask.md) | 遮罩速记属性 |
+| [`page-break-after`](property/page-break-after.md) | 分页后断点（旧） |
+| [`page-break-before`](property/page-break-before.md) | 分页前断点（旧） |
+| [`page-break-inside`](property/page-break-inside.md) | 分页内断点（旧） |
+| [`transition-delay`](property/transition-delay.md) | 过渡延迟 |
+| [`transition-duration`](property/transition-duration.md) | 过渡持续时间 |
+| [`transition-property`](property/transition-property.md) | 过渡属性 |
+| [`transition-timing-function`](property/transition-timing-function.md) | 过渡时间函数 |
+| [`transition`](property/transition.md) | 过渡速记属性 |
