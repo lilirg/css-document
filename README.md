@@ -39,7 +39,7 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | └─ 兼容 | ⏲ 待开始 | 0% |
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
-| 属性 | 📍 进行中 | 45% |
+| 属性 | 📍 进行中 | 55% |
 | └─ 动画与过渡 | ✅ 完成 | 100% |
 | └─ 背景 | ✅ 完成 | 100% |
 | └─ 边框 | ✅ 完成 | 100% |
@@ -242,30 +242,32 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 - [ ] [`word-wrap`](property/word-wrap.md) - 单词换行（旧）
 - [ ] [`writing-mode`](property/writing-mode.md) - 书写模式
 
-##### 其他属性
+##### 其他属性 ✅
 
-- [ ] [`backface-visibility`](property/backface-visibility.md) - 背面可见性
-- [ ] [`cursor`](property/cursor.md) - 光标
-- [ ] [`isolation`](property/isolation.md) - 隔离模式
-- [ ] [`mix-blend-mode`](property/mix-blend-mode.md) - 混合模式
-- [ ] [`opacity`](property/opacity.md) - 透明度
-- [ ] [`outline`](property/outline.md) - 轮廓速记
-- [ ] [`outline-color`](property/outline-color.md) - 轮廓颜色
-- [ ] [`outline-offset`](property/outline-offset.md) - 轮廓偏移
-- [ ] [`outline-style`](property/outline-style.md) - 轮廓样式
-- [ ] [`outline-width`](property/outline-width.md) - 轮廓宽度
-- [ ] [`pointer-events`](property/pointer-events.md) - 指针事件
-- [ ] [`quotes`](property/quotes.md) - 引用符号
-- [ ] [`shape-image-threshold`](property/shape-image-threshold.md) - 形状图像阈值
-- [ ] [`shape-margin`](property/shape-margin.md) - 形状边距
-- [ ] [`shape-outside`](property/shape-outside.md) - 形状外部
-- [ ] [`tab-size`](property/tab-size.md) - Tab 字符宽度
-- [ ] [`touch-action`](property/touch-action.md) - 触摸操作
-- [ ] [`transform`](property/transform.md) - 变换
-- [ ] [`transform-origin`](property/transform-origin.md) - 变换原点
-- [ ] [`transform-style`](property/transform-style.md) - 变换样式
-- [ ] [`unicode-bidi`](property/unicode-bidi.md) - Unicode 双向算法
-- [ ] [`visibility`](property/visibility.md) - 可见性
-- [ ] [`will-change`](property/will-change.md) - 即将变化
-- [ ] [`orphans`](property/orphans.md) - 孤行
-- [ ] [`widows`](property/widows.md) - 孤行（末页）
+| 属性 | 说明 |
+|------|------|
+| [`backface-visibility`](property/backface-visibility.md) | 背面可见性 |
+| [`cursor`](property/cursor.md) | 光标 |
+| [`isolation`](property/isolation.md) | 隔离模式 |
+| [`mix-blend-mode`](property/mix-blend-mode.md) | 混合模式 |
+| [`opacity`](property/opacity.md) | 透明度 |
+| [`outline`](property/outline.md) | 轮廓速记 |
+| [`outline-color`](property/outline-color.md) | 轮廓颜色 |
+| [`outline-offset`](property/outline-offset.md) | 轮廓偏移 |
+| [`outline-style`](property/outline-style.md) | 轮廓样式 |
+| [`outline-width`](property/outline-width.md) | 轮廓宽度 |
+| [`pointer-events`](property/pointer-events.md) | 指针事件 |
+| [`quotes`](property/quotes.md) | 引用符号 |
+| [`shape-image-threshold`](property/shape-image-threshold.md) | 形状图像阈值 |
+| [`shape-margin`](property/shape-margin.md) | 形状边距 |
+| [`shape-outside`](property/shape-outside.md) | 形状外部 |
+| [`tab-size`](property/tab-size.md) | Tab 字符宽度 |
+| [`touch-action`](property/touch-action.md) | 触摸操作 |
+| [`transform`](property/transform.md) | 变换 |
+| [`transform-origin`](property/transform-origin.md) | 变换原点 |
+| [`transform-style`](property/transform-style.md) | 变换样式 |
+| [`unicode-bidi`](property/unicode-bidi.md) | Unicode 双向算法 |
+| [`visibility`](property/visibility.md) | 可见性 |
+| [`will-change`](property/will-change.md) | 即将变化 |
+| [`orphans`](property/orphans.md) | 孤行 |
+| [`widows`](property/widows.md) | 孤行（末页） |
