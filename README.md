@@ -142,64 +142,91 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 | [`page-break-after`](property/page-break-after.md) | 分页后断点（旧） |
 | [`page-break-before`](property/page-break-before.md) | 分页前断点（旧） |
 | [`page-break-inside`](property/page-break-inside.md) | 分页内断点（旧） |
+| [`backface-visibility`](property/backface-visibility.md) | 背面可见性 |
+| [`cursor`](property/cursor.md) | 光标 |
+| [`isolation`](property/isolation.md) | 隔离模式 |
+| [`mix-blend-mode`](property/mix-blend-mode.md) | 混合模式 |
+| [`opacity`](property/opacity.md) | 透明度 |
+| [`outline`](property/outline.md) | 轮廓速记 |
+| [`outline-color`](property/outline-color.md) | 轮廓颜色 |
+| [`outline-offset`](property/outline-offset.md) | 轮廓偏移 |
+| [`outline-style`](property/outline-style.md) | 轮廓样式 |
+| [`outline-width`](property/outline-width.md) | 轮廓宽度 |
+| [`pointer-events`](property/pointer-events.md) | 指针事件 |
+| [`quotes`](property/quotes.md) | 引用符号 |
+| [`shape-image-threshold`](property/shape-image-threshold.md) | 形状图像阈值 |
+| [`shape-margin`](property/shape-margin.md) | 形状边距 |
+| [`shape-outside`](property/shape-outside.md) | 形状外部 |
+| [`tab-size`](property/tab-size.md) | Tab 字符宽度 |
+| [`touch-action`](property/touch-action.md) | 触摸操作 |
+| [`transform`](property/transform.md) | 变换 |
+| [`transform-origin`](property/transform-origin.md) | 变换原点 |
+| [`transform-style`](property/transform-style.md) | 变换样式 |
+| [`unicode-bidi`](property/unicode-bidi.md) | Unicode 双向算法 |
+| [`visibility`](property/visibility.md) | 可见性 |
+| [`will-change`](property/will-change.md) | 即将变化 |
+| [`orphans`](property/orphans.md) | 孤行 |
+| [`widows`](property/widows.md) | 孤行（末页） |
+
+#### 已完成的属性 ✅（续）
+
+| 属性 | 说明 |
+|------|------|
+| [`bottom`](property/bottom.md) | 底部定位 |
+| [`box-shadow`](property/box-shadow.md) | 盒子阴影 |
+| [`box-sizing`](property/box-sizing.md) | 盒子模型 |
+| [`break-after`](property/break-after.md) | 分页后断点 |
+| [`break-before`](property/break-before.md) | 分页前断点 |
+| [`break-inside`](property/break-inside.md) | 分页内断点 |
+| [`caption-side`](property/caption-side.md) | 表格标题位置 |
+| [`clear`](property/clear.md) | 清除浮动 |
+| [`clip`](property/clip.md) | 裁剪区域 |
+| [`clip-path`](property/clip-path.md) | 裁剪路径 |
+| [`column-count`](property/column-count.md) | 列数 |
+| [`column-fill`](property/column-fill.md) | 列填充 |
+| [`column-gap`](property/column-gap.md) | 列间距 |
+| [`column-rule`](property/column-rule.md) | 列分隔线速记 |
+| [`column-rule-color`](property/column-rule-color.md) | 列分隔线颜色 |
+| [`column-rule-style`](property/column-rule-style.md) | 列分隔线样式 |
+| [`column-rule-width`](property/column-rule-width.md) | 列分隔线宽度 |
+| [`column-span`](property/column-span.md) | 列跨列 |
+| [`column-width`](property/column-width.md) | 列宽 |
+| [`columns`](property/columns.md) | 列速记 |
+| [`display`](property/display.md) | 显示类型 |
+| [`float`](property/float.md) | 浮动 |
+| [`height`](property/height.md) | 高度 |
+| [`left`](property/left.md) | 左侧定位 |
+| [`margin`](property/margin.md) | 外边距速记 |
+| [`margin-bottom`](property/margin-bottom.md) | 下外边距 |
+| [`margin-left`](property/margin-left.md) | 左外边距 |
+| [`margin-right`](property/margin-right.md) | 右外边距 |
+| [`margin-top`](property/margin-top.md) | 上外边距 |
+| [`max-height`](property/max-height.md) | 最大高度 |
+| [`max-width`](property/max-width.md) | 最大宽度 |
+| [`min-height`](property/min-height.md) | 最小高度 |
+| [`min-width`](property/min-width.md) | 最小宽度 |
+| [`object-fit`](property/object-fit.md) | 对象适配 |
+| [`object-position`](property/object-position.md) | 对象位置 |
+| [`overflow`](property/overflow.md) | 溢出处理 |
+| [`overflow-x`](property/overflow-x.md) | X 轴溢出 |
+| [`overflow-y`](property/overflow-y.md) | Y 轴溢出 |
+| [`padding`](property/padding.md) | 内边距速记 |
+| [`padding-bottom`](property/padding-bottom.md) | 下内边距 |
+| [`padding-left`](property/padding-left.md) | 左内边距 |
+| [`padding-right`](property/padding-right.md) | 右内边距 |
+| [`padding-top`](property/padding-top.md) | 上内边距 |
+| [`perspective`](property/perspective.md) | 透视距离 |
+| [`perspective-origin`](property/perspective-origin.md) | 透视原点 |
+| [`position`](property/position.md) | 定位方式 |
+| [`resize`](property/resize.md) | 可调整大小 |
+| [`right`](property/right.md) | 右侧定位 |
+| [`table-layout`](property/table-layout.md) | 表格布局 |
+| [`top`](property/top.md) | 顶部定位 |
+| [`vertical-align`](property/vertical-align.md) | 垂直对齐 |
+| [`width`](property/width.md) | 宽度 |
+| [`z-index`](property/z-index.md) | 堆叠顺序 |
 
 #### 待完善的属性
-
-##### 布局 Layout
-
-- [ ] [`bottom`](property/bottom.md) - 底部定位
-- [ ] [`box-shadow`](property/box-shadow.md) - 盒子阴影
-- [ ] [`box-sizing`](property/box-sizing.md) - 盒子模型
-- [ ] [`break-after`](property/break-after.md) - 分页后断点
-- [ ] [`break-before`](property/break-before.md) - 分页前断点
-- [ ] [`break-inside`](property/break-inside.md) - 分页内断点
-- [ ] [`caption-side`](property/caption-side.md) - 表格标题位置
-- [ ] [`clear`](property/clear.md) - 清除浮动
-- [ ] [`clip`](property/clip.md) - 裁剪区域
-- [ ] [`clip-path`](property/clip-path.md) - 裁剪路径
-- [ ] [`column-count`](property/column-count.md) - 列数
-- [ ] [`column-fill`](property/column-fill.md) - 列填充
-- [ ] [`column-gap`](property/column-gap.md) - 列间距
-- [ ] [`column-rule`](property/column-rule.md) - 列分隔线速记
-- [ ] [`column-rule-color`](property/column-rule-color.md) - 列分隔线颜色
-- [ ] [`column-rule-style`](property/column-rule-style.md) - 列分隔线样式
-- [ ] [`column-rule-width`](property/column-rule-width.md) - 列分隔线宽度
-- [ ] [`column-span`](property/column-span.md) - 列跨列
-- [ ] [`column-width`](property/column-width.md) - 列宽
-- [ ] [`columns`](property/columns.md) - 列速记
-- [ ] [`display`](property/display.md) - 显示类型
-- [ ] [`float`](property/float.md) - 浮动
-- [ ] [`height`](property/height.md) - 高度
-- [ ] [`left`](property/left.md) - 左侧定位
-- [ ] [`margin`](property/margin.md) - 外边距速记
-- [ ] [`margin-bottom`](property/margin-bottom.md) - 下外边距
-- [ ] [`margin-left`](property/margin-left.md) - 左外边距
-- [ ] [`margin-right`](property/margin-right.md) - 右外边距
-- [ ] [`margin-top`](property/margin-top.md) - 上外边距
-- [ ] [`max-height`](property/max-height.md) - 最大高度
-- [ ] [`max-width`](property/max-width.md) - 最大宽度
-- [ ] [`min-height`](property/min-height.md) - 最小高度
-- [ ] [`min-width`](property/min-width.md) - 最小宽度
-- [ ] [`object-fit`](property/object-fit.md) - 对象适配
-- [ ] [`object-position`](property/object-position.md) - 对象位置
-- [ ] [`overflow`](property/overflow.md) - 溢出处理
-- [ ] [`overflow-x`](property/overflow-x.md) - X 轴溢出
-- [ ] [`overflow-y`](property/overflow-y.md) - Y 轴溢出
-- [ ] [`padding`](property/padding.md) - 内边距速记
-- [ ] [`padding-bottom`](property/padding-bottom.md) - 下内边距
-- [ ] [`padding-left`](property/padding-left.md) - 左内边距
-- [ ] [`padding-right`](property/padding-right.md) - 右内边距
-- [ ] [`padding-top`](property/padding-top.md) - 上内边距
-- [ ] [`perspective`](property/perspective.md) - 透视距离
-- [ ] [`perspective-origin`](property/perspective-origin.md) - 透视原点
-- [ ] [`position`](property/position.md) - 定位方式
-- [ ] [`resize`](property/resize.md) - 可调整大小
-- [ ] [`right`](property/right.md) - 右侧定位
-- [ ] [`table-layout`](property/table-layout.md) - 表格布局
-- [ ] [`top`](property/top.md) - 顶部定位
-- [ ] [`vertical-align`](property/vertical-align.md) - 垂直对齐
-- [ ] [`width`](property/width.md) - 宽度
-- [ ] [`z-index`](property/z-index.md) - 堆叠顺序
 
 ##### 字体与文本 Font & Text
 
@@ -241,33 +268,3 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 - [ ] [`word-spacing`](property/word-spacing.md) - 单词间距
 - [ ] [`word-wrap`](property/word-wrap.md) - 单词换行（旧）
 - [ ] [`writing-mode`](property/writing-mode.md) - 书写模式
-
-##### 其他属性 ✅
-
-| 属性 | 说明 |
-|------|------|
-| [`backface-visibility`](property/backface-visibility.md) | 背面可见性 |
-| [`cursor`](property/cursor.md) | 光标 |
-| [`isolation`](property/isolation.md) | 隔离模式 |
-| [`mix-blend-mode`](property/mix-blend-mode.md) | 混合模式 |
-| [`opacity`](property/opacity.md) | 透明度 |
-| [`outline`](property/outline.md) | 轮廓速记 |
-| [`outline-color`](property/outline-color.md) | 轮廓颜色 |
-| [`outline-offset`](property/outline-offset.md) | 轮廓偏移 |
-| [`outline-style`](property/outline-style.md) | 轮廓样式 |
-| [`outline-width`](property/outline-width.md) | 轮廓宽度 |
-| [`pointer-events`](property/pointer-events.md) | 指针事件 |
-| [`quotes`](property/quotes.md) | 引用符号 |
-| [`shape-image-threshold`](property/shape-image-threshold.md) | 形状图像阈值 |
-| [`shape-margin`](property/shape-margin.md) | 形状边距 |
-| [`shape-outside`](property/shape-outside.md) | 形状外部 |
-| [`tab-size`](property/tab-size.md) | Tab 字符宽度 |
-| [`touch-action`](property/touch-action.md) | 触摸操作 |
-| [`transform`](property/transform.md) | 变换 |
-| [`transform-origin`](property/transform-origin.md) | 变换原点 |
-| [`transform-style`](property/transform-style.md) | 变换样式 |
-| [`unicode-bidi`](property/unicode-bidi.md) | Unicode 双向算法 |
-| [`visibility`](property/visibility.md) | 可见性 |
-| [`will-change`](property/will-change.md) | 即将变化 |
-| [`orphans`](property/orphans.md) | 孤行 |
-| [`widows`](property/widows.md) | 孤行（末页） |
