@@ -1,107 +1,75 @@
 # outline
 
-`outline` 属性定义元素边框外的轮廓线，是一种在边框之外绘制的装饰线，不占用布局空间。
+`outline` 属性是轮廓的速记属性，用于在元素边框外绘制线条。
 
 ## 语法
 
 ```css
-outline: [ <'outline-color'> || <'outline-style'> || <'outline-width'> ];
+outline: [ <'outline-color'> || <'outline-style'> || <'outline-width'> || <'outline-offset'> ]
 ```
 
-### 值
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | 参见各个独立属性 |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是 |
+
+## 值
 
 | 值 | 说明 |
-| --- | --- |
-| `<outline-color>` | 轮廓颜色 |
-| `auto` | 自动颜色 |
-| `<color>` | 指定颜色 |
-| `<outline-style>` | 轮廓样式 |
-| `none` | 无轮廓 |
-| `hidden` | 隐藏轮廓 |
-| `dotted` | 点状 |
-| `dashed` | 虚线 |
-| `solid` | 实线 |
-| `double` | 双线 |
-| `groove` | 凹槽 |
-| `ridge` | 脊线 |
-| `inset` | 嵌入 |
-| `outset` | 突出 |
-| `<outline-width>` | 轮廓宽度 |
-| `thin` | 细 |
-| `medium` | 中等 |
-| `thick` | 粗 |
-| `<length>` | 指定长度 |
+| :--- | :--- |
+| `<outline-color>` | 轮廓颜色：颜色值或 `invert` |
+| `<outline-style>` | 轮廓样式：`none`、`hidden`、`dotted`、`dashed`、`solid`、`double`、`groove`、`ridge`、`inset`、`outset` |
+| `<outline-width>` | 轮廓宽度：`thin`、`medium`、`thick` 或长度值 |
+| `<outline-offset>` | 轮廓偏移距离 |
+
+## 注意
+
+- 轮廓绘制在边框外，不占用空间
+- 轮廓可以是非矩形（跟随元素形状）
+- 常用于焦点状态指示
+- 与 `border` 不同，轮廓不影响布局
 
 ## 示例
 
-### 基本用法
-
 ```css
-.focused-element {
-  outline: 2px solid #007bff;
+/* 蓝色实线轮廓 */
+.element {
+  outline: 2px solid blue;
+}
+
+/* 焦点状态轮廓 */
+button:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
 }
 ```
 
-### 不同样式
+## 使用场景
 
 ```css
-.dotted-outline {
-  outline: 3px dotted red;
+/* 自定义焦点样式 */
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
 }
 
-.dashed-outline {
-  outline: 2px dashed green;
-}
-
-.double-outline {
-  outline: 4px double blue;
-}
-```
-
-### 移除轮廓
-
-```css
-.no-outline {
+/* 移除默认轮廓（不推荐） */
+button {
   outline: none;
 }
-```
-
-### 自动颜色
-
-```css
-.auto-color {
-  outline: 2px solid auto;
-}
-```
-
-### HTML 示例
-
-```html
-<button class="focused-element">蓝色轮廓按钮</button>
-<button class="dotted-outline">点状轮廓按钮</button>
-<button class="dashed-outline">虚线轮廓按钮</button>
-<button class="no-outline">无轮廓按钮</button>
 ```
 
 ## 浏览器兼容性
 
 | 浏览器 | 版本 |
-| --- | --- |
+|--------|------|
 | Chrome | 支持 |
 | Firefox | 支持 |
 | Safari | 支持 |
 | Edge | 支持 |
-| Opera | 支持 |
-| iOS Safari | 支持 |
-| Android Browser | 支持 |
-
-## 注意事项
-
-1. **不占空间**：轮廓不占用布局空间，不会影响元素尺寸
-2. **绘制顺序**：轮廓绘制在边框之外
-3. **圆角**：轮廓会跟随元素的圆角
-4. **无障碍**：常用于焦点状态的视觉反馈
-5. **与 border 区别**：border 占用空间，outline 不占用
 
 ## 相关属性
 
@@ -111,6 +79,6 @@ outline: [ <'outline-color'> || <'outline-style'> || <'outline-width'> ];
 - [`outline-offset`](outline-offset.md) - 轮廓偏移
 - [`border`](border.md) - 边框
 
-## 规范链接
+## 规范
 
-- [CSS Basic User Interface Module Level 3](https://www.w3.org/TR/css-ui-3/#outline)
+- [CSS UI Module Level 3](https://www.w3.org/TR/css-ui-3/#outline)

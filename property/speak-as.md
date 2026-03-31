@@ -1,89 +1,78 @@
 # speak-as
 
-`speak-as` 属性定义屏幕阅读器如何朗读文本内容，指定文本的朗读方式和格式。
+`speak-as` 属性定义元素内容如何通过语音合成器朗读的格式。
 
 ## 语法
 
 ```css
-speak-as: auto | spell | digits | literal-punctuation | no-punctuation | number;
+speak-as: auto | bullet | numeral | digits | spell-out
 ```
 
-### 值
+| 语法特性 | 说明 |
+| :--- | :--- |
+| 初始值 | `auto` |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 否 |
+
+## 值
 
 | 值 | 说明 |
-| --- | --- |
-| `auto` | 根据上下文自动决定（默认） |
-| `spell` | 逐字母拼读 |
+| :--- | :--- |
+| `auto` | 根据内容自动判断 |
+| `bullet` | 朗读项目符号 |
+| `numeral` | 按数字朗读 |
 | `digits` | 逐位朗读数字 |
-| `literal-punctuation` | 朗读标点符号名称 |
-| `no-punctuation` | 跳过标点符号 |
-| `number` | 按数字方式朗读 |
+| `spell-out` | 逐字母朗读 |
+
+## 注意
+
+- 仅适用于语音合成（屏幕阅读器）
+- 与 `speak` 属性配合使用
+- 现代 Web 开发中较少使用
 
 ## 示例
 
-### 基本用法
+```css
+/* 逐字母朗读 */
+.code {
+  speak-as: spell-out;
+}
+
+/* 按数字朗读 */
+.number {
+  speak-as: numeral;
+}
+```
+
+## 使用场景
 
 ```css
-.spelled-text {
-  speak-as: spell;
-}
-
-.number-text {
-  speak-as: number;
-}
-
-.digits-text {
+/* 序列号逐位朗读 */
+.serial-number {
   speak-as: digits;
 }
-```
 
-### 标点处理
-
-```css
-.literal-punctuation {
-  speak-as: literal-punctuation;
+/* 列表项朗读符号 */
+li {
+  speak-as: bullet;
 }
-
-.no-punctuation {
-  speak-as: no-punctuation;
-}
-```
-
-### HTML 示例
-
-```html
-<div class="spelled-text">ABC123</div>
-<div class="number-text">123456</div>
-<div class="digits-text">2024</div>
-<div class="literal-punctuation">Hello, world!</div>
 ```
 
 ## 浏览器兼容性
 
 | 浏览器 | 版本 |
-| --- | --- |
-| Chrome | 部分支持 |
-| Firefox | 部分支持 |
-| Safari | 部分支持 |
-| Edge | 部分支持 |
-| Opera | 部分支持 |
-| iOS Safari | 部分支持 |
-| Android Browser | 部分支持 |
-
-## 注意事项
-
-1. **辅助功能**：主要用于无障碍场景
-2. **屏幕阅读器**：控制屏幕阅读器的朗读方式
-3. **配合 speak**：通常与 `speak` 属性配合使用
-4. **浏览器支持**：浏览器支持有限且不一致
-5. **替代方案**：现代开发中更推荐使用 ARIA 属性
+|--------|------|
+| Chrome | 不支持 |
+| Firefox | 不支持 |
+| Safari | 不支持 |
+| Edge | 不支持 |
 
 ## 相关属性
 
-- [`speak`](speak.md) - 朗读
-- [`aria-label`](aria-label.md) - ARIA 标签
-- [`aria-describedby`](aria-describedby.md) - ARIA 描述
+- [`speak`](speak.md) - 语音
+- [`voice-balance`](voice-balance.md) - 语音平衡
+- [`voice-duration`](voice-duration.md) - 语音持续时间
 
-## 规范链接
+## 规范
 
-- [CSS Speech Module](https://www.w3.org/TR/css-speech-1/#speak-as)
+- [CSS Speech Module](https://www.w3.org/TR/css-speech-1/#speak-as-property)

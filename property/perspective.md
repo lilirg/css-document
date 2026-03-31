@@ -1,6 +1,6 @@
 # perspective
 
-该属性定义 3D 变换元素的透视距离，即观察者与 z=0 平面之间的距离。
+`perspective` 属性定义元素在 3D 空间中距离观察者的距离，产生透视效果。
 
 ## 语法
 
@@ -11,67 +11,71 @@ perspective: none | <length>
 | 语法特性 | 说明 |
 | :--- | :--- |
 | 初始值 | `none` |
-| 适用 HTML 元素 | 非替换元素 |
-| 动画 | 是 |
+| 适用 HTML 元素 | 所有元素 |
+| 动画 | 是（作为长度值） |
 
 ## 值
 
-### `none`
-无透视效果。
-
-### `<length>`
-透视距离值。值越小，透视效果越强烈；值越大，透视效果越弱。
+| 值 | 说明 |
+| :--- | :--- |
+| `none` | 无透视效果 |
+| `<length>` | 透视距离，必须为正数 |
 
 ## 注意
 
-- 该属性应用于包含 3D 变换的子元素
-- 值必须为正数
-- 与 `transform-style: preserve-3d` 配合使用效果更佳
+- 值越小，透视效果越强烈
+- 值越大，透视效果越弱
+- 通常与 `transform` 属性配合使用
+- 可以应用于父元素以影响所有子元素的 3D 变换
 
 ## 示例
 
 ```css
-/* CSS 示例 */
+/* 设置透视距离 */
 .container {
-  perspective: 500px;
+  perspective: 1000px;
 }
 
-.box {
+/* 子元素进行 3D 变换 */
+.container .element {
   transform: rotateY(45deg);
 }
-```
-
-```html
-<!-- HTML 示例 -->
-<div class="container">
-  <div class="box">3D 变换内容</div>
-</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 1. 卡片翻转效果 */
+/* 卡片翻转效果 */
 .card-container {
   perspective: 1000px;
 }
 
-/* 2. 3D 旋转效果 */
-.scene {
-  perspective: 500px;
+.card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
-/* 3. 强烈透视效果 */
-.strong-perspective {
-  perspective: 200px;
+.card.flipped {
+  transform: rotateY(180deg);
 }
+```
 
-/* 4. 弱透视效果 */
-.weak-perspective {
-  perspective: 2000px;
-}
+## 浏览器兼容性
 
-/* 5. 3D 按钮效果 */
-.button-3d {
-  perspective: 800px;
-}
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 支持（需 -webkit- 前缀） |
+| Firefox | 支持 |
+| Safari | 支持（需 -webkit- 前缀） |
+| Edge | 支持 |
+
+## 相关属性
+
+- [`perspective-origin`](perspective-origin.md) - 透视原点
+- [`transform`](transform.md) - 变换
+- [`transform-style`](transform-style.md) - 变换样式
+- [`transform-origin`](transform-origin.md) - 变换原点
+
+## 规范
+
+- [CSS Transforms Module Level 1](https://www.w3.org/TR/css-transforms-1/#perspective-property)

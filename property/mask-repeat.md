@@ -1,6 +1,6 @@
 # mask-repeat
 
-该属性用于设置遮罩图像的重复方式。
+`mask-repeat` 属性定义遮罩图像的重复方式。
 
 ## 语法
 
@@ -16,139 +16,70 @@ mask-repeat: <repeat-style>#
 
 ## 值
 
-### repeat
-在水平和垂直方向都重复（默认值）。
-
-### repeat-x
-仅在水平方向重复。
-
-### repeat-y
-仅在垂直方向重复。
-
-### no-repeat
-不重复，只显示一次。
-
-### space
-均匀分布，不裁剪：
-- 图像在两个方向均匀分布
-- 完整图像显示，不留空白
-
-### round
-均匀分布，拉伸适应：
-- 图像在两个方向均匀分布
-- 图像会拉伸以适应空间
-
-### 值数量说明
-| 值数量 | 说明 |
+| 值 | 说明 |
 | :--- | :--- |
-| 1 个值 | 两个方向使用相同重复方式 |
-| 2 个值 | 第一个值为水平方向，第二个值为垂直方向 |
+| `repeat` | 双向重复（默认） |
+| `repeat-x` | 水平重复 |
+| `repeat-y` | 垂直重复 |
+| `no-repeat` | 不重复 |
+| `round` | 伸缩重复 |
+| `space` | 间距重复 |
 
 ## 注意
-- 该属性通常与 `mask-image` 配合使用
-- 可以设置多个值对应多个遮罩图像
-- 重复方式影响遮罩图像的平铺效果
-- `space` 和 `round` 会调整图像间距
+
+- 可以指定一个或两个值，分别控制水平和垂直方向
+- 可以指定多个值，对应多个遮罩层
+- 类似于 `background-repeat` 的行为
 
 ## 示例
 
 ```css
-/* 在两个方向重复（默认） */
-.box {
-  mask-image: url('mask.png');
-  mask-repeat: repeat;
-}
-
-/* 仅在水平方向重复 */
-.box {
-  mask-image: url('mask.png');
-  mask-repeat: repeat-x;
-}
-
-/* 仅在垂直方向重复 */
-.box {
-  mask-image: url('mask.png');
-  mask-repeat: repeat-y;
-}
-
-/* 不重复 */
-.box {
-  mask-image: url('mask.png');
+/* 遮罩不重复 */
+.element {
   mask-repeat: no-repeat;
+  mask-image: url('mask.svg);
 }
 
-/* 均匀分布不裁剪 */
-.box {
-  mask-image: url('mask.png');
-  mask-repeat: space;
+/* 水平重复 */
+.element {
+  mask-repeat: repeat-x;
+  mask-image: url('mask.svg);
 }
 
-/* 均匀分布拉伸适应 */
-.box {
-  mask-image: url('mask.png');
-  mask-repeat: round;
+/* 多个遮罩层，不同的重复方式 */
+.element {
+  mask-repeat: repeat, no-repeat;
+  mask-image: url('mask1.svg), url('mask2.svg);
 }
-
-/* 两个方向不同重复方式 */
-.box {
-  mask-image: url('mask.png');
-  mask-repeat: repeat-x no-repeat;
-}
-```
-
-```html
-<!-- HTML 示例 -->
-<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 1. 平铺图案遮罩 */
+/* 图案遮罩效果 */
 .pattern-mask {
-  mask-image: url('pattern.png');
   mask-repeat: repeat;
+  mask-size: 50px 50px;
+  mask-image: url('pattern.svg);
 }
+```
 
-/* 2. 水平条纹遮罩 */
-.horizontal-stripe {
-  mask-image: url('stripe.png');
-  mask-repeat: repeat-x;
-}
+## 浏览器兼容性
 
-/* 3. 垂直条纹遮罩 */
-.vertical-stripe {
-  mask-image: url('stripe.png');
-  mask-repeat: repeat-y;
-}
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 支持（需 -webkit- 前缀） |
+| Firefox | 支持 |
+| Safari | 支持（需 -webkit- 前缀） |
+| Edge | 支持 |
 
-/* 4. 中心图案遮罩 */
-.center-pattern {
-  mask-image: url('pattern.png');
-  mask-repeat: no-repeat;
-  mask-position: center;
-}
+## 相关属性
 
-/* 5. 均匀分布遮罩 */
-.space-mask {
-  mask-image: url('icon.png');
-  mask-repeat: space;
-}
+- [`mask-image`](mask-image.md) - 遮罩图像
+- [`mask-size`](mask-size.md) - 遮罩尺寸
+- [`mask-position`](mask-position.md) - 遮罩位置
+- [`mask`](mask.md) - 遮罩速记
 
-/* 6. 拉伸适应遮罩 */
-.round-mask {
-  mask-image: url('pattern.png');
-  mask-repeat: round;
-}
+## 规范
 
-/* 7. 渐变不重复 */
-.gradient-mask {
-  mask-image: linear-gradient(to right, black, transparent);
-  mask-repeat: no-repeat;
-}
-
-/* 8. 混合重复方式 */
-.mixed-mask {
-  mask-image: url('pattern.png');
-  mask-repeat: repeat-x no-repeat;
-}
+- [CSS Masking Module Level 1](https://www.w3.org/TR/css-masking-1/#the-mask-repeat)

@@ -1,6 +1,6 @@
 # table-layout
 
-该属性设置表格的布局算法。
+`table-layout` 属性定义表格和列的布局算法。
 
 ## 语法
 
@@ -16,78 +16,60 @@ table-layout: auto | fixed
 
 ## 值
 
-### `auto`
-列宽根据单元格内容自动计算（默认）。
-
-### `fixed`
-列宽由表格宽度和列宽设置决定，不根据内容计算。
+| 值 | 说明 |
+| :--- | :--- |
+| `auto` | 根据单元格内容自动调整列宽 |
+| `fixed` | 使用固定列宽布局算法 |
 
 ## 注意
 
-- `fixed` 布局渲染速度更快
-- `fixed` 布局需要明确设置列宽
-- 影响表格整体渲染性能
+- `fixed` 布局更快，因为只需要计算一次列宽
+- `auto` 布局需要遍历所有单元格内容
+- `fixed` 布局下，列宽由第一行决定
 
 ## 示例
 
 ```css
-/* CSS 示例 */
-.fixed-table {
+/* 固定列宽布局 */
+table {
   table-layout: fixed;
   width: 100%;
 }
 
-.fixed-table th,
-.fixed-table td {
-  width: 25%;
+/* 自动列宽布局 */
+table {
+  table-layout: auto;
 }
-```
-
-```html
-<!-- HTML 示例 -->
-<table class="fixed-table">
-  <tr>
-    <th>列 1</th>
-    <th>列 2</th>
-    <th>列 3</th>
-    <th>列 4</th>
-  </tr>
-  <tr>
-    <td>内容 1</td>
-    <td>内容 2</td>
-    <td>内容 3</td>
-    <td>内容 4</td>
-  </tr>
-</table>
 ```
 
 ## 使用场景
 
 ```css
-/* 1. 固定布局 - 均匀列宽 */
-.uniform-columns {
+/* 固定布局表格，列宽均匀分布 */
+.fixed-table {
   table-layout: fixed;
   width: 100%;
 }
 
-/* 2. 自动布局 - 内容自适应 */
-.auto-columns {
-  table-layout: auto;
-}
+.fixed-table th:nth-child(1) { width: 20%; }
+.fixed-table th:nth-child(2) { width: 30%; }
+.fixed-table th:nth-child(3) { width: 50%; }
+```
 
-/* 3. 固定布局 - 性能优化 */
-.performance-table {
-  table-layout: fixed;
-  width: 100%;
-}
+## 浏览器兼容性
 
-/* 4. 数据表格 - 固定列宽 */
-.data-table {
-  table-layout: fixed;
-}
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 支持 |
+| Firefox | 支持 |
+| Safari | 支持 |
+| Edge | 支持 |
 
-/* 5. 响应式表格 */
-.responsive-table {
-  table-layout: fixed;
-  width: 100%;
-}
+## 相关属性
+
+- [`border-collapse`](border-collapse.md) - 边框合并
+- [`border-spacing`](border-spacing.md) - 边框间距
+
+## 规范
+
+- [CSS Cascading and Inheritance Level 3](https://www.w3.org/TR/css-cascade-3/#table-layout)

@@ -1,132 +1,78 @@
 # mask-border
 
-该属性用于设置元素遮罩边框的所有属性（图像、切片、宽度、外扩、重复）的速记属性。
+`mask-border` 属性是遮罩边框的速记属性，用于使用图像创建元素的边框遮罩效果。
 
 ## 语法
 
 ```css
-mask-border: <mask-border-source> || <mask-border-slice> [ / <mask-border-width> ]? || <mask-border-outset> || <mask-border-repeat> || <mask-border-mode>
+mask-border: <mask-border-source> || <mask-border-slice> || <mask-border-width> || <mask-border-outset> || <mask-border-repeat> || <mask-border-mode>
 ```
 
 | 语法特性 | 说明 |
 | :--- | :--- |
-| 初始值 | 各属性初始值 |
+| 初始值 | 参见各个独立属性 |
 | 适用 HTML 元素 | 所有元素 |
-| 动画 | 取决于各组成部分 |
+| 动画 | 取决于各个独立属性 |
 
 ## 值
 
-### mask-border-source
-遮罩边框图像：
-- `none` - 无图像
-- `<image>` - 图像 URL
-
-### mask-border-slice
-图像切片：
-- `<number>` - 像素值
-- `<percentage>` - 百分比值
-
-### mask-border-width
-边框宽度：
-- `<number>` - 倍数
-- `<length>` - 具体长度
-- `auto` - 自动
-
-### mask-border-outset
-边框外扩：
-- `<length>` - 外扩距离
-
-### mask-border-repeat
-重复方式：
-- `stretch` - 拉伸
-- `repeat` - 重复
-- `round` - 圆整
-- `space` - 间距
-
-### mask-border-mode
-遮罩模式：
-- `alpha` - Alpha 通道
-- `luminance` - 亮度值
+| 值 | 说明 |
+| :--- | :--- |
+| `<mask-border-source>` | 遮罩边框图像源：`none` 或 `url()` |
+| `<mask-border-slice>` | 图像切片比例 |
+| `<mask-border-width>` | 边框宽度 |
+| `<mask-border-outset>` | 边框外扩距离 |
+| `<mask-border-repeat>` | 图像重复方式：`stretch`、`repeat`、`round`、`space` |
+| `<mask-border-mode>` | 遮罩模式：`alpha` 或 `luminance` |
 
 ## 注意
-- 速记属性会重置所有未指定的遮罩边框属性为其初始值
-- 可以使用 `mask-border-image-source`, `mask-border-slice`, `mask-border-width`, `mask-border-outset`, `mask-border-repeat`, `mask-border-mode` 分别设置
-- 遮罩边框图像通常是一个九宫格图像
-- 切片值定义图像的边界
+
+- `mask-border` 是多个遮罩边框相关属性的速记
+- 类似于 `border-image`，但用于遮罩效果
+- 使用 SVG 或图像创建复杂的边框遮罩
 
 ## 示例
 
 ```css
-/* 基本用法 */
-.box {
-  mask-border: url('mask-border.png') 30;
+/* 使用图像作为遮罩边框 */
+.element {
+  mask-border: url('border-mask.svg') 30 stretch;
 }
 
-/* 指定切片和宽度 */
-.box {
-  mask-border: url('mask-border.png') 30 / 10px;
+/* 完整语法 */
+.element {
+  mask-border: url('border-mask.svg') 30% / 20px / 5px space alpha;
 }
-
-/* 指定重复方式 */
-.box {
-  mask-border: url('mask-border.png') 30 / 10px / 2 stretch;
-}
-
-/* 使用 Alpha 模式 */
-.box {
-  mask-border: url('mask-border.png') 30 / 10px / 2 stretch alpha;
-}
-
-/* 无图像 */
-.box {
-  mask-border: none;
-}
-```
-
-```html
-<!-- HTML 示例 -->
-<div class="box">遮罩边框内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 1. 简单遮罩边框 */
-.simple-border {
-  mask-border: url('border.png') 30;
+/* 装饰性边框遮罩效果 */
+.framed-box {
+  mask-border: url('ornament-mask.svg') 40% / 30px / 10px round alpha;
+  border: 30px solid transparent;
 }
+```
 
-/* 2. 带宽度的遮罩边框 */
-.width-border {
-  mask-border: url('border.png') 30 / 10px;
-}
+## 浏览器兼容性
 
-/* 3. 拉伸模式 */
-.stretch-border {
-  mask-border: url('border.png') 30 / 10px / 2 stretch;
-}
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 不支持 |
+| Firefox | 不支持 |
+| Safari | 不支持 |
+| Edge | 不支持 |
 
-/* 4. 重复模式 */
-.repeat-border {
-  mask-border: url('border.png') 30 / 10px / 2 repeat;
-}
+## 相关属性
 
-/* 5. 圆整模式 */
-.round-border {
-  mask-border: url('border.png') 30 / 10px / 2 round;
-}
+- [`mask-border-source`](mask-border-source.md) - 遮罩边框源
+- [`mask-border-slice`](mask-border-slice.md) - 遮罩边框切片
+- [`mask-border-width`](mask-border-width.md) - 遮罩边框宽度
+- [`mask-border-outset`](mask-border-outset.md) - 遮罩边框外扩
+- [`mask-border-repeat`](mask-border-repeat.md) - 遮罩边框重复
+- [`mask-border-mode`](mask-border-mode.md) - 遮罩边框模式
 
-/* 6. 间距模式 */
-.space-border {
-  mask-border: url('border.png') 30 / 10px / 2 space;
-}
+## 规范
 
-/* 7. Alpha 模式 */
-.alpha-border {
-  mask-border: url('border.png') 30 / 10px / 2 stretch alpha;
-}
-
-/* 8. 亮度模式 */
-.luminance-border {
-  mask-border: url('border.png') 30 / 10px / 2 stretch luminance;
-}
+- [CSS Masking Module Level 1](https://www.w3.org/TR/css-masking-1/)

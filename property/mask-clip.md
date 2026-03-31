@@ -1,11 +1,11 @@
 # mask-clip
 
-该属性用于设置遮罩的裁剪区域，即遮罩应用于元素的哪个区域。
+`mask-clip` 属性定义遮罩图像裁剪的区域。
 
 ## 语法
 
 ```css
-mask-clip: <box>#
+mask-clip: <clip-box>#
 ```
 
 | 语法特性 | 说明 |
@@ -16,144 +16,63 @@ mask-clip: <box>#
 
 ## 值
 
-### border-box
-裁剪到边框盒（默认值）：
-- 遮罩应用于边框区域
-- 包括边框本身
-
-### padding-box
-裁剪到内边距盒：
-- 遮罩应用于内边距区域
-- 不包括边框
-
-### content-box
-裁剪到内容盒：
-- 遮罩应用于内容区域
-- 不包括内边距和边框
-
-### fill-box
-裁剪到 SVG 填充边界框：
-- 仅适用于 SVG 元素
-- 使用填充边界框
-
-### stroke-box
-裁剪到 SVG 描边边界框：
-- 仅适用于 SVG 元素
-- 使用描边边界框
-
-### view-box
-裁剪到 SVG 视口：
-- 仅适用于 SVG 元素
-- 使用最近的视口
-
-### no-clip
-不裁剪：
-- 遮罩可以超出元素边界
-- 允许遮罩溢出
+| 值 | 说明 |
+| :--- | :--- |
+| `border-box` | 遮罩应用于边框盒 |
+| `padding-box` | 遮罩应用于内边距盒 |
+| `content-box` | 遮罩应用于内容盒 |
+| `fill-box` | 遮罩应用于 SVG 填充边界盒 |
+| `stroke-box` | 遮罩应用于 SVG 描边边界盒 |
+| `view-box` | 遮罩应用于 SVG 视图边界盒 |
+| `no-clip` | 遮罩不被裁剪，超出部分可见 |
 
 ## 注意
-- 该属性通常与 `mask-image` 配合使用
-- 可以设置多个值对应多个遮罩图像
-- SVG 相关的值（`fill-box`, `stroke-box`, `view-box`）仅适用于 SVG 元素
-- `no-clip` 允许遮罩超出元素边界
+
+- 可以指定多个值，用逗号分隔，对应多个遮罩层
+- 与 `mask-origin` 配合使用定义遮罩的参考框
+- 在 SVG 中有特殊的边界盒选项
 
 ## 示例
 
 ```css
-/* 裁剪到边框盒（默认） */
-.box {
-  mask-image: url('mask.png');
-  mask-clip: border-box;
-}
-
-/* 裁剪到内边距盒 */
-.box {
-  mask-image: url('mask.png');
-  mask-clip: padding-box;
-}
-
-/* 裁剪到内容盒 */
-.box {
-  mask-image: url('mask.png');
+/* 遮罩裁剪到内容区域 */
+.element {
   mask-clip: content-box;
+  mask-image: url('mask.svg');
 }
 
-/* 不裁剪 */
-.box {
-  mask-image: url('mask.png');
-  mask-clip: no-clip;
+/* 多个遮罩层，不同的裁剪区域 */
+.element {
+  mask-clip: padding-box, content-box;
+  mask-image: url('mask1.svg), url('mask2.svg');
 }
-
-/* 多个裁剪区域 */
-.box {
-  mask-image: 
-    url('mask1.png'),
-    url('mask2.png');
-  mask-clip: border-box, padding-box;
-}
-```
-
-```html
-<!-- HTML 示例 -->
-<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 1. 边框区域遮罩 */
-.border-mask {
-  mask-image: url('mask.png');
-  mask-clip: border-box;
-  border: 10px solid #333;
-}
-
-/* 2. 内边距区域遮罩 */
-.padding-mask {
-  mask-image: url('mask.png');
-  mask-clip: padding-box;
-  padding: 20px;
-}
-
-/* 3. 内容区域遮罩 */
-.content-mask {
-  mask-image: url('mask.png');
+/* 文字遮罩，裁剪到文字内容 */
+.masked-text {
   mask-clip: content-box;
-  padding: 20px;
-  border: 10px solid #333;
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
+```
 
-/* 4. 溢出遮罩 */
-.overflow-mask {
-  mask-image: url('mask.png');
-  mask-clip: no-clip;
-}
+## 浏览器兼容性
 
-/* 5. 多图层不同裁剪 */
-.multi-clip {
-  mask-image: 
-    url('pattern.png'),
-    url('gradient.png');
-  mask-clip: padding-box, content-box;
-}
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 支持（需 -webkit- 前缀） |
+| Firefox | 支持 |
+| Safari | 支持（需 -webkit- 前缀） |
+| Edge | 支持 |
 
-/* 6. SVG 遮罩 */
-.svg-mask {
-  mask-image: url('mask.svg');
-  mask-clip: fill-box;
-}
+## 相关属性
 
-/* 7. 带圆角的遮罩 */
-.rounded-mask {
-  mask-image: url('mask.png');
-  mask-clip: border-box;
-  border-radius: 10px;
-}
+- [`mask-origin`](mask-origin.md) - 遮罩原点
+- [`mask-image`](mask-image.md) - 遮罩图像
+- [`mask`](mask.md) - 遮罩速记
 
-/* 8. 内边距填充遮罩 */
-.inset-mask {
-  mask-image: url('mask.png');
-  mask-clip: padding-box;
-  background: #f0f0f0;
-  padding: 15px;
-}
+## 规范
+
+- [CSS Masking Module Level 1](https://www.w3.org/TR/css-masking-1/#the-mask-clip)

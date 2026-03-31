@@ -1,6 +1,6 @@
 # mask-origin
 
-该属性用于设置遮罩图像的定位原点，即遮罩位置相对于哪个区域计算。
+`mask-origin` 属性定义遮罩图像的定位原点。
 
 ## 语法
 
@@ -16,146 +16,62 @@ mask-origin: <box>#
 
 ## 值
 
-### border-box
-相对于边框盒定位（默认值）：
-- 遮罩位置从边框外边缘开始计算
-- 包括边框区域
-
-### padding-box
-相对于内边距盒定位：
-- 遮罩位置从内边距外边缘开始计算
-- 不包括边框
-
-### content-box
-相对于内容盒定位：
-- 遮罩位置从内容区域开始计算
-- 不包括内边距和边框
-
-### fill-box
-相对于 SVG 填充边界框定位：
-- 仅适用于 SVG 元素
-- 使用填充边界框
-
-### stroke-box
-相对于 SVG 描边边界框定位：
-- 仅适用于 SVG 元素
-- 使用描边边界框
-
-### view-box
-相对于 SVG 视口定位：
-- 仅适用于 SVG 元素
-- 使用最近的视口
+| 值 | 说明 |
+| :--- | :--- |
+| `border-box` | 相对于边框盒定位 |
+| `padding-box` | 相对于内边距盒定位 |
+| `content-box` | 相对于内容盒定位 |
+| `fill-box` | 相对于 SVG 填充边界盒 |
+| `stroke-box` | 相对于 SVG 描边边界盒 |
+| `view-box` | 相对于 SVG 视图边界盒 |
 
 ## 注意
-- 该属性通常与 `mask-image` 和 `mask-position` 配合使用
-- 可以设置多个值对应多个遮罩图像
-- 与 `mask-clip` 配合使用可以精确控制遮罩效果
-- SVG 相关的值仅适用于 SVG 元素
+
+- 与 `mask-clip` 配合使用定义遮罩的参考框
+- 可以指定多个值，对应多个遮罩层
+- 在 SVG 中有特殊的边界盒选项
 
 ## 示例
 
 ```css
-/* 相对于边框盒定位（默认） */
-.box {
-  mask-image: url('mask.png');
-  mask-origin: border-box;
-}
-
-/* 相对于内边距盒定位 */
-.box {
-  mask-image: url('mask.png');
+/* 遮罩相对于内边距定位 */
+.element {
   mask-origin: padding-box;
+  mask-image: url('mask.svg);
 }
 
-/* 相对于内容盒定位 */
-.box {
-  mask-image: url('mask.png');
-  mask-origin: content-box;
+/* 多个遮罩层，不同的原点 */
+.element {
+  mask-origin: content-box, padding-box;
+  mask-image: url('mask1.svg), url('mask2.svg);
 }
-
-/* 配合位置使用 */
-.box {
-  mask-image: url('mask.png');
-  mask-origin: padding-box;
-  mask-position: center;
-}
-
-/* 多个遮罩不同原点 */
-.box {
-  mask-image: 
-    url('mask1.png'),
-    url('mask2.png');
-  mask-origin: border-box, padding-box;
-}
-```
-
-```html
-<!-- HTML 示例 -->
-<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 1. 边框内遮罩 */
-.border-origin {
-  mask-image: url('mask.png');
-  mask-origin: border-box;
-  border: 10px solid #333;
-}
-
-/* 2. 内边距内遮罩 */
-.padding-origin {
-  mask-image: url('mask.png');
-  mask-origin: padding-box;
-  padding: 20px;
-  border: 10px solid #333;
-}
-
-/* 3. 内容区遮罩 */
-.content-origin {
-  mask-image: url('mask.png');
+/* 文字遮罩，相对于内容定位 */
+.masked-text {
   mask-origin: content-box;
-  padding: 20px;
-  border: 10px solid #333;
+  mask-image: linear-gradient(to right, black, transparent);
 }
+```
 
-/* 4. 中心对齐遮罩 */
-.center-origin {
-  mask-image: url('mask.png');
-  mask-origin: padding-box;
-  mask-position: center;
-  mask-size: cover;
-}
+## 浏览器兼容性
 
-/* 5. 多图层不同原点 */
-.multi-origin {
-  mask-image: 
-    url('pattern.png'),
-    url('gradient.png');
-  mask-origin: content-box, padding-box;
-}
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 支持（需 -webkit- 前缀） |
+| Firefox | 支持 |
+| Safari | 支持（需 -webkit- 前缀） |
+| Edge | 支持 |
 
-/* 6. 带圆角遮罩 */
-.rounded-origin {
-  mask-image: url('mask.png');
-  mask-origin: border-box;
-  border-radius: 10px;
-}
+## 相关属性
 
-/* 7. SVG 元素遮罩 */
-.svg-origin {
-  mask-image: url('mask.svg');
-  mask-origin: fill-box;
-}
+- [`mask-clip`](mask-clip.md) - 遮罩裁剪
+- [`mask-image`](mask-image.md) - 遮罩图像
+- [`mask`](mask.md) - 遮罩速记
 
-/* 8. 响应式遮罩原点 */
-.responsive-origin {
-  mask-image: url('mask.png');
-  mask-origin: content-box;
-}
-@media (min-width: 768px) {
-  .responsive-origin {
-    mask-origin: padding-box;
-  }
-}
+## 规范
+
+- [CSS Masking Module Level 1](https://www.w3.org/TR/css-masking-1/#the-mask-origin)

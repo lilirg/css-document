@@ -1,6 +1,6 @@
 # mask-composite
 
-该属性用于设置多个遮罩图像的复合（混合）方式。
+`mask-composite` 属性定义多个遮罩层之间的合成方式。
 
 ## 语法
 
@@ -16,151 +16,63 @@ mask-composite: <composite-mode>#
 
 ## 值
 
-### add
-添加模式（默认值）：
-- 将遮罩图像叠加在一起
-- 遮罩值相加
-- 结果更不透明
-
-### subtract
-减去模式：
-- 从当前遮罩中减去新遮罩
-- 新遮罩区域被隐藏
-- 用于创建镂空效果
-
-### intersect
-交集模式：
-- 只显示遮罩重叠的区域
-- 非重叠区域被隐藏
-- 用于精确遮罩控制
-
-### exclude
-排除模式：
-- 显示非重叠区域
-- 重叠区域被隐藏
-- 用于创建异或效果
+| 值 | 说明 |
+| :--- | :--- |
+| `add` | 添加模式，默认值 |
+| `subtract` | 减去模式 |
+| `intersect` | 交集模式 |
+| `exclude` | 排除模式 |
 
 ## 注意
-- 该属性仅在设置多个遮罩图像时生效
-- 复合方式按顺序应用于遮罩层
-- 与 `mask-image` 配合使用
-- 可以设置多个值对应多个遮罩图像
+
+- 用于控制多个遮罩层如何组合
+- 类似于 `mix-blend-mode` 但用于遮罩
+- 每个遮罩层可以有不同的合成模式
 
 ## 示例
 
 ```css
-/* 添加模式（默认） */
-.box {
-  mask-image: 
-    url('mask1.png'),
-    url('mask2.png');
-  mask-composite: add;
-}
-
-/* 减去模式 */
-.box {
-  mask-image: 
-    url('mask1.png'),
-    url('mask2.png');
+/* 使用多个遮罩层，减去模式 */
+.element {
+  mask-image: url('mask1.svg), url('mask2.svg');
   mask-composite: subtract;
 }
 
 /* 交集模式 */
-.box {
-  mask-image: 
-    url('mask1.png'),
-    url('mask2.png');
+.element {
+  mask-image: url('mask1.svg), url('mask2.svg');
   mask-composite: intersect;
 }
-
-/* 排除模式 */
-.box {
-  mask-image: 
-    url('mask1.png'),
-    url('mask2.png');
-  mask-composite: exclude;
-}
-
-/* 多个复合方式 */
-.box {
-  mask-image: 
-    url('mask1.png'),
-    url('mask2.png'),
-    url('mask3.png');
-  mask-composite: add, subtract;
-}
-```
-
-```html
-<!-- HTML 示例 -->
-<div class="box">遮罩内容</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 1. 叠加遮罩效果 */
-.add-mask {
+/* 创建复杂遮罩效果 */
+.complex-mask {
   mask-image: 
-    url('pattern.png'),
-    url('gradient.png');
-  mask-composite: add;
-}
-
-/* 2. 镂空效果 */
-.subtract-mask {
-  mask-image: 
-    url('base.png'),
-    url('hole.png');
-  mask-composite: subtract;
-}
-
-/* 3. 交集遮罩 */
-.intersect-mask {
-  mask-image: 
-    url('shape1.png'),
-    url('shape2.png');
-  mask-composite: intersect;
-}
-
-/* 4. 异或遮罩 */
-.exclude-mask {
-  mask-image: 
-    url('shape1.png'),
-    url('shape2.png');
-  mask-composite: exclude;
-}
-
-/* 5. 多图层复合 */
-.multi-composite {
-  mask-image: 
-    url('layer1.png'),
-    url('layer2.png'),
-    url('layer3.png');
+    url('base-mask.svg),
+    url('detail-mask.svg),
+    url('highlight-mask.svg');
   mask-composite: add, subtract;
 }
+```
 
-/* 6. 圆形镂空 */
-.circle-hole {
-  mask-image: 
-    url('rectangle.png'),
-    url('circle.png');
-  mask-composite: subtract;
-}
+## 浏览器兼容性
 
-/* 7. 星形遮罩 */
-.star-mask {
-  mask-image: 
-    url('circle.png'),
-    url('star.png');
-  mask-composite: intersect;
-}
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 支持（需 -webkit- 前缀） |
+| Firefox | 支持 |
+| Safari | 支持（需 -webkit- 前缀） |
+| Edge | 支持 |
 
-/* 8. 复杂复合 */
-.complex-composite {
-  mask-image: 
-    url('base.png'),
-    url('pattern.png'),
-    url('gradient.png');
-  mask-composite: add, intersect;
-}
+## 相关属性
+
+- [`mask-image`](mask-image.md) - 遮罩图像
+- [`mask`](mask.md) - 遮罩速记
+- [`mix-blend-mode`](mix-blend-mode.md) - 混合模式
+
+## 规范
+
+- [CSS Masking Module Level 1](https://www.w3.org/TR/css-masking-1/#the-mask-composite)

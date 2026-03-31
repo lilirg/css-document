@@ -1,6 +1,6 @@
 # perspective-origin
 
-该属性定义 3D 变换元素的透视原点位置，即观察者视角的中心点。
+`perspective-origin` 属性定义 `perspective` 属性的透视原点位置。
 
 ## 语法
 
@@ -11,75 +11,73 @@ perspective-origin: <position>
 | 语法特性 | 说明 |
 | :--- | :--- |
 | 初始值 | `50% 50%` |
-| 适用 HTML 元素 | 非替换元素 |
+| 适用 HTML 元素 | 所有元素 |
 | 动画 | 是 |
 
 ## 值
 
-### `<position>`
-使用位置关键字或坐标值定义透视原点。
-
 | 值 | 说明 |
 | :--- | :--- |
-| `center` | 中心点（默认） |
-| `top` | 顶部 |
-| `bottom` | 底部 |
-| `left` | 左侧 |
-| `right` | 右侧 |
-| `<length>` | 固定坐标值 |
-| `<percentage>` | 百分比坐标 |
+| `<length>` | 使用长度值定位 |
+| `<percentage>` | 使用百分比定位 |
+| `top` | 顶部对齐 |
+| `bottom` | 底部对齐 |
+| `left` | 左侧对齐 |
+| `right` | 右侧对齐 |
+| `center` | 居中对齐 |
 
 ## 注意
 
-- 第一个值为 X 轴位置，第二个值为 Y 轴位置
+- 定义透视消失点的位置
+- 可以指定一个或两个值
+- 单个值时，第二个值默认为 `center`
 - 与 `perspective` 属性配合使用
-- 影响 3D 变换的视觉效果
 
 ## 示例
 
 ```css
-/* CSS 示例 */
+/* 透视原点在左上角 */
 .container {
-  perspective: 500px;
-  perspective-origin: left top;
+  perspective: 1000px;
+  perspective-origin: top left;
 }
 
-.box {
-  transform: rotateY(45deg);
+/* 透视原点在右侧 */
+.container {
+  perspective: 1000px;
+  perspective-origin: right center;
 }
-```
-
-```html
-<!-- HTML 示例 -->
-<div class="container">
-  <div class="box">3D 变换内容</div>
-</div>
 ```
 
 ## 使用场景
 
 ```css
-/* 1. 左上角透视原点 */
-.top-left {
-  perspective-origin: left top;
+/* 3D 场景，透视原点在底部 */
+.scene {
+  perspective: 800px;
+  perspective-origin: 50% 100%;
 }
 
-/* 2. 右下角透视原点 */
-.bottom-right {
-  perspective-origin: right bottom;
+.scene .element {
+  transform: rotateX(45deg);
 }
+```
 
-/* 3. 自定义坐标透视原点 */
-.custom {
-  perspective-origin: 25% 75%;
-}
+## 浏览器兼容性
 
-/* 4. 左侧透视原点 */
-.left-origin {
-  perspective-origin: left center;
-}
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 支持（需 -webkit- 前缀） |
+| Firefox | 支持 |
+| Safari | 支持（需 -webkit- 前缀） |
+| Edge | 支持 |
 
-/* 5. 顶部透视原点 */
-.top-origin {
-  perspective-origin: center top;
-}
+## 相关属性
+
+- [`perspective`](perspective.md) - 透视距离
+- [`transform`](transform.md) - 变换
+- [`transform-style`](transform-style.md) - 变换样式
+
+## 规范
+
+- [CSS Transforms Module Level 1](https://www.w3.org/TR/css-transforms-1/#perspective-origin-property)

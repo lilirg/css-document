@@ -1,11 +1,11 @@
 # string-set
 
-`string-set` 属性用于定义字符串变量，可在 `content` 属性中使用。
+`string-set` 属性定义字符串，用于在分页媒体中显示在页眉或页脚。
 
 ## 语法
 
 ```css
-string-set: <string-name> <string-value> [, <string-name> <string-value>]*
+string-set: none | [ <content-list> [ , <content-list> ]* ]
 ```
 
 | 语法特性 | 说明 |
@@ -18,35 +18,27 @@ string-set: <string-name> <string-value> [, <string-name> <string-value>]*
 
 | 值 | 说明 |
 | :--- | :--- |
-| `<string-name>` | 变量名称 |
-| `<string-value>` | 变量值（文本或 `content()`） |
+| `none` | 不设置字符串 |
+| `<content-list>` | 字符串内容列表 |
 
 ## 注意
 
-- 此属性主要用于 CSS paged media（分页媒体）
-- 常与 `@page` 规则配合使用
-- 可用于页眉页脚显示章节标题
-- 浏览器支持有限
+- 仅适用于分页媒体（如打印）
+- 与 `@page` 规则的 `string()` 函数配合使用
+- 用于在页眉页脚显示动态内容
 
 ## 示例
 
 ```css
-/* 定义字符串变量 */
-h1 {
-  string-set: chapter-title content(text);
-}
-
-/* 定义多个变量 */
+/* 设置章节标题字符串 */
 h2 {
-  string-set: section-title content(text), section-number content(counter(section));
+  string-set: chapter content();
 }
-```
 
-```css
-/* 在页眉中使用 */
+/* 在页眉显示章节标题 */
 @page {
   @top-center {
-    content: string(chapter-title);
+    content: string(chapter);
   }
 }
 ```
@@ -54,45 +46,35 @@ h2 {
 ## 使用场景
 
 ```css
-/* 1. 章节标题在页眉 */
-.chapter {
-  string-set: chapter content(text);
+/* 书籍章节标题在页眉显示 */
+.chapter-title {
+  string-set: title content(text);
 }
 
 @page {
+  @top-left {
+    content: string(title);
+  }
   @top-right {
-    content: string(chapter);
+    content: counter(page);
   }
-}
-
-/* 2. 页脚显示页码 */
-@page {
-  @bottom-center {
-    content: "Page " counter(page);
-  }
-}
-
-/* 3. 显示章节编号 */
-.section {
-  string-set: section-num counter(section);
 }
 ```
 
 ## 浏览器兼容性
 
-| 浏览器 | 版本 | 前缀 |
-|--------|------|------|
-| Chrome | 不支持 | - |
-| Edge | 不支持 | - |
-| Firefox | 不支持 | - |
-| Safari | 不支持 | - |
-| Opera | 不支持 | - |
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 不支持 |
+| Firefox | 部分支持 |
+| Safari | 不支持 |
+| Edge | 不支持 |
 
 ## 相关属性
 
-- [`content`](content.md) - 内容属性
-- [`counter()`](counter.md) - 计数器函数
+- [`@page`](../rule/page.md) - 页面规则
+- [`content`](content.md) - 内容
 
 ## 规范
 
-- [CSS Paged Media Module Level 3](https://drafts.csswg.org/css-page-3/)
+- [CSS Generated Content for Paged Media Module](https://www.w3.org/TR/css-gcpm-3/#string-set)
