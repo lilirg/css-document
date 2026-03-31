@@ -64,6 +64,37 @@ CSS 的视觉效果涉及颜色、透明度和混合：
 2. **不透明度** - 元素的透明程度
 3. **混合模式** - 元素如何与背景混合
 
+### 动画与变换
+
+CSS 的动画与变换涉及：
+
+1. **变换原点** - 变换的参考点
+2. **动画计时** - 动画的速度曲线
+3. **缓动函数** - 动画的速度变化
+
+## 阅读路径
+
+1. [CSS 简介](../basics/whatisCSS.md) - 了解 CSS 的基本概念
+2. [层叠](cascade.md) - 理解 CSS 样式应用的核心机制
+3. [优先级](specificity.md) - 掌握 CSS 选择器的优先级计算
+4. [继承](inheritance.md) - 理解 CSS 样式如何从父元素传递到子元素
+5. [盒模型](box-model.md) - 掌握 CSS 盒模型的概念和用法
+6. [正常文档流](normal-flow.md) - 理解元素在页面中的默认排列方式
+7. [包含块](containing-block.md) - 理解元素定位和尺寸计算的参考基准
+8. [堆叠上下文](stacking-context.md) - 理解元素在 z 轴方向上的层叠顺序
+9. [布局上下文](layout-context.md) - 理解 CSS 布局的机制
+10. [格式化上下文](formatting-context.md) - 理解 CSS 格式化的机制
+11. [BFC](block-formatting-context.md) - 掌握块级格式化上下文
+12. [FFC](flex-formatting-context.md) - 掌握弹性格式化上下文
+13. [GFC](grid-formatting-context.md) - 掌握网格格式化上下文
+14. [颜色空间](color-space.md) - 理解 CSS 颜色的表示方法
+15. [颜色模型](color-models.md) - 理解 CSS 颜色的模型
+16. [不透明度](opacity.md) - 理解 CSS 元素的透明程度
+17. [混合模式](blend-mode.md) - 理解 CSS 元素如何与背景混合
+18. [变换原点](transform-origin.md) - 理解 CSS 变换的参考点
+19. [动画计时](animation-timing.md) - 理解 CSS 动画的速度曲线
+20. [缓动函数](easing-function.md) - 理解 CSS 动画的速度变化
+
 ## 相关链接
 
 - [MDN Web Docs: CSS 概念](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Concepts)

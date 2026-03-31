@@ -95,6 +95,26 @@ CSS 支持多种颜色表示方法：
 2. **min()/max()/clamp()** - 值限制
 3. **attr()** - 属性值提取
 
+## 阅读路径
+
+1. [CSS 简介](../basics/whatisCSS.md) - 了解 CSS 的基本概念
+2. [长度](length.md) - 掌握 CSS 长度单位
+3. [颜色](color.md) - 掌握 CSS 颜色表示方法
+4. [整数](integer.md) - 掌握 CSS 整数类型
+5. [数字](number.md) - 掌握 CSS 数字类型
+6. [百分比](percentage.md) - 掌握 CSS 百分比类型
+7. [角度](angle.md) - 掌握 CSS 角度单位
+8. [时间](time.md) - 掌握 CSS 时间单位
+9. [频率](frequency.md) - 了解 CSS 频率单位
+10. [分辨率](resolution.md) - 了解 CSS 分辨率单位
+11. [字符串](string.md) - 掌握 CSS 字符串类型
+12. [URL](url.md) - 掌握 CSS URL 类型
+13. [图像](image.md) - 掌握 CSS 图像类型
+14. [变换函数](transform-function.md) - 掌握 CSS 变换函数
+15. [计时函数](timing-function.md) - 掌握 CSS 计时函数
+16. [自定义标识符](custom-ident.md) - 掌握 CSS 自定义标识符
+17. [任意值](any-value.md) - 了解 CSS 任意值类型
+
 ## 相关链接
 
 - [MDN Web Docs: CSS 数据类型](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Types)
