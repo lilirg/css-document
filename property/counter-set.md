@@ -1,11 +1,11 @@
-# counter-increment
+# counter-set
 
-`counter-increment` 属性用于递增或递减 CSS 计数器。
+`counter-set` 属性用于设置或重置 CSS 计数器。
 
 ## 语法
 
 ```css
-counter-increment: none | <identifier> <integer>?
+counter-set: none | <identifier> <integer>?
 ```
 
 | 语法特性 | 说明 |
@@ -18,37 +18,32 @@ counter-increment: none | <identifier> <integer>?
 
 | 值 | 说明 |
 | :--- | :--- |
-| `none` | 不递增计数器 |
+| `none` | 不设置计数器 |
 | `<identifier>` | 计数器名称 |
-| `<integer>` | 递增/递减值（默认为 1） |
+| `<integer>` | 初始值（默认为 0） |
 
 ## 注意
 
-- 此属性与 `counter-set` 和 `content()` 配合使用
-- 负值可以递减计数器
-- 可以递增多个计数器
+- 此属性与 `counter-increment` 和 `content()` 配合使用
+- 用于创建自定义编号系统
+- 可以设置多个计数器
 
 ## 示例
 
 ```css
-/* 递增计数器（默认 +1） */
+/* 重置计数器 */
 .section {
-  counter-increment: section;
+  counter-set: section;
 }
 
-/* 递增指定值 */
+/* 设置初始值 */
 .chapter {
-  counter-increment: chapter 2;
+  counter-set: chapter 1;
 }
 
-/* 递减计数器 */
-.reverse {
-  counter-increment: item -1;
-}
-
-/* 递增多个计数器 */
+/* 设置多个计数器 */
 .item {
-  counter-increment: chapter 1 section 1;
+  counter-set: chapter 1 section 0;
 }
 ```
 
@@ -62,15 +57,20 @@ counter-increment: none | <identifier> <integer>?
 
 ```html
 <!-- HTML 示例 -->
-<div class="section">第一节</div>
-<div class="section">第二节</div>
-<div class="section">第三节</div>
+<div class="chapter">
+  <div class="section">第一节</div>
+  <div class="section">第二节</div>
+</div>
 ```
 
 ## 使用场景
 
 ```css
 /* 1. 章节编号 */
+.chapter {
+  counter-set: chapter;
+}
+
 .chapter h1 {
   counter-increment: chapter;
 }
@@ -79,18 +79,29 @@ counter-increment: none | <identifier> <integer>?
   content: "第 " counter(chapter) "章 ";
 }
 
-/* 2. 列表编号 */
+/* 2. 嵌套编号 */
+.item {
+  counter-set: item;
+}
+
 .item::before {
   counter-increment: item;
   content: counter(item) ". ";
 }
 
-/* 3. 递减编号 */
- countdown {
-  counter-increment: countdown -1;
+/* 3. 多级编号 */
+.chapter {
+  counter-set: chapter;
 }
 
-/* 4. 多级编号 */
+.section {
+  counter-set: section;
+}
+
+.chapter h1 {
+  counter-increment: chapter;
+}
+
 .section h2 {
   counter-increment: section;
 }
@@ -112,7 +123,7 @@ counter-increment: none | <identifier> <integer>?
 
 ## 相关属性
 
-- [`counter-set`](counter-set.md) - 设置计数器
+- [`counter-increment`](counter-increment.md) - 计数器递增
 - [`content()`](content.md) - 内容函数
 - [`counters()`](counters.md) - 多级计数器函数
 

@@ -324,6 +324,7 @@
 | --- | --- |
 | [`scrollbar-color`](property/scrollbar-color.md) | 滚动条颜色 |
 | [`scrollbar-width`](property/scrollbar-width.md) | 滚动条宽度 |
+| [`scrollbar-gutter`](property/scrollbar-gutter.md) | 滚动条间距 |
 
 ##### 👤 用户界面 (User Interface)
 
@@ -414,6 +415,7 @@
 | [`text-decoration-style`](property/text-decoration-style.md) | 装饰线样式 |
 | [`text-decoration-thickness`](property/text-decoration-thickness.md) | 装饰线厚度 |
 | [`text-underline-offset`](property/text-underline-offset.md) | 下划线偏移 |
+| [`text-underline-position`](property/text-underline-position.md) | 下划线位置 |
 
 ##### 📏 行网格 (Line Grid)
 
@@ -459,6 +461,7 @@
 | [`counter-increment`](property/counter-increment.md) | 计数器递增 |
 | [`counter-reset`](property/counter-reset.md) | 计数器重置 |
 | [`counter-set`](property/counter-set.md) | 计数器设置 |
+| [`string-set`](property/string-set.md) | 字符串集 |
 
 ##### 🖌️ 浏览器前缀属性
 
