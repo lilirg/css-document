@@ -506,24 +506,24 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 
 | 属性 | 说明 | 状态 |
 | --- | --- | --- |
-| [`contain`](property/contain.md) | 包含 | ⏲ 待开始 |
-| [`content-visibility`](property/content-visibility.md) | 内容可见性 | ⏲ 待开始 |
-| [`inset`](property/inset.md) | 定位速记 | ⏲ 待开始 |
-| [`gap`](property/gap.md) | 间距速记 | ⏲ 待开始 |
-| [`scroll-behavior`](property/scroll-behavior.md) | 滚动行为 | ⏲ 待开始 |
-| [`scroll-snap-type`](property/scroll-snap-type.md) | 滚动捕捉类型 | ⏲ 待开始 |
-| [`scroll-snap-align`](property/scroll-snap-align.md) | 滚动捕捉对齐 | ⏲ 待开始 |
-| [`scroll-margin`](property/scroll-margin.md) | 滚动外边距速记 | ⏲ 待开始 |
-| [`scroll-padding`](property/scroll-padding.md) | 滚动内边距速记 | ⏲ 待开始 |
-| [`text-overflow`](property/text-overflow.md) | 文本溢出 | ⏲ 待开始 |
-| [`text-shadow`](property/text-shadow.md) | 文本阴影 | ⏲ 待开始 |
-| [`text-underline-offset`](property/text-underline-offset.md) | 下划线偏移 | ⏲ 待开始 |
-| [`accent-color`](property/accent-color.md) | 强调色 | ⏲ 待开始 |
-| [`color-scheme`](property/color-scheme.md) | 颜色方案 | ⏲ 待开始 |
-| [`scrollbar-gutter`](property/scrollbar-gutter.md) | 滚动条间距 | ⏲ 待开始 |
-| [`aspect-ratio`](property/aspect-ratio.md) | 宽高比 | ⏲ 待开始 |
-| [`content`](property/content.md) | 内容 | ⏲ 待开始 |
-| [`line-clamp`](property/line-clamp.md) | 行裁剪 | ⏲ 待开始 |
+| [`contain`](property/contain.md) | 包含 | ✅ 完成 |
+| [`content-visibility`](property/content-visibility.md) | 内容可见性 | ✅ 完成 |
+| [`inset`](property/inset.md) | 定位速记 | ✅ 完成 |
+| [`gap`](property/gap.md) | 间距速记 | ✅ 完成 |
+| [`scroll-behavior`](property/scroll-behavior.md) | 滚动行为 | ✅ 完成 |
+| [`scroll-snap-type`](property/scroll-snap-type.md) | 滚动捕捉类型 | ✅ 完成 |
+| [`scroll-snap-align`](property/scroll-snap-align.md) | 滚动捕捉对齐 | ✅ 完成 |
+| [`scroll-margin`](property/scroll-margin.md) | 滚动外边距速记 | ✅ 完成 |
+| [`scroll-padding`](property/scroll-padding.md) | 滚动内边距速记 | ✅ 完成 |
+| [`text-overflow`](property/text-overflow.md) | 文本溢出 | ✅ 完成 |
+| [`text-shadow`](property/text-shadow.md) | 文本阴影 | ✅ 完成 |
+| [`text-underline-offset`](property/text-underline-offset.md) | 下划线偏移 | ✅ 完成 |
+| [`accent-color`](property/accent-color.md) | 强调色 | ✅ 完成 |
+| [`color-scheme`](property/color-scheme.md) | 颜色方案 | ✅ 完成 |
+| [`scrollbar-gutter`](property/scrollbar-gutter.md) | 滚动条间距 | ✅ 完成 |
+| [`aspect-ratio`](property/aspect-ratio.md) | 宽高比 | ✅ 完成 |
+| [`content`](property/content.md) | 内容 | ✅ 完成 |
+| [`line-clamp`](property/line-clamp.md) | 行裁剪 | ✅ 完成 |
 
 ### 字体相关属性
 

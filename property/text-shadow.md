@@ -1,98 +1,193 @@
 # text-shadow
 
-该属性用于为文本添加阴影效果。
+`text-shadow` CSS 属性为文本添加阴影效果。
 
 ## 语法
 
 ```css
-text-shadow: offset-x offset-y blur-radius color;
-text-shadow: offset-x offset-y color;
-text-shadow: offset-x offset-y;
-```
+/* 无阴影 */
+text-shadow: none;
 
-| 语法特性 | 说明 |
-| :--- | :--- |
-| 初始值 | `none` |
-| 适用 HTML 元素 | 所有元素 |
-| 动画 | 是 |
+/* 两个值 - 水平偏移 | 垂直偏移 */
+text-shadow: 2px 2px;
+
+/* 三个值 - 水平偏移 | 垂直偏移 | 模糊半径 */
+text-shadow: 2px 2px 4px;
+
+/* 四个值 - 水平偏移 | 垂直偏移 | 模糊半径 | 颜色 */
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+/* 多个阴影（用逗号分隔） */
+text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 2em blue;
+```
 
 ## 值
 
-### `offset-x`
-水平偏移量，正值向右，负值向左。
+### 长度值
 
-### `offset-y`
-垂直偏移量，正值向下，负值向上。
+阴影的偏移量和模糊半径使用长度值。
 
-### `blur-radius`（可选）
-模糊半径，值越大阴影越模糊。
+- **水平偏移**：阴影在水平方向上的偏移
+- **垂直偏移**：阴影在垂直方向上的偏移
+- **模糊半径**：阴影的模糊程度（可选）
 
-### `color`（可选）
-阴影颜色，不指定则使用浏览器默认颜色。
+```css
+text-shadow: 2px 2px;
+text-shadow: 0.5em 0.5em 0.2em;
+text-shadow: -1px -1px 2px;
+```
 
-## 注意
-- 可以设置多个阴影，用逗号分隔
-- 阴影不会增加元素的大小
-- 继承属性
-- 性能影响：过多或过大的阴影可能影响性能
+### 颜色
+
+阴影的颜色（可选）。
+
+```css
+text-shadow: 2px 2px 4px red;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+text-shadow: 2px 2px 4px #333;
+```
+
+### `none`
+
+不应用阴影。这是默认值。
+
+```css
+text-shadow: none;
+```
 
 ## 示例
+
+### 基本阴影
+
 ```css
-.simple-shadow {
+/* 简单的黑色阴影 */
+.basic-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.no-blur {
-  text-shadow: 1px 1px #000;
+/* 无模糊的硬阴影 */
+.hard-shadow {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
+```
 
-.multiple-shadows {
+### 多个阴影
+
+```css
+/* 多层阴影效果 */
+.multi-shadow {
   text-shadow: 
     1px 1px 2px black,
-    2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-```
-
-```html
-<p class="simple-shadow">
-  带有模糊阴影的文本
-</p>
-
-<p class="no-blur">
-  带有清晰阴影的文本
-</p>
-
-<p class="multiple-shadows">
-  带有多个阴影的文本
-</p>
-```
-
-## 使用场景
-```css
-/* 1. 标题立体效果 */
-.styled-title {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    2px 2px 4px black,
+    3px 3px 6px black;
 }
 
-/* 2. 霓虹灯效果 */
-.neon-text {
+/* 霓虹灯效果 */
+.neon {
   text-shadow: 
     0 0 5px #fff,
     0 0 10px #fff,
-    0 0 20px #ff00de,
-    0 0 30px #ff00de;
+    0 0 15px #0ff,
+    0 0 20px #0ff,
+    0 0 35px #0ff;
 }
+```
 
-/* 3. 文字描边效果 */
-.outline-text {
+### 文字描边效果
+
+```css
+/* 文字描边 */
+.stroke {
   text-shadow: 
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    1px 0 0 #000,
+    -1px 0 0 #000,
+    0 1px 0 #000,
+    0 -1px 0 #000;
 }
 
-/* 4. 浅色背景上的深色阴影 */
-.light-bg {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+/* 粗描边 */
+.thick-stroke {
+  text-shadow: 
+    2px 0 0 #000,
+    -2px 0 0 #000,
+    0 2px 0 #000,
+    0 -2px 0 #000,
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000;
 }
+```
+
+### 发光效果
+
+```css
+/* 发光文字 */
+.glow {
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #ff00de,
+    0 0 15px #ff00de;
+}
+
+/* 柔和阴影 */
+.soft-shadow {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+```
+
+### 实际应用
+
+```css
+/* 标题 */
+h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+/* 按钮文字 */
+.button-text {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+/* 卡片标题 */
+.card-title {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+```
+
+## 浏览器兼容性
+
+| 浏览器 | 版本 |
+|--------|------|
+| Chrome | 1+ |
+| Edge | 12+ |
+| Firefox | 3.5+ |
+| Safari | 1+ |
+| Opera | 10.5+ |
+
+## 注意事项
+
+1. **性能考虑**：过多的阴影或过大的模糊半径可能会影响性能。
+
+2. **可读性**：使用阴影时应确保文字仍然清晰可读。
+
+3. **多个阴影**：可以指定多个阴影，用逗号分隔，按从左到右的顺序渲染。
+
+4. **模糊半径**：模糊半径为 0 时产生硬阴影，值越大阴影越模糊。
+
+5. **负值**：偏移量可以使用负值来改变阴影方向。
+
+6. **与 box-shadow 的区别**：`text-shadow` 只影响文本，`box-shadow` 影响元素盒子。
+
+## 相关属性
+
+- [`box-shadow`](box-shadow.md) - 盒子阴影
+- [`color`](color.md) - 文本颜色
+- [`filter`](filter.md) - 滤镜效果
+
+## 规范
+
+- [CSS Text Decoration Module Level 3](https://www.w3.org/TR/css-text-decor-3/#text-shadow)
