@@ -12,17 +12,17 @@
 
 ---
 
-MDN Web Docs（Mozilla Developer Network）是一个权威的 Web 技术文档网站，提供了关于 HTML、CSS、JavaScript 等前端技术的详细文档和教程。MDN Web Docs 由 Mozilla 开发者网络提供，其内容由全球的贡献者维护和更新，以确保信息的准确性和时效性。
-
-MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发人员提供了各种 API、属性和技术的详细说明，以及各种浏览器兼容性信息和规范。此外，MDN Web Docs 还提供了许多示例代码和演示，帮助开发人员更好地理解和使用 Web 技术。
-
-因此，可以说 MDN Web Docs 是一个权威的 Web 技术文档网站，对于 Web 开发人员来说是非常重要的学习资源。
-
-本参考相对于 MDN Web Docs，更倾向一般业务应用实践和特征功能的最佳实践。
+> MDN Web Docs（Mozilla Developer Network）是一个权威的 Web 技术文档网站，提供了关于 HTML、CSS、JavaScript 等前端技术的详细文档和教程。MDN Web Docs 由 Mozilla 开发者网络提供，其内容由全球的贡献者维护和更新，以确保信息的准确性和时效性。
+>
+> MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发人员提供了各种 API、属性和技术的详细说明，以及各种浏览器兼容> 性信息和规范。此外，MDN Web Docs 还提供了许多示例代码和演示，帮助开发人员更好地理解和使用 Web 技术。
+>
+> 因此，可以说 MDN Web Docs 是一个权威的 Web 技术文档网站，对于 Web 开发人员来说是非常重要的学习资源。
+>
+> 本参考相对于 MDN Web Docs，更倾向一般业务应用实践和特征功能的最佳实践。
 
 ---
 
-## 参考网站：
+## 参考网站
 
 - [https://drafts.csswg.org/css-2024/](https://drafts.csswg.org/css-2024/)
 - [https://drafts.csswg.org/css-syntax/](https://drafts.csswg.org/css-syntax/)
@@ -529,48 +529,48 @@ MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发�
 
 | 属性 | 说明 | 状态 |
 | --- | --- | --- |
-| [`font-feature-settings`](property/font-feature-settings.md) | 字体特性设置 | ⏲ 待开始 |
-| [`font-kerning`](property/font-kerning.md) | 字体 Kerning | ⏲ 待开始 |
-| [`font-optical-sizing`](property/font-optical-sizing.md) | 字体光学缩放 | ⏲ 待开始 |
-| [`font-palette`](property/font-palette.md) | 字体调色板 | ⏲ 待开始 |
-| [`font-variation-settings`](property/font-variation-settings.md) | 字体变体设置 | ⏲ 待开始 |
-| [`font-variant-caps`](property/font-variant-caps.md) | 字体变体大写字母 | ⏲ 待开始 |
-| [`font-variant-numeric`](property/font-variant-numeric.md) | 字体变体数字 | ⏲ 待开始 |
-| [`font-variant-east-asian`](property/font-variant-east-asian.md) | 字体变体东亚 | ⏲ 待开始 |
-| [`font-variant-ligatures`](property/font-variant-ligatures.md) | 字体变体连字 | ⏲ 待开始 |
+| [`font-feature-settings`](property/font-feature-settings.md) | 字体特性设置 | ✅ 完成 |
+| [`font-kerning`](property/font-kerning.md) | 字体 Kerning | ✅ 完成 |
+| [`font-optical-sizing`](property/font-optical-sizing.md) | 字体光学缩放 | ✅ 完成 |
+| [`font-palette`](property/font-palette.md) | 字体调色板 | ✅ 完成 |
+| [`font-variation-settings`](property/font-variation-settings.md) | 字体变体设置 | ✅ 完成 |
+| [`font-variant-caps`](property/font-variant-caps.md) | 字体变体大写字母 | ✅ 完成 |
+| [`font-variant-numeric`](property/font-variant-numeric.md) | 字体变体数字 | ✅ 完成 |
+| [`font-variant-east-asian`](property/font-variant-east-asian.md) | 字体变体东亚 | ✅ 完成 |
+| [`font-variant-ligatures`](property/font-variant-ligatures.md) | 字体变体连字 | ✅ 完成 |
 
 ### 文本相关属性
 
 | 属性 | 说明 | 状态 |
 | --- | --- | --- |
-| [`text-emphasis`](property/text-emphasis.md) | 文本强调速记 | ⏲ 待开始 |
-| [`text-emphasis-color`](property/text-emphasis-color.md) | 文本强调颜色 | ⏲ 待开始 |
-| [`text-emphasis-style`](property/text-emphasis-style.md) | 文本强调样式 | ⏲ 待开始 |
-| [`text-emphasis-position`](property/text-emphasis-position.md) | 文本强调位置 | ⏲ 待开始 |
-| [`text-size-adjust`](property/text-size-adjust.md) | 文本大小调整 | ⏲ 待开始 |
-| [`text-combine-upright`](property/text-combine-upright.md) | 文本组合直立 | ⏲ 待开始 |
-| [`line-break`](property/line-break.md) | 换行 | ⏲ 待开始 |
+| [`text-emphasis`](property/text-emphasis.md) | 文本强调速记 | ✅ 完成 |
+| [`text-emphasis-color`](property/text-emphasis-color.md) | 文本强调颜色 | ✅ 完成 |
+| [`text-emphasis-style`](property/text-emphasis-style.md) | 文本强调样式 | ✅ 完成 |
+| [`text-emphasis-position`](property/text-emphasis-position.md) | 文本强调位置 | ✅ 完成 |
+| [`text-size-adjust`](property/text-size-adjust.md) | 文本大小调整 | ✅ 完成 |
+| [`text-combine-upright`](property/text-combine-upright.md) | 文本组合直立 | ✅ 完成 |
+| [`line-break`](property/line-break.md) | 换行 | ✅ 完成 |
 
 ### 逻辑属性补充
 
 | 属性 | 说明 | 状态 |
 | --- | --- | --- |
-| [`border-block-color`](property/border-block-color.md) | 块边框颜色 | ⏲ 待开始 |
-| [`border-block-style`](property/border-block-style.md) | 块边框样式 | ⏲ 待开始 |
-| [`border-block-width`](property/border-block-width.md) | 块边框宽度 | ⏲ 待开始 |
-| [`border-inline-color`](property/border-inline-color.md) | 行内边框颜色 | ⏲ 待开始 |
-| [`border-inline-style`](property/border-inline-style.md) | 行内边框样式 | ⏲ 待开始 |
-| [`border-inline-width`](property/border-inline-width.md) | 行内边框宽度 | ⏲ 待开始 |
-| [`border-start-start-radius`](property/border-start-start-radius.md) | 开始开始圆角 | ⏲ 待开始 |
-| [`border-start-end-radius`](property/border-start-end-radius.md) | 开始结束圆角 | ⏲ 待开始 |
-| [`border-end-start-radius`](property/border-end-start-radius.md) | 结束开始圆角 | ⏲ 待开始 |
-| [`border-end-end-radius`](property/border-end-end-radius.md) | 结束结束圆角 | ⏲ 待开始 |
-| [`inset-block`](property/inset-block.md) | 块定位速记 | ⏲ 待开始 |
-| [`inset-block-start`](property/inset-block-start.md) | 块开始定位 | ⏲ 待开始 |
-| [`inset-block-end`](property/inset-block-end.md) | 块结束定位 | ⏲ 待开始 |
-| [`inset-inline`](property/inset-inline.md) | 行内定位速记 | ⏲ 待开始 |
-| [`inset-inline-start`](property/inset-inline-start.md) | 行内开始定位 | ⏲ 待开始 |
-| [`inset-inline-end`](property/inset-inline-end.md) | 行内结束定位 | ⏲ 待开始 |
+| [`border-block-color`](property/border-block-color.md) | 块边框颜色 | ✅ 完成 |
+| [`border-block-style`](property/border-block-style.md) | 块边框样式 | ✅ 完成 |
+| [`border-block-width`](property/border-block-width.md) | 块边框宽度 | ✅ 完成 |
+| [`border-inline-color`](property/border-inline-color.md) | 行内边框颜色 | ✅ 完成 |
+| [`border-inline-style`](property/border-inline-style.md) | 行内边框样式 | ✅ 完成 |
+| [`border-inline-width`](property/border-inline-width.md) | 行内边框宽度 | ✅ 完成 |
+| [`border-start-start-radius`](property/border-start-start-radius.md) | 开始开始圆角 | ✅ 完成 |
+| [`border-start-end-radius`](property/border-start-end-radius.md) | 开始结束圆角 | ✅ 完成 |
+| [`border-end-start-radius`](property/border-end-start-radius.md) | 结束开始圆角 | ✅ 完成 |
+| [`border-end-end-radius`](property/border-end-end-radius.md) | 结束结束圆角 | ✅ 完成 |
+| [`inset-block`](property/inset-block.md) | 块定位速记 | ✅ 完成 |
+| [`inset-block-start`](property/inset-block-start.md) | 块开始定位 | ✅ 完成 |
+| [`inset-block-end`](property/inset-block-end.md) | 块结束定位 | ✅ 完成 |
+| [`inset-inline`](property/inset-inline.md) | 行内定位速记 | ✅ 完成 |
+| [`inset-inline-start`](property/inset-inline-start.md) | 行内开始定位 | ✅ 完成 |
+| [`inset-inline-end`](property/inset-inline-end.md) | 行内结束定位 | ✅ 完成 |
 
 ### 动画与过渡新属性
 
