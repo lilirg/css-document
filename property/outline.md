@@ -1,189 +1,116 @@
 # outline
 
-该属性是轮廓的速记属性，用于设置元素周围的线条。
+`outline` 属性定义元素边框外的轮廓线，是一种在边框之外绘制的装饰线，不占用布局空间。
 
 ## 语法
 
 ```css
-outline: <outline-color> || <outline-style> || <outline-width>
+outline: [ <'outline-color'> || <'outline-style'> || <'outline-width'> ];
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | 各属性的初始值 |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 是             |
-
-## 值
-
-### 组成部分
-
-| 属性 | 说明 |
-| :--- | :--- |
-| `outline-color` | 轮廓颜色 |
-| `outline-style` | 轮廓样式 |
-| `outline-width` | 轮廓宽度 |
-
-### 样式值
+### 值
 
 | 值 | 说明 |
-| :--- | :--- |
+| --- | --- |
+| `<outline-color>` | 轮廓颜色 |
+| `auto` | 自动颜色 |
+| `<color>` | 指定颜色 |
+| `<outline-style>` | 轮廓样式 |
 | `none` | 无轮廓 |
-| `solid` | 实线 |
+| `hidden` | 隐藏轮廓 |
+| `dotted` | 点状 |
 | `dashed` | 虚线 |
-| `dotted` | 点线 |
+| `solid` | 实线 |
 | `double` | 双线 |
 | `groove` | 凹槽 |
 | `ridge` | 脊线 |
-| `inset` | 内嵌 |
-| `outset` | 外凸 |
-
-## 注意
-
-- 轮廓不占用空间，不影响布局
-- 轮廓绘制在边框之外
-- 常用于焦点状态
-- 与 `border` 不同，轮廓不占据文档流空间
+| `inset` | 嵌入 |
+| `outset` | 突出 |
+| `<outline-width>` | 轮廓宽度 |
+| `thin` | 细 |
+| `medium` | 中等 |
+| `thick` | 粗 |
+| `<length>` | 指定长度 |
 
 ## 示例
 
+### 基本用法
+
 ```css
-/* 基本轮廓 */
-.el1 {
-  outline: 2px solid blue;
-}
-
-/* 虚线轮廓 */
-.el2 {
-  outline: 2px dashed red;
-}
-
-/* 点线轮廓 */
-.el3 {
-  outline: 2px dotted green;
-}
-
-/* 无轮廓 */
-.el4 {
-  outline: none;
+.focused-element {
+  outline: 2px solid #007bff;
 }
 ```
 
-```html
-<!-- 轮廓示例 -->
-<button class="outline-button">按钮</button>
-<div class="outline-box">盒子</div>
-```
-
-## 使用场景
+### 不同样式
 
 ```css
-/* 焦点轮廓 */
-input:focus,
-button:focus {
-  outline: 2px solid blue;
-  outline-offset: 2px;
+.dotted-outline {
+  outline: 3px dotted red;
 }
 
-/* 自定义焦点 */
-.custom-focus {
-  outline: 3px solid #0066cc;
-  outline-offset: 2px;
+.dashed-outline {
+  outline: 2px dashed green;
 }
 
-/* 移除轮廓 */
+.double-outline {
+  outline: 4px double blue;
+}
+```
+
+### 移除轮廓
+
+```css
 .no-outline {
   outline: none;
 }
+```
 
-/* 虚线轮廓 */
-.dashed-outline {
-  outline: 2px dashed #666;
-}
+### 自动颜色
 
-/* 点线轮廓 */
-.dotted-outline {
-  outline: 2px dotted #666;
+```css
+.auto-color {
+  outline: 2px solid auto;
 }
+```
 
-/* 双线轮廓 */
-.double-outline {
-  outline: 4px double #666;
-}
+### HTML 示例
 
-/* 凹槽轮廓 */
-.groove-outline {
-  outline: 4px groove #666;
-}
+```html
+<button class="focused-element">蓝色轮廓按钮</button>
+<button class="dotted-outline">点状轮廓按钮</button>
+<button class="dashed-outline">虚线轮廓按钮</button>
+<button class="no-outline">无轮廓按钮</button>
+```
 
-/* 脊线轮廓 */
-.ridge-outline {
-  outline: 4px ridge #666;
-}
+## 浏览器兼容性
 
-/* 内嵌轮廓 */
-.inset-outline {
-  outline: 4px inset #666;
-}
+| 浏览器 | 版本 |
+| --- | --- |
+| Chrome | 支持 |
+| Firefox | 支持 |
+| Safari | 支持 |
+| Edge | 支持 |
+| Opera | 支持 |
+| iOS Safari | 支持 |
+| Android Browser | 支持 |
 
-/* 外凸轮廓 */
-.outset-outline {
-  outline: 4px outset #666;
-}
+## 注意事项
 
-/* 悬停轮廓 */
-.hover-outline {
-  outline: none;
-  transition: outline 0.3s;
-}
+1. **不占空间**：轮廓不占用布局空间，不会影响元素尺寸
+2. **绘制顺序**：轮廓绘制在边框之外
+3. **圆角**：轮廓会跟随元素的圆角
+4. **无障碍**：常用于焦点状态的视觉反馈
+5. **与 border 区别**：border 占用空间，outline 不占用
 
-.hover-outline:hover {
-  outline: 2px solid #0066cc;
-  outline-offset: 2px;
-}
+## 相关属性
 
-/* 激活轮廓 */
-.active-outline {
-  outline: 3px solid #00cc66;
-  outline-offset: -2px;
-}
+- [`outline-color`](outline-color.md) - 轮廓颜色
+- [`outline-style`](outline-style.md) - 轮廓样式
+- [`outline-width`](outline-width.md) - 轮廓宽度
+- [`outline-offset`](outline-offset.md) - 轮廓偏移
+- [`border`](border.md) - 边框
 
-/* 响应式轮廓 */
-.responsive-outline {
-  outline: 2px solid blue;
-}
+## 规范链接
 
-@media (max-width: 768px) {
-  .responsive-outline {
-    outline: 3px solid blue;
-  }
-}
-
-/* 动画轮廓 */
-.animated-outline {
-  outline: 2px solid blue;
-  animation: outlineChange 3s infinite;
-}
-
-@keyframes outlineChange {
-  0%, 100% { outline: 2px solid blue; }
-  50% { outline: 2px solid red; }
-}
-
-/* 可访问性焦点 */
-.accessible-focus {
-  outline: 3px solid #ffcc00;
-  outline-offset: 2px;
-}
-
-/* 错误状态 */
-.error-outline {
-  outline: 2px solid red;
-  outline-offset: 2px;
-}
-
-/* 成功状态 */
-.success-outline {
-  outline: 2px solid green;
-  outline-offset: 2px;
-}
+- [CSS Basic User Interface Module Level 3](https://www.w3.org/TR/css-ui-3/#outline)

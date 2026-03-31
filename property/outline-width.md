@@ -1,215 +1,117 @@
 # outline-width
 
-该属性设置轮廓的宽度。
+`outline-width` 属性定义元素轮廓线的宽度，轮廓线是在元素边框之外绘制的装饰线。
 
 ## 语法
 
 ```css
-outline-width: <length> | thin | medium | thick
+outline-width: thin | medium | thick | <length>;
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `medium`       |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 是             |
+### 值
 
-## 值
-
-### `<length>`
-
-使用长度值指定宽度。可以是 `px`、`em`、`rem` 等单位。不能为负值。
-
-### `thin`
-
-细轮廓。具体宽度由浏览器决定。
-
-### `medium`
-
-中等宽度轮廓。默认值。
-
-### `thick`
-
-粗轮廓。具体宽度由浏览器决定。
-
-## 注意
-
-- 该属性是 `outline` 速记属性的一部分
-- 必须设置 `outline-style` 才能看到轮廓
-- 轮廓不占用空间，不影响布局
-- 不能为负值
+| 值 | 说明 |
+| --- | --- |
+| `thin` | 细轮廓 |
+| `medium` | 中等宽度（默认） |
+| `thick` | 粗轮廓 |
+| `<length>` | 指定具体长度值 |
 
 ## 示例
 
+### 基本用法
+
 ```css
-/* 细轮廓 */
-.el1 {
-  outline-style: solid;
+.thin-outline {
   outline-width: thin;
-  outline-color: blue;
-}
-
-/* 中等轮廓 */
-.el2 {
   outline-style: solid;
-  outline-width: medium;
-  outline-color: blue;
-}
-
-/* 粗轮廓 */
-.el3 {
-  outline-style: solid;
-  outline-width: thick;
-  outline-color: blue;
-}
-
-/* 固定宽度 */
-.el4 {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: blue;
+  outline-color: #007bff;
 }
 ```
 
-```html
-<!-- 轮廓宽度示例 -->
-<div class="thin">细</div>
-<div class="medium">中等</div>
-<div class="thick">粗</div>
-<div class="fixed">固定</div>
-```
-
-## 使用场景
+### 不同宽度
 
 ```css
-/* 细焦点 */
-.thin-focus {
-  outline-style: solid;
-  outline-width: thin;
-  outline-color: blue;
-}
-
-/* 中等焦点 */
-.medium-focus {
-  outline-style: solid;
+.medium-outline {
   outline-width: medium;
-  outline-color: blue;
-}
-
-/* 粗焦点 */
-.thick-focus {
   outline-style: solid;
-  outline-width: thick;
-  outline-color: blue;
-}
-
-/* 1px 轮廓 */
-.one-pixel {
-  outline-style: solid;
-  outline-width: 1px;
-  outline-color: blue;
-}
-
-/* 2px 轮廓 */
-.two-pixel {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: blue;
-}
-
-/* 3px 轮廓 */
-.three-pixel {
-  outline-style: solid;
-  outline-width: 3px;
-  outline-color: blue;
-}
-
-/* 4px 轮廓 */
-.four-pixel {
-  outline-style: solid;
-  outline-width: 4px;
-  outline-color: blue;
-}
-
-/* 悬停宽度 */
-.hover-width {
-  outline-style: solid;
-  outline-width: 1px;
-  outline-color: blue;
-  transition: outline-width 0.3s;
-}
-
-.hover-width:hover {
-  outline-width: 3px;
-}
-
-/* 响应式宽度 */
-.responsive-width {
-  outline-style: solid;
-  outline-width: 1px;
-  outline-color: blue;
-}
-
-@media (min-width: 768px) {
-  .responsive-width {
-    outline-width: 3px;
-  }
-}
-
-/* 动画宽度 */
-.animated-width {
-  outline-style: solid;
-  outline-width: 1px;
-  outline-color: blue;
-  animation: widthChange 3s infinite;
-}
-
-@keyframes widthChange {
-  0%, 100% { outline-width: 1px; }
-  50% { outline-width: 5px; }
-}
-
-/* 错误状态 */
-.error-width {
-  outline-style: solid;
-  outline-width: 2px;
   outline-color: red;
 }
 
-/* 成功状态 */
-.success-width {
+.thick-outline {
+  outline-width: thick;
   outline-style: solid;
-  outline-width: 2px;
   outline-color: green;
 }
+```
 
-/* 警告状态 */
-.warning-width {
+### 指定长度
+
+```css
+.specific-width {
+  outline-width: 3px;
   outline-style: solid;
-  outline-width: 2px;
+  outline-color: blue;
+}
+
+.em-width {
+  outline-width: 0.5em;
+  outline-style: dashed;
+  outline-color: purple;
+}
+
+.rem-width {
+  outline-width: 2rem;
+  outline-style: dotted;
   outline-color: orange;
 }
+```
 
-/* 可访问性焦点 */
-.accessible-focus {
-  outline-style: solid;
-  outline-width: 3px;
-  outline-color: #ffcc00;
-  outline-offset: 2px;
-}
+### 配合简写
 
-/* 卡片高亮 */
-.card-highlight {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: #0066cc;
-  outline-offset: 4px;
+```css
+.custom-outline {
+  outline: 4px solid #ff6b6b;
 }
+```
 
-/* 按钮焦点 */
-.button-focus {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: #0066cc;
-  outline-offset: 3px;
-}
+### HTML 示例
+
+```html
+<button class="thin-outline">细轮廓</button>
+<button class="medium-outline">中等轮廓</button>
+<button class="thick-outline">粗轮廓</button>
+<button class="specific-width">3px 轮廓</button>
+```
+
+## 浏览器兼容性
+
+| 浏览器 | 版本 |
+| --- | --- |
+| Chrome | 支持 |
+| Firefox | 支持 |
+| Safari | 支持 |
+| Edge | 支持 |
+| Opera | 支持 |
+| iOS Safari | 支持 |
+| Android Browser | 支持 |
+
+## 注意事项
+
+1. **配合样式**：需要与 `outline-style` 配合使用才能显示
+2. **不占空间**：轮廓不占用布局空间
+3. **焦点状态**：常用于焦点状态的视觉反馈
+4. **相对单位**：推荐使用相对单位（em、rem）以保持响应式
+5. **无障碍**：确保轮廓宽度足够清晰可见
+
+## 相关属性
+
+- [`outline`](outline.md) - 轮廓简写
+- [`outline-color`](outline-color.md) - 轮廓颜色
+- [`outline-style`](outline-style.md) - 轮廓样式
+- [`outline-offset`](outline-offset.md) - 轮廓偏移
+- [`border-width`](border-width.md) - 边框宽度
+
+## 规范链接
+
+- [CSS Basic User Interface Module Level 3](https://www.w3.org/TR/css-ui-3/#outline-width)

@@ -45,7 +45,7 @@
 | └─ 兼容 | ⏲ 待开始 | 0% |
 | └─ 性能 | ⏲ 待开始 | 0% |
 | 概念 | ⏲ 待开始 | 0% |
-| 属性 | 📍 进行中 | 85% |
+| 属性 | 📍 进行中 | 95% |
 | 规则 | ⏲ 待开始 | 0% |
 | 伪类 | ⏲ 待开始 | 0% |
 | 函数 | ⏲ 待开始 | 0% |
@@ -576,39 +576,39 @@
 
 | 属性 | 说明 | 状态 |
 | --- | --- | --- |
-| [`animation-timeline`](property/animation-timeline.md) | 动画时间线 | ⏲ 待开始 |
-| [`animation-range`](property/animation-range.md) | 动画范围 | ⏲ 待开始 |
-| [`animation-range-start`](property/animation-range-start.md) | 动画范围开始 | ⏲ 待开始 |
-| [`animation-range-end`](property/animation-range-end.md) | 动画范围结束 | ⏲ 待开始 |
-| [`scroll-timeline`](property/scroll-timeline.md) | 滚动时间线 | ⏲ 待开始 |
-| [`view-timeline`](property/view-timeline.md) | 视图时间线 | ⏲ 待开始 |
+| [`animation-timeline`](property/animation-timeline.md) | 动画时间线 | ✅ 完成 |
+| [`animation-range`](property/animation-range.md) | 动画范围 | ✅ 完成 |
+| [`animation-range-start`](property/animation-range-start.md) | 动画范围开始 | ✅ 完成 |
+| [`animation-range-end`](property/animation-range-end.md) | 动画范围结束 | ✅ 完成 |
+| [`scroll-timeline`](property/scroll-timeline.md) | 滚动时间线 | ✅ 完成 |
+| [`view-timeline`](property/view-timeline.md) | 视图时间线 | ✅ 完成 |
 
 ### 分页媒体补充
 
 | 属性 | 说明 | 状态 |
 | --- | --- | --- |
-| [`bleed`](property/bleed.md) | 出血 | ⏲ 待开始 |
-| [`marks`](property/marks.md) | 标记 | ⏲ 待开始 |
-| [`size`](property/size.md) | 页面尺寸 | ⏲ 待开始 |
+| [`bleed`](property/bleed.md) | 出血 | ✅ 完成 |
+| [`marks`](property/marks.md) | 标记 | ✅ 完成 |
+| [`size`](property/size.md) | 页面尺寸 | ✅ 完成 |
 
 ### 其他补充
 
 | 属性 | 说明 | 状态 |
 | --- | --- | --- |
-| [`box-decoration-break`](property/box-decoration-break.md) | 盒子装饰片段 | ⏲ 待开始 |
-| [`forced-color-adjust`](property/forced-color-adjust.md) | 强制颜色调整 | ⏲ 待开始 |
-| [`transform-box`](property/transform-box.md) | 变换盒子 | ⏲ 待开始 |
-| [`overflow-anchor`](property/overflow-anchor.md) | 溢出锚点 | ⏲ 待开始 |
-| [`overflow-block`](property/overflow-block.md) | 块溢出 | ⏲ 待开始 |
-| [`overflow-inline`](property/overflow-inline.md) | 行内溢出 | ⏲ 待开始 |
-| [`overflow-clip-margin`](property/overflow-clip-margin.md) | 溢出裁剪边距 | ⏲ 待开始 |
-| [`max-lines`](property/max-lines.md) | 最大行数 | ⏲ 待开始 |
-| [`speak`](property/speak.md) | 语音 | ⏲ 待开始 |
-| [`speak-as`](property/speak-as.md) | 语音方式 | ⏲ 待开始 |
-| [`caret`](property/caret.md) | 光标速记 | ⏲ 待开始 |
-| [`caret-shape`](property/caret-shape.md) | 光标形状 | ⏲ 待开始 |
-| [`outline`](property/outline.md) | 轮廓速记 | ⏲ 待开始 |
-| [`outline-color`](property/outline-color.md) | 轮廓颜色 | ⏲ 待开始 |
-| [`outline-style`](property/outline-style.md) | 轮廓样式 | ⏲ 待开始 |
-| [`outline-width`](property/outline-width.md) | 轮廓宽度 | ⏲ 待开始 |
-| [`outline-offset`](property/outline-offset.md) | 轮廓偏移 | ⏲ 待开始 |
+| [`box-decoration-break`](property/box-decoration-break.md) | 盒子装饰片段 | ✅ 完成 |
+| [`forced-color-adjust`](property/forced-color-adjust.md) | 强制颜色调整 | ✅ 完成 |
+| [`transform-box`](property/transform-box.md) | 变换盒子 | ✅ 完成 |
+| [`overflow-anchor`](property/overflow-anchor.md) | 溢出锚点 | ✅ 完成 |
+| [`overflow-block`](property/overflow-block.md) | 块溢出 | ✅ 完成 |
+| [`overflow-inline`](property/overflow-inline.md) | 行内溢出 | ✅ 完成 |
+| [`overflow-clip-margin`](property/overflow-clip-margin.md) | 溢出裁剪边距 | ✅ 完成 |
+| [`max-lines`](property/max-lines.md) | 最大行数 | ✅ 完成 |
+| [`speak`](property/speak.md) | 语音 | ✅ 完成 |
+| [`speak-as`](property/speak-as.md) | 语音方式 | ✅ 完成 |
+| [`caret`](property/caret.md) | 光标速记 | ✅ 完成 |
+| [`caret-shape`](property/caret-shape.md) | 光标形状 | ✅ 完成 |
+| [`outline`](property/outline.md) | 轮廓速记 | ✅ 完成 |
+| [`outline-color`](property/outline-color.md) | 轮廓颜色 | ✅ 完成 |
+| [`outline-style`](property/outline-style.md) | 轮廓样式 | ✅ 完成 |
+| [`outline-width`](property/outline-width.md) | 轮廓宽度 | ✅ 完成 |
+| [`outline-offset`](property/outline-offset.md) | 轮廓偏移 | ✅ 完成 |

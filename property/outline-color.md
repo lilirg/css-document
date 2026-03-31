@@ -1,188 +1,106 @@
 # outline-color
 
-该属性设置轮廓的颜色。
+`outline-color` 属性定义元素轮廓线的颜色，轮廓线是在元素边框之外绘制的装饰线。
 
 ## 语法
 
 ```css
-outline-color: <color> | invert
+outline-color: auto | <color> | invert;
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `invert`       |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 是             |
+### 值
 
-## 值
-
-### `<color>`
-
-任何有效的 CSS 颜色值：
-- 颜色名称：`red`、`blue`、`green`
-- 十六进制：`#ff0000`、`#f00`
-- RGB：`rgb(255, 0, 0)`、`rgba(255, 0, 0, 0.5)`
-- HSL：`hsl(0, 100%, 50%)`、`hsla(0, 100%, 50%, 0.5)`
-
-### `invert`
-
-反转屏幕颜色。用于在无法确定轮廓颜色的情况下提供可见性。
-
-## 注意
-
-- 该属性是 `outline` 速记属性的一部分
-- 必须先设置 `outline-style` 才能看到轮廓
-- `invert` 值在旧版浏览器中用于提高可访问性
+| 值 | 说明 |
+| --- | --- |
+| `auto` | 使用默认颜色（默认） |
+| `<color>` | 指定颜色值 |
+| `invert` | 反转颜色（用于确保可见性） |
 
 ## 示例
 
+### 基本用法
+
 ```css
-/* 颜色名称 */
-.el1 {
-  outline-color: blue;
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-/* 十六进制 */
-.el2 {
-  outline-color: #ff0000;
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-/* RGB */
-.el3 {
-  outline-color: rgb(0, 255, 0);
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-/* RGBA */
-.el4 {
-  outline-color: rgba(0, 0, 255, 0.5);
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-/* 反转 */
-.el5 {
-  outline-color: invert;
+.focused-element {
+  outline-color: #007bff;
   outline-style: solid;
   outline-width: 2px;
 }
 ```
 
-```html
-<!-- 轮廓颜色示例 -->
-<div class="red-outline">红色轮廓</div>
-<div class="blue-outline">蓝色轮廓</div>
-<div class="green-outline">绿色轮廓</div>
-```
-
-## 使用场景
+### 使用颜色值
 
 ```css
-/* 焦点状态 */
-input:focus {
-  outline-color: blue;
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-/* 错误状态 */
-.error {
+.red-outline {
   outline-color: red;
   outline-style: solid;
-  outline-width: 2px;
 }
 
-/* 成功状态 */
-.success {
-  outline-color: green;
+.hex-color {
+  outline-color: #ff6b6b;
   outline-style: solid;
-  outline-width: 2px;
 }
 
-/* 警告状态 */
-.warning {
-  outline-color: orange;
+.rgb-color {
+  outline-color: rgb(0, 123, 255);
   outline-style: solid;
-  outline-width: 2px;
 }
+```
 
-/* 自定义颜色 */
-.custom-color {
-  outline-color: #0066cc;
-  outline-style: solid;
-  outline-width: 3px;
-}
+### 透明颜色
 
-/* 半透明轮廓 */
+```css
 .transparent-outline {
-  outline-color: rgba(0, 102, 204, 0.5);
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-/* HSL 颜色 */
-.hsl-outline {
-  outline-color: hsl(120, 100%, 25%);
-  outline-style: solid;
-  outline-width: 2px;
-}
-
-/* 悬停状态 */
-.hover-outline {
-  outline-style: solid;
-  outline-width: 2px;
   outline-color: transparent;
-  transition: outline-color 0.3s;
-}
-
-.hover-outline:hover {
-  outline-color: blue;
-}
-
-/* 响应式颜色 */
-.responsive-color {
-  outline-color: blue;
   outline-style: solid;
-  outline-width: 2px;
 }
+```
 
-@media (prefers-color-scheme: dark) {
-  .responsive-color {
-    outline-color: #66b3ff;
-  }
-}
+### 使用简写
 
-/* 动画颜色 */
-.animated-color {
-  outline-color: blue;
-  outline-style: solid;
-  outline-width: 2px;
-  animation: colorChange 3s infinite;
+```css
+.outline-color {
+  outline: 2px solid blue;
 }
+```
 
-@keyframes colorChange {
-  0%, 100% { outline-color: blue; }
-  25% { outline-color: red; }
-  50% { outline-color: green; }
-  75% { outline-color: orange; }
-}
+### HTML 示例
 
-/* 可访问性焦点 */
-.accessible-focus {
-  outline-color: #ffcc00;
-  outline-style: solid;
-  outline-width: 3px;
-  outline-offset: 2px;
-}
+```html
+<button class="focused-element">蓝色轮廓</button>
+<button class="red-outline">红色轮廓</button>
+<button class="hex-color">十六进制颜色轮廓</button>
+<button class="transparent-outline">透明轮廓</button>
+```
 
-/* 主题颜色 */
-.theme-outline {
-  outline-color: var(--primary-color);
-  outline-style: solid;
-  outline-width: 2px;
-}
+## 浏览器兼容性
+
+| 浏览器 | 版本 |
+| --- | --- |
+| Chrome | 支持 |
+| Firefox | 支持 |
+| Safari | 支持 |
+| Edge | 支持 |
+| Opera | 支持 |
+| iOS Safari | 支持 |
+| Android Browser | 支持 |
+
+## 注意事项
+
+1. **配合样式**：需要与 `outline-style` 配合使用才能显示
+2. **不占空间**：轮廓不占用布局空间
+3. **焦点状态**：常用于焦点状态的视觉反馈
+4. **无障碍**：确保轮廓颜色与背景有足够的对比度
+5. **invert 值**：`invert` 用于自动反色以确保可见性
+
+## 相关属性
+
+- [`outline`](outline.md) - 轮廓简写
+- [`outline-style`](outline-style.md) - 轮廓样式
+- [`outline-width`](outline-width.md) - 轮廓宽度
+- [`outline-offset`](outline-offset.md) - 轮廓偏移
+- [`border-color`](border-color.md) - 边框颜色
+
+## 规范链接
+
+- [CSS Basic User Interface Module Level 3](https://www.w3.org/TR/css-ui-3/#outline-color)

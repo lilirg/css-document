@@ -1,163 +1,106 @@
 # outline-offset
 
-该属性设置轮廓与元素边框之间的间距。
+`outline-offset` 属性定义轮廓线与元素边框之间的额外间距，控制轮廓线向外偏移的距离。
 
 ## 语法
 
 ```css
-outline-offset: <length>
+outline-offset: <length>;
 ```
 
-| 语法特性     | 说明           |
-| :----------- | :------------- |
-| 初始值       | `0`            |
-| 适用 HTML 元素 | 所有元素     |
-| 动画         | 是             |
+### 值
 
-## 值
-
-### `<length>`
-
-轮廓与边框之间的距离：
-- 正值：轮廓向外扩展
-- 负值：轮廓向内收缩
-- `0`：轮廓紧贴边框
-
-## 注意
-
-- 该属性是 `outline` 速记属性的一部分
-- 轮廓不占用空间，不影响布局
-- 常用于提高焦点状态的可访问性
-- 负值可能导致轮廓被裁剪
+| 值 | 说明 |
+| --- | --- |
+| `<length>` | 指定偏移距离（必须为非负值） |
 
 ## 示例
 
+### 基本用法
+
 ```css
-/* 正偏移 */
-.el1 {
-  outline: 2px solid blue;
+.offset-outline {
+  outline: 2px solid #007bff;
   outline-offset: 4px;
-}
-
-/* 零偏移 */
-.el2 {
-  outline: 2px solid blue;
-  outline-offset: 0;
-}
-
-/* 负偏移 */
-.el3 {
-  outline: 2px solid blue;
-  outline-offset: -2px;
 }
 ```
 
-```html
-<!-- 轮廓偏移示例 -->
-<button class="offset-button">按钮</button>
-<div class="offset-box">盒子</div>
-```
-
-## 使用场景
+### 不同偏移
 
 ```css
-/* 焦点偏移 */
-input:focus {
-  outline: 2px solid blue;
-  outline-offset: 4px;
-}
-
-/* 悬停偏移 */
-.hover-offset {
-  outline: 2px solid blue;
-  outline-offset: 0;
-  transition: outline-offset 0.3s;
-}
-
-.hover-offset:hover {
-  outline-offset: 4px;
-}
-
-/* 可访问性焦点 */
-.accessible-focus {
-  outline: 3px solid #ffcc00;
+.small-offset {
+  outline: 2px solid red;
   outline-offset: 2px;
 }
 
-/* 外部轮廓 */
-.external-offset {
-  outline: 2px solid red;
-  outline-offset: 6px;
+.medium-offset {
+  outline: 2px solid green;
+  outline-offset: 5px;
 }
 
-/* 内部轮廓 */
-.internal-offset {
-  outline: 2px solid red;
-  outline-offset: -2px;
-}
-
-/* 大偏移 */
 .large-offset {
   outline: 2px solid blue;
   outline-offset: 10px;
 }
+```
 
-/* 小偏移 */
-.small-offset {
-  outline: 2px solid blue;
-  outline-offset: 1px;
+### 配合圆角
+
+```css
+.rounded-offset {
+  outline: 3px solid purple;
+  outline-offset: 5px;
+  border-radius: 10px;
 }
+```
 
-/* 响应式偏移 */
-.responsive-offset {
-  outline: 2px solid blue;
-  outline-offset: 2px;
-}
+### 焦点状态
 
-@media (min-width: 768px) {
-  .responsive-offset {
-    outline-offset: 4px;
-  }
-}
-
-/* 动画偏移 */
-.animated-offset {
-  outline: 2px solid blue;
-  outline-offset: 0;
-  animation: offsetChange 3s infinite;
-}
-
-@keyframes offsetChange {
-  0%, 100% { outline-offset: 0; }
-  50% { outline-offset: 8px; }
-}
-
-/* 错误状态 */
-.error-offset {
-  outline: 2px solid red;
-  outline-offset: 2px;
-}
-
-/* 成功状态 */
-.success-offset {
-  outline: 2px solid green;
-  outline-offset: 2px;
-}
-
-/* 警告状态 */
-.warning-offset {
-  outline: 2px solid orange;
-  outline-offset: 2px;
-}
-
-/* 卡片高亮 */
-.card-highlight {
-  outline: 2px solid #0066cc;
-  outline-offset: 4px;
-}
-
-/* 按钮焦点 */
-.button-focus {
-  outline: 2px solid #0066cc;
+```css
+button:focus {
+  outline: 2px solid #007bff;
   outline-offset: 3px;
 }
+```
+
+### HTML 示例
+
+```html
+<button class="offset-outline">偏移轮廓按钮</button>
+<button class="small-offset">小偏移</button>
+<button class="medium-offset">中等偏移</button>
+<button class="large-offset">大偏移</button>
+<button class="rounded-offset">圆角偏移</button>
+```
+
+## 浏览器兼容性
+
+| 浏览器 | 版本 |
+| --- | --- |
+| Chrome | 支持 |
+| Firefox | 35+ |
+| Safari | 7+ |
+| Edge | 支持 |
+| Opera | 支持 |
+| iOS Safari | 7+ |
+| Android Browser | 支持 |
+
+## 注意事项
+
+1. **非负值**：值必须为非负值，负值会被忽略
+2. **不占空间**：轮廓不占用布局空间，但偏移会影响视觉范围
+3. **圆角跟随**：轮廓会跟随元素的圆角和偏移
+4. **焦点状态**：常用于增强焦点状态的可见性
+5. **无障碍**：适当的偏移可以提高可访问性
+
+## 相关属性
+
+- [`outline`](outline.md) - 轮廓简写
+- [`outline-color`](outline-color.md) - 轮廓颜色
+- [`outline-style`](outline-style.md) - 轮廓样式
+- [`outline-width`](outline-width.md) - 轮廓宽度
+- [`border`](border.md) - 边框
+
+## 规范链接
+
+- [CSS Basic User Interface Module Level 3](https://www.w3.org/TR/css-ui-3/#outline-offset)
