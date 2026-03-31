@@ -70,6 +70,12 @@
 | [`animation-name`](property/animation-name.md) | 动画名称 |
 | [`animation-play-state`](property/animation-play-state.md) | 动画播放状态 |
 | [`animation-timing-function`](property/animation-timing-function.md) | 动画时间函数 |
+| [`animation-timeline`](property/animation-timeline.md) | 动画时间线 |
+| [`animation-range`](property/animation-range.md) | 动画范围 |
+| [`animation-range-start`](property/animation-range-start.md) | 动画范围开始 |
+| [`animation-range-end`](property/animation-range-end.md) | 动画范围结束 |
+| [`scroll-timeline`](property/scroll-timeline.md) | 滚动时间线 |
+| [`view-timeline`](property/view-timeline.md) | 视图时间线 |
 | [`transition`](property/transition.md) | 过渡速记属性 |
 | [`transition-delay`](property/transition-delay.md) | 过渡延迟 |
 | [`transition-duration`](property/transition-duration.md) | 过渡持续时间 |
@@ -261,6 +267,9 @@
 | [`page-break-inside`](property/page-break-inside.md) | 分页内断点（旧） |
 | [`orphans`](property/orphans.md) | 孤行 |
 | [`widows`](property/widows.md) | 孤行（末页） |
+| [`bleed`](property/bleed.md) | 出血 |
+| [`marks`](property/marks.md) | 标记 |
+| [`size`](property/size.md) | 页面尺寸 |
 
 ##### 🎭 遮罩 (Masking)
 
@@ -322,6 +331,8 @@
 | --- | --- |
 | [`appearance`](property/appearance.md) | 元素的原生 UI 外观 |
 | [`caret-color`](property/caret-color.md) | 光标颜色 |
+| [`caret`](property/caret.md) | 光标速记 |
+| [`caret-shape`](property/caret-shape.md) | 光标形状 |
 | [`cursor`](property/cursor.md) | 光标 |
 | [`outline`](property/outline.md) | 轮廓速记 |
 | [`outline-color`](property/outline-color.md) | 轮廓颜色 |
@@ -352,6 +363,10 @@
 | [`overflow`](property/overflow.md) | 溢出处理 |
 | [`overflow-x`](property/overflow-x.md) | X 轴溢出 |
 | [`overflow-y`](property/overflow-y.md) | Y 轴溢出 |
+| [`overflow-anchor`](property/overflow-anchor.md) | 溢出锚点 |
+| [`overflow-block`](property/overflow-block.md) | 块溢出 |
+| [`overflow-inline`](property/overflow-inline.md) | 行内溢出 |
+| [`overflow-clip-margin`](property/overflow-clip-margin.md) | 溢出裁剪边距 |
 
 ##### 🔤 Ruby 标注 (Ruby)
 
@@ -372,6 +387,8 @@
 | [`voice-rate`](property/voice-rate.md) | 语音速率 |
 | [`voice-stress`](property/voice-stress.md) | 语音重音 |
 | [`voice-volume`](property/voice-volume.md) | 语音音量 |
+| [`speak`](property/speak.md) | 语音 |
+| [`speak-as`](property/speak-as.md) | 语音方式 |
 
 ##### 📄 页面生成与标记 (GCPM)
 
@@ -396,6 +413,7 @@
 | [`text-decoration-line`](property/text-decoration-line.md) | 装饰线类型 |
 | [`text-decoration-style`](property/text-decoration-style.md) | 装饰线样式 |
 | [`text-decoration-thickness`](property/text-decoration-thickness.md) | 装饰线厚度 |
+| [`text-underline-offset`](property/text-underline-offset.md) | 下划线偏移 |
 
 ##### 📏 行网格 (Line Grid)
 
@@ -407,7 +425,8 @@
 
 | 属性 | 说明 |
 | --- | --- |
-| *(暂无)* |
+| [`box-decoration-break`](property/box-decoration-break.md) | 盒子装饰片段 |
+| [`max-lines`](property/max-lines.md) | 最大行数 |
 
 ##### 📐 逻辑属性 (Logical Properties)
 
@@ -477,14 +496,23 @@
 
 | 属性 | 说明 |
 | --- | --- |
+| [`accent-color`](property/accent-color.md) | 强调色 |
+| [`aspect-ratio`](property/aspect-ratio.md) | 宽高比 |
+| [`box-decoration-break`](property/box-decoration-break.md) | 盒子装饰片段 |
 | [`box-shadow`](property/box-shadow.md) | 盒子阴影 |
 | [`clear`](property/clear.md) | 清除浮动 |
 | [`clip`](property/clip.md) | 裁剪区域 |
 | [`clip-path`](property/clip-path.md) | 裁剪路径 |
+| [`color-scheme`](property/color-scheme.md) | 颜色方案 |
+| [`content`](property/content.md) | 内容 |
 | [`display`](property/display.md) | 显示类型 |
 | [`empty-cells`](property/empty-cells.md) | 空单元格 |
 | [`float`](property/float.md) | 浮动 |
+| [`forced-color-adjust`](property/forced-color-adjust.md) | 强制颜色调整 |
+| [`gap`](property/gap.md) | 间距速记 |
 | [`height`](property/height.md) | 高度 |
+| [`inset`](property/inset.md) | 定位速记 |
+| [`line-clamp`](property/line-clamp.md) | 行裁剪 |
 | [`list-style`](property/list-style.md) | 列表样式速记 |
 | [`list-style-image`](property/list-style-image.md) | 列表图像 |
 | [`list-style-position`](property/list-style-position.md) | 列表位置 |
@@ -496,119 +524,15 @@
 | [`object-fit`](property/object-fit.md) | 对象适配 |
 | [`object-position`](property/object-position.md) | 对象位置 |
 | [`quotes`](property/quotes.md) | 引用符号 |
+| [`scroll-behavior`](property/scroll-behavior.md) | 滚动行为 |
+| [`scroll-margin`](property/scroll-margin.md) | 滚动外边距速记 |
+| [`scroll-padding`](property/scroll-padding.md) | 滚动内边距速记 |
+| [`scroll-snap-align`](property/scroll-snap-align.md) | 滚动捕捉对齐 |
+| [`scroll-snap-type`](property/scroll-snap-type.md) | 滚动捕捉类型 |
+| [`scrollbar-gutter`](property/scrollbar-gutter.md) | 滚动条间距 |
 | [`table-layout`](property/table-layout.md) | 表格布局 |
+| [`text-overflow`](property/text-overflow.md) | 文本溢出 |
+| [`text-shadow`](property/text-shadow.md) | 文本阴影 |
+| [`transform-box`](property/transform-box.md) | 变换盒子 |
 | [`vertical-align`](property/vertical-align.md) | 垂直对齐 |
 | [`width`](property/width.md) | 宽度 |
-
-## 待完成的属性（根据 W3C CSS 规范）
-
-### 核心属性（高优先级）
-
-| 属性 | 说明 | 状态 |
-| --- | --- | --- |
-| [`contain`](property/contain.md) | 包含 | ✅ 完成 |
-| [`content-visibility`](property/content-visibility.md) | 内容可见性 | ✅ 完成 |
-| [`inset`](property/inset.md) | 定位速记 | ✅ 完成 |
-| [`gap`](property/gap.md) | 间距速记 | ✅ 完成 |
-| [`scroll-behavior`](property/scroll-behavior.md) | 滚动行为 | ✅ 完成 |
-| [`scroll-snap-type`](property/scroll-snap-type.md) | 滚动捕捉类型 | ✅ 完成 |
-| [`scroll-snap-align`](property/scroll-snap-align.md) | 滚动捕捉对齐 | ✅ 完成 |
-| [`scroll-margin`](property/scroll-margin.md) | 滚动外边距速记 | ✅ 完成 |
-| [`scroll-padding`](property/scroll-padding.md) | 滚动内边距速记 | ✅ 完成 |
-| [`text-overflow`](property/text-overflow.md) | 文本溢出 | ✅ 完成 |
-| [`text-shadow`](property/text-shadow.md) | 文本阴影 | ✅ 完成 |
-| [`text-underline-offset`](property/text-underline-offset.md) | 下划线偏移 | ✅ 完成 |
-| [`accent-color`](property/accent-color.md) | 强调色 | ✅ 完成 |
-| [`color-scheme`](property/color-scheme.md) | 颜色方案 | ✅ 完成 |
-| [`scrollbar-gutter`](property/scrollbar-gutter.md) | 滚动条间距 | ✅ 完成 |
-| [`aspect-ratio`](property/aspect-ratio.md) | 宽高比 | ✅ 完成 |
-| [`content`](property/content.md) | 内容 | ✅ 完成 |
-| [`line-clamp`](property/line-clamp.md) | 行裁剪 | ✅ 完成 |
-
-### 字体相关属性
-
-| 属性 | 说明 | 状态 |
-| --- | --- | --- |
-| [`font-feature-settings`](property/font-feature-settings.md) | 字体特性设置 | ✅ 完成 |
-| [`font-kerning`](property/font-kerning.md) | 字体 Kerning | ✅ 完成 |
-| [`font-optical-sizing`](property/font-optical-sizing.md) | 字体光学缩放 | ✅ 完成 |
-| [`font-palette`](property/font-palette.md) | 字体调色板 | ✅ 完成 |
-| [`font-variation-settings`](property/font-variation-settings.md) | 字体变体设置 | ✅ 完成 |
-| [`font-variant-caps`](property/font-variant-caps.md) | 字体变体大写字母 | ✅ 完成 |
-| [`font-variant-numeric`](property/font-variant-numeric.md) | 字体变体数字 | ✅ 完成 |
-| [`font-variant-east-asian`](property/font-variant-east-asian.md) | 字体变体东亚 | ✅ 完成 |
-| [`font-variant-ligatures`](property/font-variant-ligatures.md) | 字体变体连字 | ✅ 完成 |
-
-### 文本相关属性
-
-| 属性 | 说明 | 状态 |
-| --- | --- | --- |
-| [`text-emphasis`](property/text-emphasis.md) | 文本强调速记 | ✅ 完成 |
-| [`text-emphasis-color`](property/text-emphasis-color.md) | 文本强调颜色 | ✅ 完成 |
-| [`text-emphasis-style`](property/text-emphasis-style.md) | 文本强调样式 | ✅ 完成 |
-| [`text-emphasis-position`](property/text-emphasis-position.md) | 文本强调位置 | ✅ 完成 |
-| [`text-size-adjust`](property/text-size-adjust.md) | 文本大小调整 | ✅ 完成 |
-| [`text-combine-upright`](property/text-combine-upright.md) | 文本组合直立 | ✅ 完成 |
-| [`line-break`](property/line-break.md) | 换行 | ✅ 完成 |
-
-### 逻辑属性补充
-
-| 属性 | 说明 | 状态 |
-| --- | --- | --- |
-| [`border-block-color`](property/border-block-color.md) | 块边框颜色 | ✅ 完成 |
-| [`border-block-style`](property/border-block-style.md) | 块边框样式 | ✅ 完成 |
-| [`border-block-width`](property/border-block-width.md) | 块边框宽度 | ✅ 完成 |
-| [`border-inline-color`](property/border-inline-color.md) | 行内边框颜色 | ✅ 完成 |
-| [`border-inline-style`](property/border-inline-style.md) | 行内边框样式 | ✅ 完成 |
-| [`border-inline-width`](property/border-inline-width.md) | 行内边框宽度 | ✅ 完成 |
-| [`border-start-start-radius`](property/border-start-start-radius.md) | 开始开始圆角 | ✅ 完成 |
-| [`border-start-end-radius`](property/border-start-end-radius.md) | 开始结束圆角 | ✅ 完成 |
-| [`border-end-start-radius`](property/border-end-start-radius.md) | 结束开始圆角 | ✅ 完成 |
-| [`border-end-end-radius`](property/border-end-end-radius.md) | 结束结束圆角 | ✅ 完成 |
-| [`inset-block`](property/inset-block.md) | 块定位速记 | ✅ 完成 |
-| [`inset-block-start`](property/inset-block-start.md) | 块开始定位 | ✅ 完成 |
-| [`inset-block-end`](property/inset-block-end.md) | 块结束定位 | ✅ 完成 |
-| [`inset-inline`](property/inset-inline.md) | 行内定位速记 | ✅ 完成 |
-| [`inset-inline-start`](property/inset-inline-start.md) | 行内开始定位 | ✅ 完成 |
-| [`inset-inline-end`](property/inset-inline-end.md) | 行内结束定位 | ✅ 完成 |
-
-### 动画与过渡新属性
-
-| 属性 | 说明 | 状态 |
-| --- | --- | --- |
-| [`animation-timeline`](property/animation-timeline.md) | 动画时间线 | ✅ 完成 |
-| [`animation-range`](property/animation-range.md) | 动画范围 | ✅ 完成 |
-| [`animation-range-start`](property/animation-range-start.md) | 动画范围开始 | ✅ 完成 |
-| [`animation-range-end`](property/animation-range-end.md) | 动画范围结束 | ✅ 完成 |
-| [`scroll-timeline`](property/scroll-timeline.md) | 滚动时间线 | ✅ 完成 |
-| [`view-timeline`](property/view-timeline.md) | 视图时间线 | ✅ 完成 |
-
-### 分页媒体补充
-
-| 属性 | 说明 | 状态 |
-| --- | --- | --- |
-| [`bleed`](property/bleed.md) | 出血 | ✅ 完成 |
-| [`marks`](property/marks.md) | 标记 | ✅ 完成 |
-| [`size`](property/size.md) | 页面尺寸 | ✅ 完成 |
-
-### 其他补充
-
-| 属性 | 说明 | 状态 |
-| --- | --- | --- |
-| [`box-decoration-break`](property/box-decoration-break.md) | 盒子装饰片段 | ✅ 完成 |
-| [`forced-color-adjust`](property/forced-color-adjust.md) | 强制颜色调整 | ✅ 完成 |
-| [`transform-box`](property/transform-box.md) | 变换盒子 | ✅ 完成 |
-| [`overflow-anchor`](property/overflow-anchor.md) | 溢出锚点 | ✅ 完成 |
-| [`overflow-block`](property/overflow-block.md) | 块溢出 | ✅ 完成 |
-| [`overflow-inline`](property/overflow-inline.md) | 行内溢出 | ✅ 完成 |
-| [`overflow-clip-margin`](property/overflow-clip-margin.md) | 溢出裁剪边距 | ✅ 完成 |
-| [`max-lines`](property/max-lines.md) | 最大行数 | ✅ 完成 |
-| [`speak`](property/speak.md) | 语音 | ✅ 完成 |
-| [`speak-as`](property/speak-as.md) | 语音方式 | ✅ 完成 |
-| [`caret`](property/caret.md) | 光标速记 | ✅ 完成 |
-| [`caret-shape`](property/caret-shape.md) | 光标形状 | ✅ 完成 |
-| [`outline`](property/outline.md) | 轮廓速记 | ✅ 完成 |
-| [`outline-color`](property/outline-color.md) | 轮廓颜色 | ✅ 完成 |
-| [`outline-style`](property/outline-style.md) | 轮廓样式 | ✅ 完成 |
-| [`outline-width`](property/outline-width.md) | 轮廓宽度 | ✅ 完成 |
-| [`outline-offset`](property/outline-offset.md) | 轮廓偏移 | ✅ 完成 |
