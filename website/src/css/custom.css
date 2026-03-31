@@ -1,0 +1,60 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles React Prism by default (Prism is used to highlight syntax in
+ * markdown blocks).
+ */
+
+:root {
+  --ifm-color-primary: #264d99;
+  --ifm-color-primary-dark: #224488;
+  --ifm-color-primary-darker: #1f3e7b;
+  --ifm-color-primary-darkest: #1a3366;
+  --ifm-color-primary-light: #3a6bb3;
+  --ifm-color-primary-lighter: #4d7bc5;
+  --ifm-color-primary-lightest: #769bdc;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #4d7bc5;
+  --ifm-color-primary-dark: #3a6bb3;
+  --ifm-color-primary-darker: #2d5a9e;
+  --ifm-color-primary-darkest: #224488;
+  --ifm-color-primary-light: #6d96d6;
+  --ifm-color-primary-lighter: #8ab0e1;
+  --ifm-color-primary-lightest: #b3cbe8;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom styles */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.button--primary {
+  background: white;
+  color: #667eea;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.button--primary:hover {
+  transform: scale(1.05);
+}
