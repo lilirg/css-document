@@ -2,7 +2,7 @@
 
 CSS（Cascading Style Sheets，层叠样式表）是为 web 内容添加样式的代码。
 
-和 HTML 类似，CSS 也不是真正的**编程语言**，甚至不是**标记语言**。 **CSS 是一门****样式表语言** ，这也就是说人们可以用它来选择性地为 HTML 元素添加样式。举例来说，以下 CSS 代码选择了所有的段落文字，并将它们设置为红色。
+和 HTML 类似，CSS 也不是真正的**编程语言**，甚至不是**标记语言**。CSS 是一门样式表语言，这也就是说人们可以用它来选择性地为 HTML 元素添加样式。举例来说，以下 CSS 代码选择了所有的段落文字，并将它们设置为红色。
 
 ```css
 p {
@@ -17,7 +17,7 @@ p {
 1. 新建一个 `index.html`，将以下粘贴到文档头部（也就是 `<head>` 和 `</head>` 标签之间）
 
    ```html
-   <linkhref="styles/style.css"rel="stylesheet" />
+   <link href="styles/style.css" rel="stylesheet" />
    ```
 2. 将以下内容粘贴到 `<body>` 和 `</body>` 之间
 
@@ -32,12 +32,12 @@ p {
 
 1. [规则集](./composition.md)
 2. [选择器](./selector.md)
-3. 冲突-层叠、优先级、继承
-4. 盒模型
-5. 值与单位
-6. 替换元素和表单
-7. 开发者工具
-8. 布局排版
-9. 响应式
-10. 兼容
-11. 性能
+3. [冲突-层叠、优先级、继承](./conflict.md)
+4. [盒模型](./box-model.md)
+5. [值与单位](./values-and-units.md)
+6. [替换元素和表单](./replaced-elements-and-forms.md)
+7. [开发者工具](./developer-tools.md)
+8. [布局排版](./layout.md)
+9. [响应式](./responsive.md)
+10. [兼容](./compatibility.md)
+11. [性能](./performance.md)

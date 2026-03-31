@@ -1,20 +1,20 @@
-# CSS规则集 - A CSS Ruleset
+# CSS 规则集 (CSS Ruleset)
 
-## 选择器 - Selector
+## 选择器 (Selector)
 
-HTML 元素的名称位于规则集开始。它选择了一个或多个需要添加样式的元素（在这个例子中就是 `<p>` 元素）。要给不同元素添加样式，只需要更改选择器。
+选择器位于规则集的开头。它选择一个或多个需要添加样式的 HTML 元素（在这个例子中就是 `<p>` 元素）。要为不同元素添加样式，只需要更改选择器。
 
-## 声明 - Declaration
+## 声明 (Declaration)
 
-一个单独的规则，如 `color: red; `用来指定添加样式元素的属性。
+一个单独的声明，如 `color: red;` 用来指定元素的样式属性。
 
-## 属性 - Properties
+## 属性 (Properties)
 
-改变 HTML 元素样式的途径（本例中 color 就是 `<p>` 元素的属性）。CSS 中，由编写人员决定修改哪个属性以改变规则。
+属性是用来改变 HTML 元素样式的名称（本例中 `color` 就是 `<p>` 元素的属性）。在 CSS 中，通过设置不同的属性值来改变元素的样式。
 
-## 属性的值 - Property value
+## 属性值 (Property value)
 
-在属性的右边，冒号后面即属性的值，它从指定属性的众多外观中选择一个值（我们除了 `red` 之外还有很多属性值可以用于 `color` ）。
+在属性的右边，冒号后面是属性的值。它从指定属性的众多可能值中选择一个（对于 `color` 属性，除了 `red` 之外还有很多其他颜色值可以使用）。
 
 ## 注意其他重要的语法
 
@@ -26,8 +26,8 @@ HTML 元素的名称位于规则集开始。它选择了一个或多个需要添
 
 ```css
 p {
-  color:red;
-  width:500px;
-  border:1px solid black;
+  color: red;
+  width: 500px;
+  border: 1px solid black;
 }
 ```
