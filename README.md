@@ -103,7 +103,6 @@
 | [`border-bottom-right-radius`](property/border-bottom-right-radius.md) | 下右边框圆角 |
 | [`border-bottom-style`](property/border-bottom-style.md) | 下边框样式 |
 | [`border-bottom-width`](property/border-bottom-width.md) | 下边框宽度 |
-| [`border-collapse`](property/border-collapse.md) | 边框合并 |
 | [`border-color`](property/border-color.md) | 边框颜色速记 |
 | [`border-image`](property/border-image.md) | 边框图像速记 |
 | [`border-image-outset`](property/border-image-outset.md) | 边框图像外扩 |
@@ -120,7 +119,6 @@
 | [`border-right-color`](property/border-right-color.md) | 右边框颜色 |
 | [`border-right-style`](property/border-right-style.md) | 右边框样式 |
 | [`border-right-width`](property/border-right-width.md) | 右边框宽度 |
-| [`border-spacing`](property/border-spacing.md) | 边框间距 |
 | [`border-style`](property/border-style.md) | 边框样式速记 |
 | [`border-top`](property/border-top.md) | 上边框速记 |
 | [`border-top-color`](property/border-top-color.md) | 上边框颜色 |
@@ -129,12 +127,14 @@
 | [`border-top-style`](property/border-top-style.md) | 上边框样式 |
 | [`border-top-width`](property/border-top-width.md) | 上边框宽度 |
 | [`border-width`](property/border-width.md) | 边框宽度速记 |
+| [`box-shadow`](property/box-shadow.md) | 盒子阴影 |
 
 ##### 🌈 颜色 (Colors)
 
 | 属性 | 说明 |
 | --- | --- |
 | [`color`](property/color.md) | 文本颜色 |
+| [`color-scheme`](property/color-scheme.md) | 颜色方案 |
 | [`opacity`](property/opacity.md) | 透明度 |
 
 ##### 🔤 字体 (Fonts)
@@ -155,17 +155,21 @@
 
 | 属性 | 说明 |
 | --- | --- |
+| [`content`](property/content.md) | 内容 |
 | [`direction`](property/direction.md) | 文本方向 |
 | [`hanging-punctuation`](property/hanging-punctuation.md) | 悬挂标点 |
 | [`hyphens`](property/hyphens.md) | 连字符 |
 | [`letter-spacing`](property/letter-spacing.md) | 字母间距 |
+| [`line-clamp`](property/line-clamp.md) | 行裁剪 |
 | [`line-height`](property/line-height.md) | 行高 |
+| [`quotes`](property/quotes.md) | 引用符号 |
 | [`tab-size`](property/tab-size.md) | Tab 字符宽度 |
 | [`text-align`](property/text-align.md) | 文本对齐 |
 | [`text-align-last`](property/text-align-last.md) | 最后一行对齐 |
 | [`text-indent`](property/text-indent.md) | 文本缩进 |
 | [`text-justify`](property/text-justify.md) | 文本两端对齐 |
 | [`text-orientation`](property/text-orientation.md) | 文本方向 |
+| [`text-overflow`](property/text-overflow.md) | 文本溢出 |
 | [`text-rendering`](property/text-rendering.md) | 文本渲染 |
 | [`text-transform`](property/text-transform.md) | 文本转换 |
 | [`white-space`](property/white-space.md) | 空白处理 |
@@ -178,16 +182,22 @@
 | 属性 | 说明 |
 | --- | --- |
 | [`box-sizing`](property/box-sizing.md) | 盒子模型 |
+| [`height`](property/height.md) | 高度 |
 | [`margin`](property/margin.md) | 外边距速记 |
 | [`margin-bottom`](property/margin-bottom.md) | 下外边距 |
 | [`margin-left`](property/margin-left.md) | 左外边距 |
 | [`margin-right`](property/margin-right.md) | 右外边距 |
 | [`margin-top`](property/margin-top.md) | 上外边距 |
+| [`max-height`](property/max-height.md) | 最大高度 |
+| [`max-width`](property/max-width.md) | 最大宽度 |
+| [`min-height`](property/min-height.md) | 最小高度 |
+| [`min-width`](property/min-width.md) | 最小宽度 |
 | [`padding`](property/padding.md) | 内边距速记 |
 | [`padding-bottom`](property/padding-bottom.md) | 下内边距 |
 | [`padding-left`](property/padding-left.md) | 左内边距 |
 | [`padding-right`](property/padding-right.md) | 右内边距 |
 | [`padding-top`](property/padding-top.md) | 上内边距 |
+| [`width`](property/width.md) | 宽度 |
 
 ##### 📐 弹性布局 (Flexbox)
 
@@ -196,6 +206,7 @@
 | [`align-content`](property/align-content.md) | 对齐内容 |
 | [`align-items`](property/align-items.md) | 对齐项目 |
 | [`align-self`](property/align-self.md) | 对齐自身 |
+| [`aspect-ratio`](property/aspect-ratio.md) | 宽高比 |
 | [`flex`](property/flex.md) | 弹性速记 |
 | [`flex-basis`](property/flex-basis.md) | 弹性基准 |
 | [`flex-direction`](property/flex-direction.md) | 弹性方向 |
@@ -203,6 +214,7 @@
 | [`flex-grow`](property/flex-grow.md) | 弹性增长 |
 | [`flex-shrink`](property/flex-shrink.md) | 弹性收缩 |
 | [`flex-wrap`](property/flex-wrap.md) | 弹性换行 |
+| [`gap`](property/gap.md) | 间距速记 |
 | [`justify-content`](property/justify-content.md) | 主轴对齐 |
 | [`order`](property/order.md) | 顺序 |
 
@@ -249,6 +261,7 @@
 | 属性 | 说明 |
 | --- | --- |
 | [`bottom`](property/bottom.md) | 底部定位 |
+| [`inset`](property/inset.md) | 定位速记 |
 | [`left`](property/left.md) | 左侧定位 |
 | [`position`](property/position.md) | 定位方式 |
 | [`right`](property/right.md) | 右侧定位 |
@@ -309,6 +322,7 @@
 | [`perspective`](property/perspective.md) | 透视距离 |
 | [`perspective-origin`](property/perspective-origin.md) | 透视原点 |
 | [`transform`](property/transform.md) | 变换 |
+| [`transform-box`](property/transform-box.md) | 变换盒子 |
 | [`transform-origin`](property/transform-origin.md) | 变换原点 |
 | [`transform-style`](property/transform-style.md) | 变换样式 |
 
@@ -330,11 +344,13 @@
 
 | 属性 | 说明 |
 | --- | --- |
+| [`accent-color`](property/accent-color.md) | 强调色 |
 | [`appearance`](property/appearance.md) | 元素的原生 UI 外观 |
 | [`caret-color`](property/caret-color.md) | 光标颜色 |
 | [`caret`](property/caret.md) | 光标速记 |
 | [`caret-shape`](property/caret-shape.md) | 光标形状 |
 | [`cursor`](property/cursor.md) | 光标 |
+| [`forced-color-adjust`](property/forced-color-adjust.md) | 强制颜色调整 |
 | [`outline`](property/outline.md) | 轮廓速记 |
 | [`outline-color`](property/outline-color.md) | 轮廓颜色 |
 | [`outline-offset`](property/outline-offset.md) | 轮廓偏移 |
@@ -361,6 +377,7 @@
 
 | 属性 | 说明 |
 | --- | --- |
+| [`display`](property/display.md) | 显示类型 |
 | [`overflow`](property/overflow.md) | 溢出处理 |
 | [`overflow-x`](property/overflow-x.md) | X 轴溢出 |
 | [`overflow-y`](property/overflow-y.md) | Y 轴溢出 |
@@ -401,6 +418,8 @@
 
 | 属性 | 说明 |
 | --- | --- |
+| [`clip`](property/clip.md) | 裁剪区域 |
+| [`clip-path`](property/clip-path.md) | 裁剪路径 |
 | [`shape-image-threshold`](property/shape-image-threshold.md) | 形状图像阈值 |
 | [`shape-margin`](property/shape-margin.md) | 形状边距 |
 | [`shape-outside`](property/shape-outside.md) | 形状外部 |
@@ -414,14 +433,9 @@
 | [`text-decoration-line`](property/text-decoration-line.md) | 装饰线类型 |
 | [`text-decoration-style`](property/text-decoration-style.md) | 装饰线样式 |
 | [`text-decoration-thickness`](property/text-decoration-thickness.md) | 装饰线厚度 |
+| [`text-shadow`](property/text-shadow.md) | 文本阴影 |
 | [`text-underline-offset`](property/text-underline-offset.md) | 下划线偏移 |
 | [`text-underline-position`](property/text-underline-position.md) | 下划线位置 |
-
-##### 📏 行网格 (Line Grid)
-
-| 属性 | 说明 |
-| --- | --- |
-| *(暂无)* |
 
 ##### ✂️ 分块 (Fragmentation)
 
@@ -463,7 +477,50 @@
 | [`counter-set`](property/counter-set.md) | 计数器设置 |
 | [`string-set`](property/string-set.md) | 字符串集 |
 
-##### 🖌️ 浏览器前缀属性
+##### 📋 列表 (Lists)
+
+| 属性 | 说明 |
+| --- | --- |
+| [`list-style`](property/list-style.md) | 列表样式速记 |
+| [`list-style-image`](property/list-style-image.md) | 列表图像 |
+| [`list-style-position`](property/list-style-position.md) | 列表位置 |
+| [`list-style-type`](property/list-style-type.md) | 列表类型 |
+
+##### 📑 表格 (Tables)
+
+| 属性 | 说明 |
+| --- | --- |
+| [`border-collapse`](property/border-collapse.md) | 边框合并 |
+| [`border-spacing`](property/border-spacing.md) | 边框间距 |
+| [`empty-cells`](property/empty-cells.md) | 空单元格 |
+| [`table-layout`](property/table-layout.md) | 表格布局 |
+| [`vertical-align`](property/vertical-align.md) | 垂直对齐 |
+
+##### 📜 滚动 (Scrolling)
+
+| 属性 | 说明 |
+| --- | --- |
+| [`scroll-behavior`](property/scroll-behavior.md) | 滚动行为 |
+| [`scroll-margin`](property/scroll-margin.md) | 滚动外边距速记 |
+| [`scroll-padding`](property/scroll-padding.md) | 滚动内边距速记 |
+| [`scroll-snap-align`](property/scroll-snap-align.md) | 滚动捕捉对齐 |
+| [`scroll-snap-type`](property/scroll-snap-type.md) | 滚动捕捉类型 |
+
+##### 🖼️ 替换元素 (Replaced Elements)
+
+| 属性 | 说明 |
+| --- | --- |
+| [`object-fit`](property/object-fit.md) | 对象适配 |
+| [`object-position`](property/object-position.md) | 对象位置 |
+
+##### 📐 布局排版 (Layout)
+
+| 属性 | 说明 |
+| --- | --- |
+| [`clear`](property/clear.md) | 清除浮动 |
+| [`float`](property/float.md) | 浮动 |
+
+##### ️ 浏览器前缀属性
 
 ###### Firefox (-moz-)
 
@@ -495,47 +552,3 @@
 | [`-webkit-text-stroke-width`](property/-webkit-text-stroke-width.md) | WebKit 文本描边宽度 |
 | [`-webkit-touch-callout`](property/-webkit-touch-callout.md) | WebKit 触摸调用菜单 |
 
-##### 📋 其他属性
-
-| 属性 | 说明 |
-| --- | --- |
-| [`accent-color`](property/accent-color.md) | 强调色 |
-| [`aspect-ratio`](property/aspect-ratio.md) | 宽高比 |
-| [`box-decoration-break`](property/box-decoration-break.md) | 盒子装饰片段 |
-| [`box-shadow`](property/box-shadow.md) | 盒子阴影 |
-| [`clear`](property/clear.md) | 清除浮动 |
-| [`clip`](property/clip.md) | 裁剪区域 |
-| [`clip-path`](property/clip-path.md) | 裁剪路径 |
-| [`color-scheme`](property/color-scheme.md) | 颜色方案 |
-| [`content`](property/content.md) | 内容 |
-| [`display`](property/display.md) | 显示类型 |
-| [`empty-cells`](property/empty-cells.md) | 空单元格 |
-| [`float`](property/float.md) | 浮动 |
-| [`forced-color-adjust`](property/forced-color-adjust.md) | 强制颜色调整 |
-| [`gap`](property/gap.md) | 间距速记 |
-| [`height`](property/height.md) | 高度 |
-| [`inset`](property/inset.md) | 定位速记 |
-| [`line-clamp`](property/line-clamp.md) | 行裁剪 |
-| [`list-style`](property/list-style.md) | 列表样式速记 |
-| [`list-style-image`](property/list-style-image.md) | 列表图像 |
-| [`list-style-position`](property/list-style-position.md) | 列表位置 |
-| [`list-style-type`](property/list-style-type.md) | 列表类型 |
-| [`max-height`](property/max-height.md) | 最大高度 |
-| [`max-width`](property/max-width.md) | 最大宽度 |
-| [`min-height`](property/min-height.md) | 最小高度 |
-| [`min-width`](property/min-width.md) | 最小宽度 |
-| [`object-fit`](property/object-fit.md) | 对象适配 |
-| [`object-position`](property/object-position.md) | 对象位置 |
-| [`quotes`](property/quotes.md) | 引用符号 |
-| [`scroll-behavior`](property/scroll-behavior.md) | 滚动行为 |
-| [`scroll-margin`](property/scroll-margin.md) | 滚动外边距速记 |
-| [`scroll-padding`](property/scroll-padding.md) | 滚动内边距速记 |
-| [`scroll-snap-align`](property/scroll-snap-align.md) | 滚动捕捉对齐 |
-| [`scroll-snap-type`](property/scroll-snap-type.md) | 滚动捕捉类型 |
-| [`scrollbar-gutter`](property/scrollbar-gutter.md) | 滚动条间距 |
-| [`table-layout`](property/table-layout.md) | 表格布局 |
-| [`text-overflow`](property/text-overflow.md) | 文本溢出 |
-| [`text-shadow`](property/text-shadow.md) | 文本阴影 |
-| [`transform-box`](property/transform-box.md) | 变换盒子 |
-| [`vertical-align`](property/vertical-align.md) | 垂直对齐 |
-| [`width`](property/width.md) | 宽度 |
