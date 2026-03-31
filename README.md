@@ -6,53 +6,44 @@
 
 ---
 
-阅读本参考时，您可能会发现很多内容在互联网上已经存在。
+## 导航
 
-我们编辑文档时，以 [MDN Web Docs](https://developer.mozilla.org/ "MDN Web Docs") 为准，比较明确的定义和用法，会直接以该站为准，甚至直接引用。
-
----
-
-> MDN Web Docs（Mozilla Developer Network）是一个权威的 Web 技术文档网站，提供了关于 HTML、CSS、JavaScript 等前端技术的详细文档和教程。MDN Web Docs 由 Mozilla 开发者网络提供，其内容由全球的贡献者维护和更新，以确保信息的准确性和时效性。
->
-> MDN Web Docs 不仅提供了丰富的技术文档和教程，还为 Web 开发人员提供了各种 API、属性和技术的详细说明，以及各种浏览器兼容> 性信息和规范。此外，MDN Web Docs 还提供了许多示例代码和演示，帮助开发人员更好地理解和使用 Web 技术。
->
-> 因此，可以说 MDN Web Docs 是一个权威的 Web 技术文档网站，对于 Web 开发人员来说是非常重要的学习资源。
->
-> 本参考相对于 MDN Web Docs，更倾向一般业务应用实践和特征功能的最佳实践。
-
----
+- [基础内容](basics/README.md)
+- [概念](concept/README.md)
+- [属性](property/README.md)
+- [规则](rule/README.md)
+- [伪类和伪元素](pseudo-class/README.md)
+- [函数](function/README.md)
+- [数据类型](data-type/README.md)
 
 ## 参考网站
 
-- [https://drafts.csswg.org/css-2024/](https://drafts.csswg.org/css-2024/)
-- [https://drafts.csswg.org/css-syntax/](https://drafts.csswg.org/css-syntax/)
-- [https://drafts.csswg.org/css-cascade-6/](https://drafts.csswg.org/css-cascade-6/)
+### CSS 规范
 
-## 完成进度
+- [CSS Snapshot 2024](https://drafts.csswg.org/css-2024/) - CSS 规范总览
+- [CSS Syntax Level 3](https://drafts.csswg.org/css-syntax/) - CSS 语法规范
+- [CSS Cascading and Inheritance Level 6](https://drafts.csswg.org/css-cascade-6/) - 层叠与继承规范
+- [CSS Values and Units Level 3](https://drafts.csswg.org/css-values-3/) - 值与单位规范
+- [CSS Box Model](https://drafts.csswg.org/css-box-3/) - 盒模型规范
+- [CSS Flexbox Layout](https://drafts.csswg.org/css-flexbox-1/) - 弹性盒布局规范
+- [CSS Grid Layout](https://drafts.csswg.org/css-grid-2/) - 网格布局规范
+- [CSS Selectors Level 4](https://drafts.csswg.org/selectors-4/) - 选择器规范
+- [CSS Pseudo-Elements Level 4](https://drafts.csswg.org/css-pseudo-4/) - 伪元素规范
+- [CSS Color Level 4](https://drafts.csswg.org/css-color-4/) - 颜色规范
+- [CSS Transforms Level 1](https://drafts.csswg.org/css-transforms/) - 变换规范
+- [CSS Animations Level 1](https://drafts.csswg.org/css-animations-1/) - 动画规范
+- [CSS Transitions Level 1](https://drafts.csswg.org/css-transitions/) - 过渡规范
 
-| 模块 | 状态 | 进度 |
-| --- | --- |------|
-| 基础内容 | ⏲ 进行中 | 20% |
-| └─ 规则集 | ✅ 完成 | 100% |
-| └─ 选择器 | ✅ 完成 | 100% |
-| └─ 冲突 - 层叠、优先级、继承 | ⏲ 待开始 | 0% |
-| └─ 盒模型 | ⏲ 待开始 | 0% |
-| └─ 值与单位 | ⏲ 待开始 | 0% |
-| └─ 替换元素和表单 | ⏲ 待开始 | 0% |
-| └─ 开发者工具 | ⏲ 待开始 | 0% |
-| └─ 布局排版 | ⏲ 待开始 | 0% |
-| └─ 响应式 | ⏲ 待开始 | 0% |
-| └─ 兼容 | ⏲ 待开始 | 0% |
-| └─ 性能 | ⏲ 待开始 | 0% |
-| 概念 | ✅ 完成 | 100% |
-| 属性 | ✅ 完成 | 100% |
-| 规则 | ✅ 完成 | 100% |
-| 伪类 | ✅ 完成 | 100% |
-| 函数 | ✅ 完成 | 100% |
-| 数据类型 | ✅ 完成 | 100% |
+### 权威文档
 
-### 属性
+- [MDN Web Docs - CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS) - MDN CSS 参考文档
+- [MDN CSS 属性参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference) - 完整属性列表
+- [W3C CSS 规范](https://www.w3.org/Style/CSS/specs.en) - W3C 官方规范列表
 
-参考 [MDN CSS 属性参考](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
+### 工具与资源
 
-[属性文档](./property/READNE.md)
+- [Can I Use - CSS](https://caniuse.com/css) - CSS 浏览器兼容性查询
+- [CSS-Tricks](https://css-tricks.com/) - CSS 教程与技巧
+- [CodePen](https://codepen.io/) - CSS 代码演示平台
+
+
