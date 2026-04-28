@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- 圆角矩形背景 -->
+  <rect x="30" y="30" width="452" height="452" rx="100" ry="100" fill="#4A90D9"/>
+  
+  <!-- 外圈 CSS 括号 -->
+  <text x="130" y="350" font-family="Arial, sans-serif" font-size="220" font-weight="bold" fill="white" opacity="0.25">{</text>
+  <text x="310" y="350" font-family="Arial, sans-serif" font-size="220" font-weight="bold" fill="white" opacity="0.25">}</text>
+  
+  <!-- AI 文字 - 渐变效果 -->
+  <defs>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#E0E8FF"/>
+    </linearGradient>
+  </defs>
+  <text x="256" y="290" font-family="Arial, sans-serif" font-size="140" font-weight="bold" fill="url(#aiGradient)" text-anchor="middle" letter-spacing="8">AI</text>
+  
+  <!-- STYLE 文字 - 底部小字 -->
+  <text x="256" y="410" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="white" opacity="0.7" text-anchor="middle" letter-spacing="12">STYLE</text>
+  
+  <!-- 装饰点 - 科技感 -->
+  <circle cx="90" cy="130" r="8" fill="#6BB5FF" opacity="0.6"/>
+  <circle cx="430" cy="160" r="6" fill="#6BB5FF" opacity="0.5"/>
+  <circle cx="410" cy="400" r="7" fill="#6BB5FF" opacity="0.4"/>
+  <circle cx="100" cy="390" r="5" fill="#6BB5FF" opacity="0.5"/>
+</svg>

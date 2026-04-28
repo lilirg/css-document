@@ -6,7 +6,7 @@
 
 ## 前端设计类 Skills
 
-### [`frontend-design()`](skills/frontend-design:1)
+### `frontend-design()`
 **用途**: 创建独特的、生产级的前端界面，具有高设计质量
 
 **适用场景**:
@@ -20,7 +20,7 @@
 "创建一个带有渐变背景和卡片布局的落地页"
 ```
 
-### [`ui-styling()`](skills/ui-styling:1)
+### `ui-styling()`
 **用途**: 使用 shadcn/ui 组件和 Tailwind CSS 创建用户界面
 
 **适用场景**:
@@ -31,7 +31,7 @@
 - 定制主题和颜色
 - 实现暗色模式
 
-### [`tailwindcss()`](skills/tailwindcss:1)
+### `tailwindcss()`
 **用途**: Tailwind CSS 实用优先 CSS 框架
 
 **适用场景**:
@@ -39,7 +39,7 @@
 - 构建响应式设计
 - 使用主题变量定制设计系统
 
-### [`ui-ux-pro-max()`](skills/ui-ux-pro-max:1)
+### `ui-ux-pro-max()`
 **用途**: UI/UX 设计智能，包含 50+ 样式、21 种调色板、50+ 字体配对
 
 **可用功能**:
@@ -56,7 +56,7 @@
 
 ## CSS 规范类 Skills
 
-### [`frontend-code-review()`](skills/frontend-code-review:1)
+### `frontend-code-review()`
 **用途**: 触发时审查前端文件（.tsx, .ts, .js）
 
 **适用场景**:
@@ -66,7 +66,7 @@
 
 ## Vue 开发类 Skills
 
-### [`vue-best-practices()`](skills/vue-best-practices:1)
+### `vue-best-practices()`
 **用途**: Vue.js 任务必备技能
 
 **适用场景**:
@@ -75,7 +75,7 @@
 - TypeScript 集成
 - SSR (Volar, vue-tsc)
 
-### [`vue-development-guides()`](skills/vue-development-guides:1)
+### `vue-development-guides()`
 **用途**: Vue.js 应用开发最佳实践
 
 **适用场景**:
@@ -83,7 +83,7 @@
 - 重构 Vue 代码
 - 审查 Vue 项目
 
-### [`create-adaptable-composable()`](skills/create-adaptable-composable:1)
+### `create-adaptable-composable()`
 **用途**: 创建库级 Vue composable
 
 **适用场景**:
@@ -93,7 +93,7 @@
 
 ## 工作流类 Skills
 
-### [`brainstorming()`](skills/brainstorming:1)
+### `brainstorming()`
 **用途**: 创意工作前必须使用
 
 **适用场景**:
@@ -101,7 +101,7 @@
 - 实现前进行设计讨论
 - 功能规划
 
-### [`writing-plans()`](skills/writing-plans:1)
+### `writing-plans()`
 **用途**: 有多步骤任务时的规划
 
 **适用场景**:
@@ -109,7 +109,7 @@
 - 接触代码前
 - 多步骤任务规划
 
-### [`subagent-driven-development()`](skills/subagent-driven-development:1)
+### `subagent-driven-development()`
 **用途**: 执行实现计划
 
 **适用场景**:
@@ -120,10 +120,10 @@
 
 ### 快速开始
 
-1. **设计阶段**: 使用 [`brainstorming()`](skills/brainstorming:1) 探索需求
-2. **规划阶段**: 使用 [`writing-plans()`](skills/writing-plans:1) 制定计划
-3. **开发阶段**: 使用 [`frontend-design()`](skills/frontend-design:1) 或 [`ui-styling()`](skills/ui-styling:1)
-4. **审查阶段**: 使用 [`frontend-code-review()`](skills/frontend-code-review:1)
+1. **设计阶段**: 使用 `brainstorming()` 探索需求
+2. **规划阶段**: 使用 `writing-plans()` 制定计划
+3. **开发阶段**: 使用 `frontend-design()` 或 `ui-styling()`
+4. **审查阶段**: 使用 `frontend-code-review()`
 
 ### CSS 开发工作流
 
@@ -138,8 +138,3 @@
 ## 如何启用 Skills
 
 在 VJSP 中，Skills 会自动根据任务类型触发。您也可以手动指定使用特定 Skill。
-
-## 相关资源
-
-- [VJSP 官方文档](https://vjsp.dev/)
-- [Skills 仓库](https://github.com/vjsp/skills)

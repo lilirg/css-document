@@ -140,9 +140,3 @@ AI 生成的新特性代码需要：
 ```
 "解释 CSS Container Queries 的用法并提供示例"
 ```
-
-## 相关资源
-
-- [MDN CSS 参考](/reference/intro)
-- [CSS 核心概念](/concepts/intro)
-- [Can I Use](https://caniuse.com/)
