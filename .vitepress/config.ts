@@ -236,7 +236,10 @@ export default defineConfig({
           text: 'AI 开发',
           collapsed: false,
           items: [
-            { text: 'AI 辅助 CSS 开发指南', link: '/ai/index' }
+            { text: 'AI 辅助 CSS 开发指南', link: '/ai/index' },
+            { text: 'CSS 开发规范', link: '/ai/css-rules' },
+            { text: 'Tailwind CSS 使用指南', link: '/ai/tailwind-css' },
+            { text: '推荐 Skills', link: '/ai/skills-recommendation' }
           ]
         }
       ]
