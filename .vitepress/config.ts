@@ -12,7 +12,8 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '基础知识', link: '/basics/whatisCSS' },
       { text: '核心概念', link: '/concepts/intro' },
-      { text: '参考文档', link: '/reference/intro' }
+      { text: '参考文档', link: '/reference/intro' },
+      { text: 'AI 开发', link: '/ai/index' }
     ],
 
     sidebar: {
@@ -225,6 +226,17 @@ export default defineConfig({
             { text: '@keyframes', link: '/reference/rules/keyframes' },
             { text: '@media', link: '/reference/rules/media' },
             { text: '@supports', link: '/reference/rules/supports' }
+          ]
+        }
+      ],
+
+      // AI 开发
+      '/ai/': [
+        {
+          text: 'AI 开发',
+          collapsed: false,
+          items: [
+            { text: 'AI 辅助 CSS 开发指南', link: '/ai/index' }
           ]
         }
       ]
