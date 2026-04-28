@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/css/',
   srcDir: 'docs',
   title: "CSS 参考",
   description: "从基础概念到高级特性的完整 CSS 学习资料",
@@ -230,7 +231,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/lilirg/css-document' }
     ]
   }
 })
