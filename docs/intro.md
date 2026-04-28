@@ -16,9 +16,9 @@ CSS（Cascading Style Sheets，层叠样式表）是一种用于描述 HTML 文�
 
 点击下方按钮开始学习 CSS：
 
-- [开始入门](/docs/basics/whatisCSS) - 了解 CSS 的基本概念
-- [学习概念](/docs/concepts/intro) - 理解 CSS 的工作机制
-- [查看参考](/docs/reference/intro) - 查找具体的 CSS 特性
+- [开始入门](/basics/whatisCSS) - 了解 CSS 的基本概念
+- [学习概念](/concepts/intro) - 理解 CSS 的工作机制
+- [查看参考](/reference/intro) - 查找具体的 CSS 特性
 
 ## 相关资源
 
