@@ -10,6 +10,8 @@ export default defineConfig({
   head: [
     // PWA 图标配置
     ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'apple-touch-icon-precomposed', href: '/apple-touch-icon-precomposed.png' }],
     // PWA 配置
     ['meta', { name: 'theme-color', content: '#4A90D9' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
