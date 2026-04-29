@@ -6,9 +6,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-      "dev": "vitepress dev",
+      "dev": "vitepress dev --port 9333",
       "build": "vitepress build",
-      "preview": "vitepress preview"
+      "preview": "vitepress preview --port 9333"
     },
   "dependencies": {
     "vitepress": "^1.6.0"

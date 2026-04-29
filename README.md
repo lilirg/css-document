@@ -8,13 +8,14 @@
 
 ## 导航
 
-- [基础内容](basics/README.md)
-- [概念](concept/README.md)
-- [属性](property/README.md)
-- [规则](rule/README.md)
-- [伪类和伪元素](pseudo-class/README.md)
-- [函数](function/README.md)
-- [数据类型](data-type/README.md)
+- [基础内容](docs/basics/whatisCSS.md)
+- [核心概念](docs/concepts/intro.md)
+- [参考文档](docs/reference/intro.md)
+  - [属性](docs/reference/properties/animation.md)
+  - [伪类](docs/reference/pseudo-class/intro.md)
+  - [函数](docs/reference/functions/attr().md)
+  - [数据类型](docs/reference/data-types/angle.md)
+  - [规则](docs/reference/rules/intro.md)
 
 ## 参考网站
 
