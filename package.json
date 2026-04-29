@@ -8,6 +8,7 @@
   "scripts": {
       "dev": "vitepress dev --port 9333",
       "build": "vitepress build",
+      "build:vercel": "BASE=/ vitepress build",
       "preview": "vitepress preview --port 9333"
     },
   "dependencies": {
